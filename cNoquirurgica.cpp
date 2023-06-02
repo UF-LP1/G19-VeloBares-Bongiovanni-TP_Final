@@ -1,1 +1,0 @@
-#include "cNoquirurgica.h"
