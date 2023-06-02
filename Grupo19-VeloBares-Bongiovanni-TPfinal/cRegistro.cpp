@@ -1,13 +1,16 @@
 #include "cRegistro.h"
 
-cRegsitro:: cRegistro (cHospital hospital_, cMedico medico_, time_t fechasolicitud_, time_t fechaentrega_, cProtesis protesis_, cPaciente paciente_);
+
+
+cRegistro::cRegistro(cHospital hospital_, cMedico medico_, time_t fechasolicitud_, time_t fechaentrega_, cProtesis protesis_, cPaciente paciente_)
 {
-	this->
-	this->
-	this->
-	this->
-	this->
-	this->
+	this->hospital = hospital_;
+	this->medico = medico_;
+	this->fechadesolicitud = fechasolicitud_;
+	this->fechaentrega = fechaentrega_;
+	this->protesis = protesis_;
+	this->paciente = paciente_;
+
 }
 
 cRegistro::~cRegistro()

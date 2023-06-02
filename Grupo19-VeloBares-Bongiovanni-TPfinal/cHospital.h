@@ -7,6 +7,7 @@ class cHospital
 {
 public:
 	friend class cRegistro;
+	friend class cPaciente; //le doy permiso a la clase cPaciente a que acceda a mis cosas (siendo cHospital), incluyo el .h en cPaciente además
 	cHospital(string nombrehoispital_, string direccionhospital_);
 	~cHospital();
 	string getnombrehospital(string nombrehospital);
