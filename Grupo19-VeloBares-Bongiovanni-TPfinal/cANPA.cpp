@@ -1,6 +1,6 @@
 #include "cANPA.h"
 
-cANPA::cANPA(cOrtopedia* ortopediaa_, cHospital* hospitall_)
+cANPA::cANPA(vector <cOrtopedia> ortopediaa_, vector <cHospital> hospitall_)
 {
 	this-> ortopediaa= ortopediaa_;
 	this-> hospitall= hospitall_;
@@ -8,6 +8,16 @@ cANPA::cANPA(cOrtopedia* ortopediaa_, cHospital* hospitall_)
 
 cANPA::~cANPA()
 {
+}
+
+vector<cOrtopedia> cANPA::getlistao()
+{
+	return vector<cOrtopedia>();
+}
+
+vector<cHospital> cANPA::getlistah()
+{
+	return vector<cHospital>();
 }
 
 void cANPA::imprimirANPPA()
@@ -20,13 +30,5 @@ string cANPA::to_string()
 	return string();
 }
 
-cOrtopedia cANPA::getlistao()
-{
-	//this->ortopedia;
-}
 
-cHospital cANPA::getlistah()
-{
-	//this->hospital;
-}
 

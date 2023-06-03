@@ -21,6 +21,11 @@ void cFabricante::imprimirfabricante()
 	return;
 }
 
+string cFabricante::to_string()
+{
+	return string();
+}
+
 void cFabricante::recibirsolicitud()
 {
 	return;

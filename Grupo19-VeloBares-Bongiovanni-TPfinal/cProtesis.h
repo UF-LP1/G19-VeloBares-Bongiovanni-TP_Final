@@ -1,11 +1,13 @@
 #pragma once
 #include <string>
+#include "cPaciente.h"
 using namespace std;
 
 class cProtesis
 {
 public:
-	    friend class cRegistro; //asi el registro tiene como atributo a protesis
+	friend class cMedico; //asi el medico tiene como atributo a protesis
+	friend class cRegistro; //asi el registro tiene como atributo a protesis
 		cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_);
 		~cProtesis();
 		string getdimensiones();
@@ -14,7 +16,7 @@ public:
 		unsigned int getcodigo();
 		void setfechafabricacion(time_t fechadefabricacion);
 		void imprimirprotesis();
-		string to_string;
+		string to_string();
 
 protected:
 	string dimensiones;

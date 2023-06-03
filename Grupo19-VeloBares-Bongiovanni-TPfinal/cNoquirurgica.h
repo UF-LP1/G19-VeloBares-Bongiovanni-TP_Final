@@ -9,7 +9,7 @@ public:
     ~cNoquirurgica();
     void ajustardimensiones();
     void inmprimirnoquirurgica();
-    string to_string;
+    string to_string();
 
 //private: no tiene nada, igual va?
 

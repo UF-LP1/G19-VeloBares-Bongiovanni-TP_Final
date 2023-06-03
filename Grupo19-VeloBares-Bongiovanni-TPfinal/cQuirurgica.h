@@ -9,11 +9,11 @@ class cQuirurgica :
     public cProtesis
 {
 public:
-    cQuirurgica(string dimensiones_, string material_, string fabricante_);//le paso lo que tiene protesis pues hija
+    cQuirurgica(string dimensiones_, string material_, string fabricante_);
     ~cQuirurgica();
     void norechazo(bool alergias);
     void imprimirquirurgicas();
-    string to_string; 
+    string to_string();
 
 //private: (no tenemos atributos)
 

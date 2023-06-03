@@ -41,3 +41,8 @@ void cProtesis::imprimirprotesis()
 {
 	return;
 }
+
+string cProtesis::to_string()
+{
+	return string();
+}

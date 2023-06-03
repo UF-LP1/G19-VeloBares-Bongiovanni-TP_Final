@@ -18,4 +18,9 @@ void cNoquirurgica::inmprimirnoquirurgica()
 	return;
 }
 
+string cNoquirurgica::to_string()
+{
+	return string();
+}
+
 

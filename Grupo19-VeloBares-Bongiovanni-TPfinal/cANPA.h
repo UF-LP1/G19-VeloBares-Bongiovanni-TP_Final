@@ -7,15 +7,15 @@ using namespace std;
 class cANPA
 {
 public:
-	cANPA(cOrtopedia* ortopediaa_, cHospital* hospitall_);
+	cANPA(vector <cOrtopedia> ortopediaa_,  vector <cHospital> hospitall_);
 	~cANPA();
-	cOrtopedia getlistao();
-	cHospital getlistah();
+	vector <cOrtopedia> getlistao();
+	vector <cHospital>  getlistah();
 	void imprimirANPPA();
 	string to_string();
 
 private:
-	cOrtopedia *ortopediaa;
-    cHospital *hospitall;
+	vector< cOrtopedia> ortopediaa;
+    vector< cHospital> hospitall;
 };
 

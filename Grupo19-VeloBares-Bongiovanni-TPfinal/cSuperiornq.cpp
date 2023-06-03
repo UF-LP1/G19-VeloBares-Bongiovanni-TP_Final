@@ -3,12 +3,13 @@
 cSuperiornq::cSuperiornq(string dimensiones_, string material_, string fabricante_) : cNoquirurgica(dimensiones_, material_, fabricante_) {}
 cSuperiornq::~cSuperiornq() {}
 
-void imprimirsuperiornq()
+void cSuperiornq::imprimirsuperiornq()
 {
-	return;
 }
 
-string to_string()
+string cSuperiornq::to_string()
 {
 	return string();
 }
+
+

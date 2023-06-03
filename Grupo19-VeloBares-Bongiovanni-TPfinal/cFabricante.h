@@ -9,8 +9,8 @@ public:
 	~cFabricante();
 	void hacerprotesis();
 	void imprimirfabricante();
-	string to_string;
-	void recibirsolicitud(); // recibe solicitud y la rechaza o no
+	string to_string();
+	void recibirsolicitud();//recibe solicitud y la rechaza o no
 
 private:
 	string nombrefabricante;

@@ -1,9 +1,11 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string nombrehoispital_, string direccionhospital_)
+cHospital::cHospital(string nombrehoispital_, string direccionhospital_, vector <cMedico> vectorm_, vector <cPaciente> vectorpa_)
 {
 	this->nombrehospital = nombrehoispital_;
 	this->direccionhospital = direccionhospital_;
+	this-> vectorm=vectorm_;
+	this-> vectorpa=vectorpa_;
 }
 
 cHospital::~cHospital()
@@ -18,6 +20,16 @@ string cHospital::getnombrehospital()
 void cHospital::setdireccionhospital(string direccionhospital)
 {
 	return;
+}
+
+vector<cMedico> cHospital::getvectormedico()
+{
+	return vector<cMedico>();
+}
+
+vector<cPaciente> cHospital::getvectorpaciente()
+{
+	return vector<cPaciente>();
 }
 
 void cHospital::agregarpaciente()

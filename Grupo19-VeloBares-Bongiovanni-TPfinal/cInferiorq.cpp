@@ -3,12 +3,12 @@
 cInferiorq::cInferiorq(string dimensiones_, string material_, string fabricante_) : cQuirurgica(dimensiones_, material_, fabricante_) {}
 cInferiorq::~cInferiorq() {}
 
-void imprimirinferiorq()
+void cInferiorq::imprimirinferiorq()
 {
-	return;
 }
 
-string to_string()
+string cInferiorq::to_string()
 {
 	return string();
 }
+

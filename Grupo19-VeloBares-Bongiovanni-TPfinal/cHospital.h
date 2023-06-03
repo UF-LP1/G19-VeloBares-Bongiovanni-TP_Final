@@ -8,15 +8,12 @@ using namespace std;
 class cHospital
 {
 public:
-	//friend class cRegistro; //lo mismo que con paciente
-	//friend class cPaciente; //le doy permiso a la clase cPaciente a que acceda a mis cosas (siendo cHospital), incluyo el .h en cPaciente además
-	//cambie y lo puse en paciente porque sino el constructor de paciente no tomaba
-	cHospital(string nombrehoispital_, string direccionhospital_);
+	cHospital(string nombrehoispital_, string direccionhospital_, vector <cMedico> vectorm_, vector <cPaciente> vectorpa_);
 	~cHospital();
 	string getnombrehospital();
 	void setdireccionhospital(string direccionhospital);
-	//get vector medico
-	//get vector paciente
+	vector <cMedico> getvectormedico();
+	vector <cPaciente> getvectorpaciente();
 	void agregarpaciente();
 	void eliminarpaciente();
 	void imprimirhospital();
@@ -25,8 +22,8 @@ public:
 private:
 	string nombrehospital;
 	string direccionhospital;
-	//vector cMedico;
-	//vector cMedico;
+	vector <cMedico> vectorm;
+	vector <cPaciente> vectorpa;
 
 };
 

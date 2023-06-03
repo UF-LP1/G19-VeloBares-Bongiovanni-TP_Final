@@ -7,6 +7,7 @@ class cPaciente
 public:
 	friend class cRegistro; //asi el registro tiene como atributo a paciente
 	friend class cHospital;
+	friend class cProtesis;
     cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, unsigned int radio_);
 	~cPaciente();
 	string getnombrepaciente();
