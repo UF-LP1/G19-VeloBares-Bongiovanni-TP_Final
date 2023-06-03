@@ -1,15 +1,17 @@
 #pragma once
 #include "cProtesis.h"
+
 class cNoquirurgica :
-    public cProtesis //tiene a su madre.
+    public cProtesis 
 {
-private:
 public:
-    cNoquirurgica();
+    cNoquirurgica(string dimensiones_, string material_, string fabricante_);
     ~cNoquirurgica();
     void ajustardimensiones();
     void inmprimirnoquirurgica();
     string to_string;
+
+//private: no tiene nada, igual va?
 
 };
 

@@ -1,7 +1,12 @@
 #pragma once
 #include "cNoquirurgica.h"
+
 class cSuperiornq :
-    public cNoquirurgica //la madre
+    public cNoquirurgica
 {
+    cSuperiornq(string dimensiones_, string material_, string fabricante_);
+    ~cSuperiornq();
+    void imprimirsuperiornq();
+    string to_string();
 };
 

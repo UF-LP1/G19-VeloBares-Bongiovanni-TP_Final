@@ -7,38 +7,41 @@ cOrtopedia::cOrtopedia(unsigned int cantidadstock_, string nombreortopedia_, str
 	this->direccionortopedia = direccionortopedia_;
 }
 
-
-
 cOrtopedia::~cOrtopedia()
 {
 }
 
-unsigned int cOrtopedia::getstock(unsigned int cantidadstock)
+unsigned int cOrtopedia::getstock()
 {
 	return this->cantidadstock;
 }
 
-string cOrtopedia::getnombreortopedia(string nombreortopedia)
+string cOrtopedia::getnombreortopedia()
 {
 	return this->nombreortopedia;
 }
 
 void cOrtopedia::setdireccionortopedia(string direccionortopedia)
 {
+	return;
 }
 
 void cOrtopedia::llamarfabricante()
 {
+	return;
 }
 
 void cOrtopedia::buscarpaciente()
 {
+	return;
 }
 
 void cOrtopedia::buscarprotesis()
 {
+	return;
 }
 
 void cOrtopedia::imprimirortopedia()
 {
+	return;
 }

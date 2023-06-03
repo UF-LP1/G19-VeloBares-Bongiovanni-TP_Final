@@ -5,27 +5,29 @@
 #include "cMedico.h"
 #include "cHospital.h"
 using namespace std;
+
 class cRegistro
 {
-private:
-	cHospital hospital;
-	cMedico medico;
-	time_t fechadesolicitud;
-	time_t fechaentrega;
-	cProtesis protesis;
-	cPaciente paciente;
 public:
-	cRegistro(cHospital hospital_, cMedico medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis protesis_, cPaciente paciente_); //INICIALIZAR LOS OTRBUTOS DE PACIENTE Y PROTESIS
+	friend class cHospital;
+	cRegistro(cHospital *hospital_, cMedico *medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis *protesis_, cPaciente *paciente_); //INICIALIZAR LOS OTRBUTOS DE PACIENTE Y PROTESIS
 	~cRegistro();
-	cHospital gethospital(cHospital hospital);
-	cMedico getmedico(cMedico medico);
-	time_t getfechasolicitud(time_t fechasolicitud);
+	cHospital gethospital();
+	cMedico getmedico();
+	time_t getfechasolicitud();
 	void setfechaentrega(time_t fechaentrega);
-	cProtesis getprotesis(cProtesis protesis);
-	cPaciente getpaciente(cPaciente paciente);
+	cProtesis getprotesis();
+	cPaciente getpaciente();
 	void imprimirregistro();
 	string to_string();
 
-	
+private:
+	cHospital *hospital;
+	cMedico *medico;
+	time_t fechadesolicitud;
+	time_t fechaentrega;
+	cProtesis *protesis;
+	cPaciente *paciente;
+
 };
 

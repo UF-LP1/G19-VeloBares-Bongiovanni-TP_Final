@@ -1,41 +1,43 @@
 #include "cProtesis.h"
 
-
-cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_)
+cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_)
 {
 	this->dimensiones = dimensiones_;
 	this->material = material_;
 	this->fabricante = fabricante_;
+	this-> fechadefabricacion =  fechadefabricacion_;
 }
 
 cProtesis::~cProtesis()
 {
 }
 
-string cProtesis::getdimensiones(string dimensiones)
+string cProtesis::getdimensiones()
 {
 	return this->dimensiones;
 }
 
-string cProtesis::getmaterial(string material)
+string cProtesis::getmaterial()
 {
 	return this-> material;
 }
 
-string cProtesis::getfabricante(string fabricante)
+string cProtesis::getfabricante()
 {
 	return this->fabricante;
 }
 
-unsigned int cProtesis::getcodigo(unsigned int codigo)
+unsigned int cProtesis::getcodigo()
 {
 	return this->codigo;
 }
 
-void cProtesis::setfechafabricacion()
+void cProtesis::setfechafabricacion(time_t fechadefabricacion)
 {
+	return;
 }
 
 void cProtesis::imprimirprotesis()
 {
+	return;
 }

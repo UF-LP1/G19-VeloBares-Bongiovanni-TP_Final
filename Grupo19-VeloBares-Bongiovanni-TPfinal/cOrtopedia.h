@@ -4,18 +4,13 @@ using namespace std;
 
 class cOrtopedia
 {
-private:
-	unsigned int cantidadstock;
-	string nombreortopedia;
-	string direccionortopedia;
-	//vector protesis
-
 public:
 	cOrtopedia(unsigned int cantidadstock_, string nombreortopedia_, string direccionortopedia_);
 	~cOrtopedia();
-	unsigned int getstock(unsigned int  cantidadstock);
-	string getnombreortopedia(string nombreortopedia);
+	unsigned int getstock();
+	string getnombreortopedia();
 	//getlisapr
+	//bool buscar(unsigned int codigo);
 	void setdireccionortopedia(string direccionortopedia);
 	void llamarfabricante();
 	void buscarpaciente();
@@ -23,6 +18,11 @@ public:
 	void imprimirortopedia();
 	string to_string;
 
+private:
+	unsigned int cantidadstock;
+	string nombreortopedia;
+	string direccionortopedia;
+	//vector protesis
 
 };
 
