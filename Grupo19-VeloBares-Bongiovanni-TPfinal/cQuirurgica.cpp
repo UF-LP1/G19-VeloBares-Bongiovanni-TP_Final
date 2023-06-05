@@ -12,10 +12,7 @@ void cQuirurgica::norechazo(bool alergias)
 {
 	bool getalergias();
 	string getmaterial();
-	if("titanio" == getmaterial())
-	else if("cobre" == getmaterial())
-	else ("plastico" == getmaterial())
-	return;
+	
 }
 
 void cQuirurgica::imprimirquirurgicas()//probamos sobrecarga

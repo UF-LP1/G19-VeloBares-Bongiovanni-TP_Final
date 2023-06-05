@@ -1,5 +1,8 @@
 #pragma once
+#include <vector>
 #include <string>
+#include "cProtesis.h"
+#include "cPaciente.h"
 using namespace std;
 
 class cFabricante
@@ -7,7 +10,7 @@ class cFabricante
 public:
 	cFabricante(string nombrefabricante_, string direccionfabricante_, unsigned int nhabilitacion_);
 	~cFabricante();
-	void hacerprotesis();
+	cProtesis hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
 	void imprimirfabricante();
 	string to_string();
 	void recibirsolicitud();//recibe solicitud y la rechaza o no

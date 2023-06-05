@@ -5,6 +5,7 @@ using namespace std;
 class cOrtopedia
 {
 public:
+	friend class cMedico; //asi se si tiene stock!!!!!!!!!
 	cOrtopedia(unsigned int cantidadstock_, string nombreortopedia_, string direccionortopedia_);
 	~cOrtopedia();
 	unsigned int getstock();

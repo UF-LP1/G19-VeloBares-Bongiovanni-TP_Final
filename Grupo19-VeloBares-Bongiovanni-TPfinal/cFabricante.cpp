@@ -11,10 +11,25 @@ cFabricante::~cFabricante()
 {
 }
 
-void cFabricante::hacerprotesis()
+cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 {
-	return;
+	string radio = pte.getradio();
+	bool alergia = pte.getalergias();
+	vector<cProtesis> vectorpr = m.getlista();
+	cProtesis protesisnueva();
+	for (cProtesis p : vectorpr)
+	{
+		if ((p.getdimensiones() == radio) && !alergia)
+		{
+			protesisnueva = p;
+			break;
+		}
+	}
+	return protesisnueva;
+			
+		
 }
+	
 
 void cFabricante::imprimirfabricante()
 {
