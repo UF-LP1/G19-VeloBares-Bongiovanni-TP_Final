@@ -1,11 +1,12 @@
 #include "cProtesis.h"
 
-cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_)
+cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_)
 {
 	this->dimensiones = dimensiones_;
 	this->material = material_;
 	this->fabricante = fabricante_;
 	this-> fechadefabricacion =  fechadefabricacion_;
+	this->codigo = codigo_;
 }
 
 cProtesis::~cProtesis()
