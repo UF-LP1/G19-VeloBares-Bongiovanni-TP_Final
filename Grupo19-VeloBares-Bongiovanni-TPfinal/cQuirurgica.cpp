@@ -1,8 +1,8 @@
 #include "cQuirurgica.h"
 
-cQuirurgica::cQuirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_, enum lado ladoprotesis_):cProtesis( dimensiones_,  material_,  fabricante_,  fechadefabricacion_,  codigo_)
+cQuirurgica::cQuirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_,lado ladoprotesis_):cProtesis( dimensiones_,  material_,  fabricante_,  fechadefabricacion_,  codigo_)
 {
-
+	this->ladoprotesis = ladoprotesis_;
 }
 
 cQuirurgica::~cQuirurgica()
@@ -12,11 +12,10 @@ cQuirurgica::~cQuirurgica()
 void cQuirurgica::norechazo(bool alergias)
 {
 	bool getalergias();
-	string getmaterial();
-	
+	string getmaterial();	
 }
 
-void cQuirurgica::imprimirquirurgicas()//probamos sobrecarga
+void cQuirurgica::imprimirquirurgicas()//probemos sobrecarga
 {
 	return; 
 }

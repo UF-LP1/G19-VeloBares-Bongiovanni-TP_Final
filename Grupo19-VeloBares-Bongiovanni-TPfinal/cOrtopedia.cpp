@@ -36,8 +36,6 @@ void cOrtopedia::llamarfabricante()
 	return;
 }
 
-
-
 void cOrtopedia::imprimirortopedia()
 {
 	return;

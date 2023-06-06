@@ -51,6 +51,16 @@ string cPaciente::getproblema()
 	return this-> problema;
 }
 
+void cPaciente::settelefonocontacto(unsigned int telefonocontacto)
+{
+	return;
+}
+
+unsigned int cPaciente::getcodigopaciente()
+{
+	return this->codigopaciente;
+}
+
 void cPaciente::setfechanacimiento(time_t fechanacimiento)
 {
 	return;

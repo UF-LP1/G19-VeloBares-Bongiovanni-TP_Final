@@ -11,12 +11,23 @@ cFabricante::~cFabricante()
 {
 }
 
+string cFabricante::getnombredefabricante()
+{
+	return this->nombrefabricante;
+}
+
+string cFabricante::getdirecciondefabricante()
+{
+	return this->direccionfabricante;
+}
+
 cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 {
 	string radio = pte.getradio();
 	bool alergia = pte.getalergias();
 	vector<cProtesis> vectorpr = m.getlista();
-	cProtesis protesisnueva;
+	int pos = 0;//como ponemos una posicion especoifica del vector?
+	cProtesis *protesisnueva = new cProtesis();//memoria dinamica, como se hace?
 	for (cProtesis p : vectorpr)
 	{
 		if ((p.getdimensiones() == radio) && !alergia)
@@ -26,11 +37,8 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 		}
 	}
 	return p;
-			
-		
 }
 	
-
 void cFabricante::imprimirfabricante()
 {
 	return;

@@ -16,7 +16,7 @@ cRegistro::~cRegistro()
 
 cHospital cRegistro::gethospital()
 {
-	//return this->hospital;
+	//return this->hospital; //como se hace
 }
 
 cMedico cRegistro::getmedico()

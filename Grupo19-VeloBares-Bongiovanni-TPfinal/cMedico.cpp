@@ -1,5 +1,4 @@
 #include "cMedico.h"
-
 using namespace std;
 
 cMedico::cMedico(vector <cProtesis> vectorpr_, string nombremedico_, string apellidomedico_, const string matricula_):  matricula(matricula_)//inicializo matricula con lista de inicializacion
@@ -13,15 +12,18 @@ cMedico::~cMedico()
 {
 }
 
-string cMedico::getnombremedico() {
+string cMedico::getnombremedico() 
+{
 	return this->nombremedico;
 }
 
-string cMedico::getapellidomedico() {
+string cMedico::getapellidomedico() 
+{
 	return this->apellidomedico;
 }
 
-string cMedico::getmatricula() {
+string cMedico::getmatricula() 
+{
 	return this->matricula;
 }
 
@@ -43,7 +45,6 @@ vector<cProtesis> cMedico::recetarprotesis(cPaciente pte, cOrtopedia o)//necesit
 			posiblesprotesis.push_back(p);
 
 			}
-
 	}
 
 	if (!posiblesprotesis.empty()) //si es que se agregaron, agarrame alguna random total es lo mismo

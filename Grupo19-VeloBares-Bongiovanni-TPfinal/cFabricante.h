@@ -10,6 +10,8 @@ class cFabricante
 public:
 	cFabricante(string nombrefabricante_, string direccionfabricante_, unsigned int nhabilitacion_);
 	~cFabricante();
+	string getnombredefabricante();
+	string getdirecciondefabricante();
 	cProtesis hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
 	void imprimirfabricante();
 	string to_string();
@@ -18,6 +20,6 @@ public:
 private:
 	string nombrefabricante;
 	string direccionfabricante;
-	unsigned int nhabilitacion;
+	unsigned int nhabilitacion;//para que esta?
 };
 

@@ -3,14 +3,14 @@
 #include "cProtesis.h"
 #include "cPaciente.h"
 #include "cMedico.h"
-#include "cHospital.h"
+#include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
 using namespace std;
 
 class cRegistro
 {
 public:
 	friend class cHospital;
-	cRegistro(cHospital *hospital_, cMedico *medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis *protesis_, cPaciente *paciente_); //INICIALIZAR LOS OTRBUTOS DE PACIENTE Y PROTESIS
+	cRegistro(cHospital *hospital_, cMedico *medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis *protesis_, cPaciente *paciente_); 
 	~cRegistro();
 	cHospital gethospital();
 	cMedico getmedico();

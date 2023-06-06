@@ -130,8 +130,6 @@
     <ClInclude Include="cANPA.h" />
     <ClInclude Include="cFabricante.h" />
     <ClInclude Include="cHospital.h" />
-    <ClInclude Include="cInferiornq.h" />
-    <ClInclude Include="cInferiorq.h" />
     <ClInclude Include="cMedico.h" />
     <ClInclude Include="cNoquirurgica.h" />
     <ClInclude Include="cOrtopedia.h" />
@@ -139,15 +137,12 @@
     <ClInclude Include="cProtesis.h" />
     <ClInclude Include="cQuirurgica.h" />
     <ClInclude Include="cRegistro.h" />
-    <ClInclude Include="cSuperiornq.h" />
-    <ClInclude Include="cSuperiorq.h" />
+    <ClInclude Include="ladoenum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cANPA.cpp" />
     <ClCompile Include="cFabricante.cpp" />
     <ClCompile Include="cHospital.cpp" />
-    <ClCompile Include="cInferiornq.cpp" />
-    <ClCompile Include="cInferiorq.cpp" />
     <ClCompile Include="cMedico.cpp" />
     <ClCompile Include="cNoquirurgica.cpp" />
     <ClCompile Include="cOrtopedia.cpp" />
@@ -155,8 +150,7 @@
     <ClCompile Include="cProtesis.cpp" />
     <ClCompile Include="cQuirurgica.cpp" />
     <ClCompile Include="cRegistro.cpp" />
-    <ClCompile Include="cSuperiornq.cpp" />
-    <ClCompile Include="cSuperiorq.cpp" />
+    <ClCompile Include="ladoenum.cpp" />
     <ClCompile Include="MAIN.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

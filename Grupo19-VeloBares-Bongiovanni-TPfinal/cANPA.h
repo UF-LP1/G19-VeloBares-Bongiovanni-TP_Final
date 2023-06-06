@@ -13,9 +13,8 @@ public:
 	vector <cHospital>  getlistah();
 	void imprimirANPPA();
 	string to_string();
-	2222
-	void buscarprotesis();
-	..
+	void buscarprotesis();//el ANPA busca protesis?
+	
 private:
 	vector< cOrtopedia> ortopediaa;
     vector< cHospital> hospitall;

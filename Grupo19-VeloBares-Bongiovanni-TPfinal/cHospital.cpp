@@ -38,7 +38,7 @@ void cHospital::agregarpaciente(cPaciente p)
 	return;
 }
 
-void cHospital::eliminarpaciente()
+void cHospital::eliminarpaciente()//hacerloo
 {
 	return;
 }
@@ -52,11 +52,12 @@ string cHospital::to_string()
 {
 	return string();
 }
-void cHospital::buscarpaciente() {
-
-
+void cHospital::buscarpaciente() 
+{
+	return;
 }
 
-void operator++(const cPaciente& p) // no lleva cHospital pues está fuera de la clase en el .h;)
+void operator++(const cPaciente& p)//no lleva cHospital pues está fuera de la clase en el .h
 {
+	return;
 }

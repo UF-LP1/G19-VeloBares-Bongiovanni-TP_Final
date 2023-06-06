@@ -1,5 +1,5 @@
 #pragma once
-#include "cHospital.h"
+#include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
 using namespace std;
 
 class cPaciente
@@ -18,6 +18,8 @@ public:
 	bool getalergias();
 	string getradio();
 	string getproblema();
+	void settelefonocontacto(unsigned int telefonocontacto);
+	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento);
 	void imprimirpaciente();
 	string to_string();
