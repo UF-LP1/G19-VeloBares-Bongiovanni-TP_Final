@@ -14,8 +14,6 @@ public:
 	bool buscar(unsigned int codigo);
 	void setdireccionortopedia(string direccionortopedia);
 	void llamarfabricante();
-	void buscarpaciente();
-	void buscarprotesis();
 	void imprimirortopedia();
 	string to_string();
 

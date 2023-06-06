@@ -30,5 +30,13 @@ string cANPA::to_string()
 	return string();
 }
 
+void cANPA::buscarpaciente()
+{
+	return;
+}
 
+void cANPA::buscarprotesis()
+{
+	return;
+}
 

@@ -14,10 +14,11 @@ public:
 	void setdireccionhospital(string direccionhospital);
 	vector <cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
-	void agregarpaciente();
+	void agregarpaciente(cPaciente p);
 	void eliminarpaciente();
 	void imprimirhospital();
 	string to_string();
+	void buscarpaciente();
 
 private:
 	string nombrehospital;
@@ -27,3 +28,4 @@ private:
 
 };
 
+void  operator ++ (const cPaciente& p);

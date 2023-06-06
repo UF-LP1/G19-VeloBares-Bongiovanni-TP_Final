@@ -10,7 +10,7 @@ public:
 	friend class cProtesis;
 	friend class cMedico; //asi me receta la protesis
 	friend class cFabricante; //para que me haga la protesis si la ortopedia no tiene stock
-    cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_);
+    cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_);
 	~cPaciente();
 	string getnombrepaciente();
 	string getapellidopaciente();
@@ -23,6 +23,7 @@ public:
 	string to_string();
 
 private:
+
 	string nombrepaciente;
 	string apellidopaciente;
 	time_t fechadenacimiento;
@@ -31,6 +32,7 @@ private:
 	string problema;
 	unsigned int telefonocontacto;
 	string radio;
+	unsigned int codigopaciente;
 
 };
 

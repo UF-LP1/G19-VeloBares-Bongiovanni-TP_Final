@@ -36,15 +36,7 @@ void cOrtopedia::llamarfabricante()
 	return;
 }
 
-void cOrtopedia::buscarpaciente()
-{
-	return;
-}
 
-void cOrtopedia::buscarprotesis()
-{
-	return;
-}
 
 void cOrtopedia::imprimirortopedia()
 {

@@ -32,8 +32,9 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return vector<cPaciente>();
 }
 
-void cHospital::agregarpaciente()
+void cHospital::agregarpaciente(cPaciente p)
 {
+	vectorpa.push_back(p);
 	return;
 }
 
@@ -50,4 +51,12 @@ void cHospital::imprimirhospital()
 string cHospital::to_string()
 {
 	return string();
+}
+void cHospital::buscarpaciente() {
+
+
+}
+
+void operator++(const cPaciente& p) // no lleva cHospital pues está fuera de la clase en el .h;)
+{
 }

@@ -16,7 +16,7 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 	string radio = pte.getradio();
 	bool alergia = pte.getalergias();
 	vector<cProtesis> vectorpr = m.getlista();
-	cProtesis protesisnueva();
+	cProtesis protesisnueva;
 	for (cProtesis p : vectorpr)
 	{
 		if ((p.getdimensiones() == radio) && !alergia)
@@ -25,7 +25,7 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 			break;
 		}
 	}
-	return protesisnueva;
+	return p;
 			
 		
 }

@@ -2,7 +2,7 @@
 using namespace std;
 #include <string>
 
-cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_)
+cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_)
 {
 	this->nombrepaciente = nombrepaciente_;
 	this->apellidopaciente = apellidopaciente_;
@@ -12,6 +12,7 @@ cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fe
 	this->problema = problema_;
 	this->telefonocontacto = telefonocontacto_;
 	this->radio = radio_;
+	this->codigopaciente = codigopaciente_;
 }
 
 cPaciente::~cPaciente()
