@@ -1,5 +1,8 @@
 #pragma once
 #include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
+#include <sstream>
+#include <string>
+#include <iostream>
 using namespace std;
 
 class cPaciente
@@ -10,11 +13,10 @@ public:
 	friend class cProtesis;
 	friend class cMedico; //asi me receta la protesis
 	friend class cFabricante; //para que me haga la protesis si la ortopedia no tiene stock
-    cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_);
+    cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_,  bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_);
 	~cPaciente();
 	string getnombrepaciente();
 	string getapellidopaciente();
-	cHospital gethospital(); 
 	bool getalergias();
 	string getradio();
 	string getproblema();
@@ -22,14 +24,13 @@ public:
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento);
 	void imprimirpaciente();
-	string to_string();
+	string To_string();
 
 private:
 
 	string nombrepaciente;
 	string apellidopaciente;
 	time_t fechadenacimiento;
-	cHospital *hospital;
 	bool alergia;
 	string problema;
 	unsigned int telefonocontacto;
@@ -38,3 +39,5 @@ private:
 
 };
 
+
+ostream& operator << (ostream& out, cPaciente& pac);

@@ -2,12 +2,11 @@
 using namespace std;
 #include <string>
 
-cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_, cHospital *hospital_, bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_)
+cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_,  bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_)
 {
 	this->nombrepaciente = nombrepaciente_;
 	this->apellidopaciente = apellidopaciente_;
 	this->fechadenacimiento = fechanacimiento_;
-	this->hospital = hospital_;
 	this->alergia = alergias_;
 	this->problema = problema_;
 	this->telefonocontacto = telefonocontacto_;
@@ -29,12 +28,6 @@ string cPaciente::getapellidopaciente()
 	return this->apellidopaciente;
 }
 
-cHospital cPaciente::gethospital()
-{
-	//tal vez hay que hacer como con Saul y declarar un nombre con memoria dinamica
-	//return this->hospital; //esta bien? si pongo return cHospital llora
-	//ahora llora asi tambien 
-}
 
 bool cPaciente::getalergias()
 {
@@ -79,7 +72,14 @@ void cPaciente::imprimirpaciente()
 	return;
 }
 
-string cPaciente::to_string()
+string cPaciente::To_string()
 {
-	return string();
+
+	string auxpaciente = this->getnombrepaciente() + this->getapellidopaciente() + to_string(this->getalergias()) + this->getradio() + this->getproblema() + to_string(getcodigopaciente());
+
+	return auxpaciente;
+}
+ostream& operator<<(ostream& out, cPaciente& pac)
+{
+	out << pac.To_string();
 }

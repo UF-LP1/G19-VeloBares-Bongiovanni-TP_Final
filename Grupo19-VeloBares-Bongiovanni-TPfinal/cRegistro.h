@@ -16,8 +16,8 @@ public:
 	cMedico getmedico();
 	time_t getfechasolicitud();
 	void setfechaentrega(time_t fechaentrega);
-	cProtesis getprotesis();
-	cPaciente getpaciente();
+	cProtesis* getprotesis();
+	cPaciente* getpaciente();
 	void imprimirregistro();
 	string to_string();
 

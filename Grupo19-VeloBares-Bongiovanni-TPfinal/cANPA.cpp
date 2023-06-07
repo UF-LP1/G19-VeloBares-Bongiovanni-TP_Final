@@ -23,33 +23,28 @@ vector<cHospital> cANPA::getlistah()
 
 ostream& operator<<(ostream& out, cANPA &anpa)
 {
-	int i = 0;
-	vector <cOrtopedia> aux = anpa.getlistao();
-
-    for (i=0; i<anpa.getlistao().size(); i++)
-    {
-		out << aux[i].getstock() << endl;
-		out<< aux[i].getnombreortopedia() << endl;
-    }
-
-	vector <cHospital> aux1 = anpa.getlistah();
-	vector <cMedico> aux2 = aux1.getvectormedico();
-	vector <cPaciente> aux3 = aux1.getvectorpaciente();
-
-
-	for (i = 0; i < anpa.getlistah().size(); i++)
-	{
-		out << aux1[i].getnombrehospital() << endl;
-		out << aux2[i].vectorm<< endl;
-		out << aux3[i].vectorpa<< endl;
-	}
+	out << anpa.To_string();
 
 	return out;
 }
 
-string cANPA::to_string()
+string cANPA::To_string()
 {
-	return string();
+	string auxanpa = "\0";
+
+	for (int i = 0; i < this->getlistao().size(); i++)
+	{
+	    auxanpa = to_string(this->getlistao()[i].getstock()) +"\n" + this->getlistao()[i].getnombreortopedia();
+	}
+
+	vector <cHospital> aux1 = this->getlistah();
+	
+	for (int i = 0; i < this->getlistah().size(); i++)
+	{
+		auxanpa += aux1[i].To_stringh()+"\n";
+	}
+
+	return auxanpa;
 }
 
 void cANPA::buscarprotesis()

@@ -34,14 +34,14 @@ void cRegistro::setfechaentrega(time_t fechaentrega)
 	return;
 }
 
-cProtesis cRegistro::getprotesis()
+cProtesis* cRegistro::getprotesis()
 {
 	//return this->protesis;
 }
 
-cPaciente cRegistro::getpaciente()
+cPaciente* cRegistro::getpaciente()
 {
-	//return this->paciente;
+	return this->paciente;
 }
 
 void cRegistro::imprimirregistro()

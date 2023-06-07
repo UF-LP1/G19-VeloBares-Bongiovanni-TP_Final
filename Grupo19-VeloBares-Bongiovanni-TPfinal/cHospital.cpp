@@ -52,9 +52,11 @@ void cHospital::imprimirhospital()
 	return;
 }
 
-string cHospital::to_string()
+string cHospital::To_stringh()
 {
-	return string();
+	string auxhos;
+	//es igual al to string de pacientes y medicos
+	return auxhos;
 }
 void cHospital::buscarpaciente() 
 {

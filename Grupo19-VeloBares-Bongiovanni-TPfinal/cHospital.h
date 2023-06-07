@@ -12,12 +12,12 @@ public:
 	~cHospital();
 	string getnombrehospital();
 	void setdireccionhospital(string direccionhospital);
-	vector <cMedico> getvectormedico();
+	vector<cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
 	void agregarpaciente(cPaciente p);
 	void eliminarpaciente();
 	void imprimirhospital();
-	string to_string();
+	string To_stringh();
 	void buscarpaciente();
 
 private:

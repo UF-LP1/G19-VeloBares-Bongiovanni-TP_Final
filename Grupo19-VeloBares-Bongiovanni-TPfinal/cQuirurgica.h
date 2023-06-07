@@ -3,9 +3,8 @@
 #include "cPaciente.h"
 #include "ladoenum.h"
 
-/*#ifndef _CQUIRURGICA_H
-#define _CQUIRURGICA_H*/ //esta en el tp anterior, nose si va
-
+#ifndef _CQUIRURGICA_H
+#define _CQUIRURGICA_H*
 class cQuirurgica :
     public cProtesis
 {
@@ -22,4 +21,4 @@ private:
 
 };
 
-//#endif (esta en el tp anterior, no se si va)
+#endif 

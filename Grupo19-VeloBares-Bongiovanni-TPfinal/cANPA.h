@@ -11,10 +11,9 @@ public:
 	~cANPA();
 	vector <cOrtopedia> getlistao();
 	vector <cHospital>  getlistah();
-	//void imprimirANPPA();
-	string to_string();
-	void buscarprotesis();//el ANPA busca protesis?
-	
+	string To_string();
+	void buscarprotesis();
+
 private:
 	vector< cOrtopedia> ortopediaa;
     vector< cHospital> hospitall;
