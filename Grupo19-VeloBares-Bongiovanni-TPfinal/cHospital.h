@@ -18,7 +18,7 @@ public:
 	void eliminarpaciente();
 	void imprimirhospital();
 	string to_string();
-	void buscarpaciente();//para que necesita buscar?
+	void buscarpaciente();
 
 private:
 	string nombrehospital;

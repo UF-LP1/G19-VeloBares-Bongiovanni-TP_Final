@@ -20,7 +20,7 @@ public:
 private:
 	string nombrefabricante;
 	string direccionfabricante;
-	unsigned int nhabilitacion;//para que esta?
+	unsigned int nhabilitacion;
 };
 
 

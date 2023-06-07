@@ -20,7 +20,6 @@ private:
     vector< cHospital> hospitall;
 };
 
-ostream& operator<<(ostream& out, const cOrtopedia& ortopediaa);
+ostream& operator << (ostream& out, cANPA& anpa);
 
-ostream& operator<<(ostream& out, const cHospital& hospitall);
 
