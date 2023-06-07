@@ -63,6 +63,11 @@ vector<cProtesis> cMedico::recetarprotesis(cPaciente pte, cOrtopedia o)//necesit
 
 void cMedico::imprimirmedico()
 {
+	//string getnombremedico();
+	//string getapellidomedico();
+	//string getmatricula();
+	//vector <cProtesis> getlista();
+
 	return;
 }
 

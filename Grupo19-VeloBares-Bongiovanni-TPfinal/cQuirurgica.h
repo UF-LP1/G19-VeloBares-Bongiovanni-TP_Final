@@ -13,7 +13,7 @@ public:
     cQuirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_, lado ladoprotesis_);
     ~cQuirurgica();
     void norechazo(bool alergias);
-    void imprimirquirurgicas();
+    void imprimirprotesis();
     string to_string();
 
 private:

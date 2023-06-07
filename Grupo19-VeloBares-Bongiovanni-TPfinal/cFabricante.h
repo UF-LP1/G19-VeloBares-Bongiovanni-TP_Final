@@ -23,3 +23,5 @@ private:
 	unsigned int nhabilitacion;//para que esta?
 };
 
+
+

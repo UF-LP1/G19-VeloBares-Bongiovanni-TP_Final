@@ -45,6 +45,10 @@ void cHospital::eliminarpaciente()//hacerloo
 
 void cHospital::imprimirhospital()
 {
+	//string getnombrehospital();
+	//vector <cMedico> getvectormedico();
+	//vector <cPaciente> getvectorpaciente();
+
 	return;
 }
 

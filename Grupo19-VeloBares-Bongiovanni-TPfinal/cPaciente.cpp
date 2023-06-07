@@ -68,6 +68,14 @@ void cPaciente::setfechanacimiento(time_t fechanacimiento)
 
 void cPaciente::imprimirpaciente()
 {
+	/*string getnombrepaciente();
+	string getapellidopaciente();
+	cHospital gethospital();
+	bool getalergias();
+	string getradio();
+	string getproblema();
+	unsigned int getcodigopaciente();*/
+
 	return;
 }
 

@@ -14,8 +14,13 @@ void cNoquirurgica::ajustardimensiones()
 	return;
 }
 
-void cNoquirurgica::inmprimirnoquirurgica()
+void cNoquirurgica::imprimirprotesis()
 {
+	cout << this->getdimensiones() << endl;
+	cout << this->getmaterial() << endl;
+	cout << this->getfabricante() << endl;
+	cout << this->getcodigo() << endl;
+
 	return;
 }
 

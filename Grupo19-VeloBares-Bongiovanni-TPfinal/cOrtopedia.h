@@ -13,7 +13,7 @@ public:
 	bool buscar(unsigned int codigo);
 	void setdireccionortopedia(string direccionortopedia);
 	void llamarfabricante();
-	void imprimirortopedia();
+	void imprimirortopedias();
 	string to_string();
 
 private:

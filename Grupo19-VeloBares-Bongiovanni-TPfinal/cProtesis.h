@@ -16,7 +16,7 @@ public:
 		string getfabricante();
 		unsigned int getcodigo();
 		void setfechafabricacion(time_t fechadefabricacion);
-		void imprimirprotesis();
+		virtual void imprimirprotesis();
 		string to_string();
 
 protected:

@@ -1,4 +1,5 @@
 #include "cOrtopedia.h"
+#include <iostream>
 
 cOrtopedia::cOrtopedia(unsigned int cantidadstock_, string nombreortopedia_, string direccionortopedia_)
 {
@@ -36,8 +37,11 @@ void cOrtopedia::llamarfabricante()
 	return;
 }
 
-void cOrtopedia::imprimirortopedia()
-{
+void cOrtopedia::imprimirortopedias()
+{	
+	//unsigned int getstock();
+	//string getnombreortopedia();
+
 	return;
 }
 

@@ -40,6 +40,11 @@ void cProtesis::setfechafabricacion(time_t fechadefabricacion)
 
 void cProtesis::imprimirprotesis()
 {
+	cout << this->getdimensiones () << endl;
+	cout << this->getmaterial () << endl;
+	cout << this->getfabricante() << endl;
+	cout << this->getcodigo() << endl;
+	
 	return;
 }
 

@@ -46,6 +46,12 @@ cPaciente cRegistro::getpaciente()
 
 void cRegistro::imprimirregistro()
 {
+	/*cHospital gethospital();
+	cMedico getmedico();
+	time_t getfechasolicitud();
+	cProtesis getprotesis();
+	cPaciente getpaciente();*/
+
 	return;
 }
 

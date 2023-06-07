@@ -15,9 +15,14 @@ void cQuirurgica::norechazo(bool alergias)
 	string getmaterial();	
 }
 
-void cQuirurgica::imprimirquirurgicas()//probemos sobrecarga
+void cQuirurgica::imprimirprotesis()
 {
-	return; 
+	cout << this->getdimensiones() << endl;
+	cout << this->getmaterial() << endl;
+	cout << this->getfabricante() << endl;
+	cout << this->getcodigo() << endl;
+
+	return;
 }
 
 string cQuirurgica::to_string()

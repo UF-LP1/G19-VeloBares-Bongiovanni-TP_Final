@@ -41,6 +41,9 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 	
 void cFabricante::imprimirfabricante()
 {
+	//string getnombredefabricante();
+	//string getdirecciondefabricante();
+	
 	return;
 }
 
