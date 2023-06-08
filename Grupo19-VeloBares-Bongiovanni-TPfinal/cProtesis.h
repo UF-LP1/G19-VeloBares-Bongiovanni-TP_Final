@@ -28,6 +28,6 @@ protected:
 	unsigned int codigo;
 
 };
-ostream& operator<<(ostream& out, cProtesis& protesis);
+
 #endif
 

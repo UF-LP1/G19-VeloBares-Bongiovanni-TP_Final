@@ -14,7 +14,6 @@ public:
 	string getnombredefabricante();
 	string getdirecciondefabricante();
 	cProtesis hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
-	void imprimirfabricante();
 	string To_stringfabricante();
 	void recibirsolicitud();//recibe solicitud y la rechaza o no
 

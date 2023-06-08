@@ -24,7 +24,6 @@ public:
 	void settelefonocontacto(unsigned int telefonocontacto);
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento);
-	void imprimirpaciente();
 	string To_stringpaciente();
 
 private:

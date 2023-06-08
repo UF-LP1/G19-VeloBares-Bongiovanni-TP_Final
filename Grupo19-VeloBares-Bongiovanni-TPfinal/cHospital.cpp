@@ -83,11 +83,10 @@ cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__, cPaciente p)
 		}
 		else
 		{
-			cout << "No se encontró al paciente" << endl; // va o no va?
+			return ; //ver q devyrlvr
 		}
 	}
-
-	return ;
+	
 }
 
 void cHospital::operator++(const cPaciente& p)

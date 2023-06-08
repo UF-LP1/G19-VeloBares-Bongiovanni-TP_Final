@@ -23,16 +23,15 @@ string cFabricante::getdirecciondefabricante()
 
 cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 {
-	string radio = pte.getradio();
-	bool alergia = pte.getalergias();
-	vector<cProtesis> vectorpr = m.getlista();
-	int pos = 0;//como ponemos una posicion especoifica del vector?
-	cProtesis *protesisnueva = new cProtesis();//memoria dinamica, como se hace?
-	for (cProtesis p : vectorpr)
+	string radio = pte.getradio(); //guardo el radio
+	bool alergia = pte.getalergias(); //guardo las alergias
+	vector<cProtesis> vectorpr = m.getlista(); //guardo mi lista de protesis que esta en medicos
+	
+	for (int i =0; i<vectorpr.size(); i++)
 	{
-		if ((p.getdimensiones() == radio) && !alergia)
+		if ((p.getdimensiones() == radio) && !alergia) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
 		{
-			protesisnueva = p;
+			p = vectorpr.at(i);
 			break;
 		}
 	}

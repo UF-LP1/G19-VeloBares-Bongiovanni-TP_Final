@@ -55,9 +55,9 @@ string cRegistro::To_stringregistro()
 {
 	string auxregistro;//como va el time_t? time_t getfechasolicitud()
 
-	vector <cHospital> aux1 = this->gethospital();
+	vector <cHospital> aux1 = this-> gethospital();
 
-	for (int i = 0; i < this->gethospital().size(); i++)
+	for (int i = 0; i < this-> gethospital().size(); i++)
 	{
 		auxregistro += aux1[i].To_stringhospital();
 	}

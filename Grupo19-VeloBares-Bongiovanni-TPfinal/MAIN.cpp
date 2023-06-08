@@ -15,5 +15,7 @@ using namespace std;
 
 int main()
 {
+	//llamar al ostream de paciente y protesis
+
 	return 0;
 }

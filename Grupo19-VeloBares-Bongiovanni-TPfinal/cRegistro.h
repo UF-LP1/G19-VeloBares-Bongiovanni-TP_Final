@@ -18,7 +18,6 @@ public:
 	void setfechaentrega(time_t fechaentrega);
 	cProtesis* getprotesis();
 	cPaciente* getpaciente();
-	void imprimirregistro();
 	string To_stringregistro();
 
 private:

@@ -20,9 +20,8 @@ public:
 	string getapellidomedico();
 	string getmatricula();
 	vector <cProtesis> getlista();
-	vector <cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o);
-	void imprimirmedico();
 	string To_stringmedico();
+	vector<cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o);
 
 private:
 	vector <cProtesis> vectorpr;
