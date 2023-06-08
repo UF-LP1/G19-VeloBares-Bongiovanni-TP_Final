@@ -6,6 +6,7 @@
 using namespace std;
 #ifndef _CREGISTRO_H
 #define _CREGISTRO_H*
+
 class cRegistro
 {
 public:

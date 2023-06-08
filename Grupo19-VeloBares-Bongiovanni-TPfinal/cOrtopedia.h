@@ -3,6 +3,7 @@
 using namespace std;
 #ifndef _CORTOPEDIAA_H
 #define _CORTOPEDIA_H*
+
 class cOrtopedia
 {
 public:
@@ -20,7 +21,6 @@ private:
 	static unsigned int cantidadstock;
 	string nombreortopedia;
 	string direccionortopedia;
-	//vector <cProtesis> vectorpr; noseee estaba comentada 
 
 };
 

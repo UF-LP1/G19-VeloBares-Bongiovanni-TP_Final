@@ -40,7 +40,8 @@ vector<cProtesis> cMedico::recetarprotesis(cPaciente pte, cOrtopedia o)//necesit
 
 	for ( cProtesis& p: vectorpr ) //SINTAXIS DEL FOR PARA LOS VECTOR.
 	{
-		if ((p.getdimensiones() == radio) && !alergia && (o.getstock() !=0) )
+		if ((p.getdimensiones() == radio) && !alergia && (o.getstock() !=0))
+
 			{
 			posiblesprotesis.push_back(p);
 

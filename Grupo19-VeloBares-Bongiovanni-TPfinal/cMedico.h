@@ -3,12 +3,12 @@
 #include <vector>
 #include <iostream>
 #include "cProtesis.h"
-// no explota si no pongo el .h de paciente porque en el.h de
 #include "cOrtopedia.h"
 #include "cHospital.h"
 using namespace std;
 #ifndef _CQMEDICO_H
 #define _CMEDICO_H*
+
 class cMedico
 {
 public:

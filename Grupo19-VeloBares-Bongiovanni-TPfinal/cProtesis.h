@@ -4,6 +4,7 @@
 using namespace std;
 #ifndef _CPROTESIS_H
 #define _CPROTESIS_H*
+
 class cProtesis
 {
 public:

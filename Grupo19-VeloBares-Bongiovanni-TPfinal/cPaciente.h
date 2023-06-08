@@ -1,11 +1,12 @@
 #pragma once
-#include "cMedico.h"//si esto esta aca, el friend no hay que sacar? 
-#include <sstream>		// debería ser cmedico
+#include "cMedico.h"
+#include <sstream>		
 #include <string>
 #include <iostream>
 using namespace std;
 #ifndef _CPACIENTE_H
 #define _CPACIENTE_H*
+
 class cPaciente
 {
 public:

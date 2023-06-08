@@ -3,6 +3,7 @@
 #include "ladoenum.h"
 #ifndef _CNOQUIRURGICA_H
 #define _CNOQUIRURGICA_H*
+
 class cNoquirurgica : public cProtesis 
 {
 public:
@@ -10,6 +11,7 @@ public:
     ~cNoquirurgica();
     void ajustardimensiones();
     string To_stringno();
+    void imprimirprotesis();
 
 private: 
    

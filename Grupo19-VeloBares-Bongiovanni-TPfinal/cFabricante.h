@@ -6,6 +6,7 @@
 using namespace std;
 #ifndef _CFABRICANTE_H
 #define _CFABRICANTE_H*
+
 class cFabricante
 {
 public:

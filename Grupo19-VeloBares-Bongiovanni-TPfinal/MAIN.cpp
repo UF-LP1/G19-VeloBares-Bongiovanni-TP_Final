@@ -1,4 +1,3 @@
-
 #include <vector>
 #include <string>
 #include "iostream"
@@ -10,7 +9,6 @@
 #include "cFabricante.h"
 #include "cOrtopedia.h"
 #include "cRegistro.h"
-
 using namespace std;
 
 int main()
