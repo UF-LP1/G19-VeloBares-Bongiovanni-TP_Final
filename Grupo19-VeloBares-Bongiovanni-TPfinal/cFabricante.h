@@ -4,7 +4,8 @@
 #include "cProtesis.h"
 #include "cPaciente.h"
 using namespace std;
-
+#ifndef _CFABRICANTE_H
+#define _CFABRICANTE_H*
 class cFabricante
 {
 public:
@@ -24,4 +25,4 @@ private:
 };
 
 ostream& operator<<(ostream& out, cFabricante& fabricante);
-
+#endif

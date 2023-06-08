@@ -3,7 +3,8 @@
 #include "cHospital.h"
 #include "cOrtopedia.h"
 using namespace std;
-
+#ifndef _CANPA_H
+#define _CANPA_H*
 class cANPA
 {
 public:
@@ -21,4 +22,4 @@ private:
 
 ostream& operator << (ostream& out, cANPA& anpa);
 
-
+#endif

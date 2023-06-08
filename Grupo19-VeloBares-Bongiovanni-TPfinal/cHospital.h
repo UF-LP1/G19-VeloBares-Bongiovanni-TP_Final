@@ -4,7 +4,8 @@
 #include "cPaciente.h"
 #include "cRegistro.h"
 using namespace std;
-
+#ifndef _CHOSPITAL_H
+#define _CHOSPITAL_H*
 class cHospital
 {
 public:
@@ -15,11 +16,11 @@ public:
 	vector<cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
 	void agregarpaciente(cPaciente p);
-	void eliminarpaciente();
-	void imprimirhospital();
+	void eliminarpaciente(unsigned int codigo__, cPaciente p);
 	string To_stringhospital();
-	void buscarpaciente();
-
+	cPaciente buscarpaciente(unsigned int codigopaciente__, cPaciente p);
+    void operator ++ (const cPaciente& p);
+	void operator ++ (); 
 private:
 	string nombrehospital;
 	string direccionhospital;
@@ -28,5 +29,6 @@ private:
 
 };
 
-void  operator ++ (const cPaciente& p);
-ostream& operator<<(ostream& out, cHospital& hospital);
+
+ostream& operator <<(ostream& out, cHospital& hospital);
+#endif

@@ -5,7 +5,8 @@
 #include "cMedico.h"
 #include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
 using namespace std;
-
+#ifndef _CREGISTRO_H
+#define _CREGISTRO_H*
 class cRegistro
 {
 public:
@@ -32,4 +33,5 @@ private:
 };
 
 ostream& operator<<(ostream& out, cRegistro& registro);
+#endif
 

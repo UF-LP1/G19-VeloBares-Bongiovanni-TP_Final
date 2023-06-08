@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 using namespace std;
-
+#ifndef _CORTOPEDIAA_H
+#define _CORTOPEDIA_H*
 class cOrtopedia
 {
 public:
@@ -25,3 +26,4 @@ private:
 };
 
 ostream& operator<<(ostream& out, cOrtopedia& ortopedia);
+#endif

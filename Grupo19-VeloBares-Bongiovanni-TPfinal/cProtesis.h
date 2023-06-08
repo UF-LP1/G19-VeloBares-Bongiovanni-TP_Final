@@ -2,7 +2,8 @@
 #include <string>
 #include "cPaciente.h"
 using namespace std;
-
+#ifndef _CPROTESIS_H
+#define _CPROTESIS_H*
 class cProtesis
 {
 public:
@@ -27,6 +28,6 @@ protected:
 	unsigned int codigo;
 
 };
-
 ostream& operator<<(ostream& out, cProtesis& protesis);
+#endif
 

@@ -38,9 +38,11 @@ void cHospital::agregarpaciente(cPaciente p)
 	return;
 }
 
-void cHospital::eliminarpaciente()
+void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
 {
-	return;
+		cPaciente eliminado= buscarpaciente(codigo__, p);// llamo funcion buscar para encontrar el paciente que quiero eliminar.
+		vectorpa.erase(eliminado);// donde esta eliminado deberia ir una posicion
+		return;
 }
 
 ostream& operator<<(ostream& out, cHospital& hospital)
@@ -52,31 +54,51 @@ ostream& operator<<(ostream& out, cHospital& hospital)
 
 string cHospital::To_stringhospital()
 {
-	string auxhos;
+	string auxhos; //que tiene?
 
-	vector <cPaciente> aux1 = this->getvectorpaciente();
+	vector <cPaciente> aux1 = this->getvectorpaciente(); // igual el vector de pacientes que tiene el hospital
 
 	for (int i = 0; i < this->getvectorpaciente().size(); i++)
 	{
-		auxhos += aux1[i].To_stringpaciente();
+		auxhos += aux1[i].To_stringpaciente(); // concateno los string (primero paso a string el de ptes)
 	}
 
-	vector <cMedico> aux2 = this->getvectormedico();
+	vector <cMedico> aux2 = this->getvectormedico(); // lo mismo con el vector de medicos que tiene el hospital
 
 	for (int i = 0; i < this->getvectormedico().size(); i++)
 	{
 		auxhos += aux2[i].To_stringmedico();
 	}
 
-	return auxhos;
+	return auxhos; // este tiene en modo string a los vectores de pacientes y medicos con toda su info adentro
 }
 
-void cHospital::buscarpaciente() 
+cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__, cPaciente p) 
 {
+	for(int i=0; i< vectorpa.size(); i++) // recorro el vector pacientes...
+	{
+		if (p.getcodigopaciente() == codigopaciente__) // si el codigo de x paciente coincide con el que me dan...
+		{
+			return vectorpa.at(i); // devuelvo el paciente en esa posicion...
+		}
+		else
+		{
+			cout << "No se encontró al paciente" << endl; // va o no va?
+		}
+	}
+
+	return ;
+}
+
+void cHospital::operator++(const cPaciente& p)
+{
+	vectorpa.push_back(p);
 	return;
 }
 
-void operator++(const cPaciente& p)//no lleva cHospital pues está fuera de la clase en el .h
+void cHospital::operator++()
 {
+	cPaciente p;
+	vectorpa.push_back(p);
 	return;
 }

@@ -4,7 +4,8 @@
 #include <string>
 #include <iostream>
 using namespace std;
-
+#ifndef _CPACIENTE_H
+#define _CPACIENTE_H*
 class cPaciente
 {
 public:
@@ -38,5 +39,5 @@ private:
 	unsigned int codigopaciente;
 
 };
-
 ostream& operator << (ostream& out, cPaciente& pac);
+#endif

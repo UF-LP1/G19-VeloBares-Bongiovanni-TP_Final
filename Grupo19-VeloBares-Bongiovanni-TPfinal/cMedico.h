@@ -6,7 +6,8 @@
 #include "cPaciente.h"
 #include "cOrtopedia.h"
 using namespace std;
-
+#ifndef _CQMEDICO_H
+#define _CMEDICO_H*
 class cMedico
 {
 public:
@@ -31,3 +32,4 @@ private:
 };
 
 ostream& operator<<(ostream& out, cMedico& medico);
+#endif
