@@ -1,6 +1,5 @@
 #pragma once
 #include "cProtesis.h"
-#include "cPaciente.h"
 #include "ladoenum.h"
 
 #ifndef _CQUIRURGICA_H

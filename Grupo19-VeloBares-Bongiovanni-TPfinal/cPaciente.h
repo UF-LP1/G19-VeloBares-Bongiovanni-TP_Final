@@ -1,6 +1,6 @@
 #pragma once
-#include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
-#include <sstream>
+#include "cMedico.h"//si esto esta aca, el friend no hay que sacar? 
+#include <sstream>		// debería ser cmedico
 #include <string>
 #include <iostream>
 using namespace std;

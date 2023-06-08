@@ -1,8 +1,8 @@
 #pragma once
 #include <string> 
 #include <vector>
-#include "cPaciente.h"
-#include "cRegistro.h"
+#include "cMedico.h"
+
 using namespace std;
 #ifndef _CHOSPITAL_H
 #define _CHOSPITAL_H*

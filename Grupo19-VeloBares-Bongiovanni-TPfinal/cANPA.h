@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
-#include "cHospital.h"
-#include "cOrtopedia.h"
+#include "cRegistro.h"
 using namespace std;
 #ifndef _CANPA_H
 #define _CANPA_H*
