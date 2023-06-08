@@ -13,7 +13,7 @@ public:
     ~cQuirurgica();
     void norechazo(bool alergias);
     void imprimirprotesis();
-    string to_string();
+    string To_stringq();
 
 private:
   

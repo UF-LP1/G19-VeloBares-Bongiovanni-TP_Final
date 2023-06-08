@@ -20,7 +20,7 @@ public:
 	vector <cProtesis> getlista();
 	vector <cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o);
 	void imprimirmedico();
-	string to_string();
+	string To_stringmedico();
 
 private:
 	vector <cProtesis> vectorpr;
@@ -30,3 +30,4 @@ private:
 
 };
 
+ostream& operator<<(ostream& out, cMedico& medico);

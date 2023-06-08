@@ -17,7 +17,7 @@ public:
 		unsigned int getcodigo();
 		void setfechafabricacion(time_t fechadefabricacion);
 		virtual void imprimirprotesis();
-		string to_string();
+		string To_stringprotesis();
 
 protected:
 	string dimensiones;
@@ -27,4 +27,6 @@ protected:
 	unsigned int codigo;
 
 };
+
+ostream& operator<<(ostream& out, cProtesis& protesis);
 

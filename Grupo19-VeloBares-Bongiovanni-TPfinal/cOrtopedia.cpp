@@ -37,15 +37,18 @@ void cOrtopedia::llamarfabricante()
 	return;
 }
 
-void cOrtopedia::imprimirortopedias()
-{	
-	//unsigned int getstock();
-	//string getnombreortopedia();
+ostream& operator<<(ostream& out, cOrtopedia& ortopedia)
+{
+	out << ortopedia.To_stringortopedia();
 
-	return;
+	return out;
 }
 
-string cOrtopedia::to_string()
+string cOrtopedia::To_stringortopedia()
 {
-	return string();
+	string auxortopedia = "\0";
+
+	string auxortopedia = this->getnombreortopedia() + to_string(this->getstock());
+
+	return auxortopedia;
 }

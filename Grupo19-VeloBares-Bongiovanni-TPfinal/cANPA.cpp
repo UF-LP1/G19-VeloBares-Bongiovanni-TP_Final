@@ -23,12 +23,12 @@ vector<cHospital> cANPA::getlistah()
 
 ostream& operator<<(ostream& out, cANPA &anpa)
 {
-	out << anpa.To_string();
+	out << anpa.To_stringanpa();
 
 	return out;
 }
 
-string cANPA::To_string()
+string cANPA::To_stringanpa()
 {
 	string auxanpa = "\0";
 
@@ -41,7 +41,7 @@ string cANPA::To_string()
 	
 	for (int i = 0; i < this->getlistah().size(); i++)
 	{
-		auxanpa += aux1[i].To_stringh()+"\n";
+		auxanpa += aux1[i].To_stringhospital()+"\n";
 	}
 
 	return auxanpa;

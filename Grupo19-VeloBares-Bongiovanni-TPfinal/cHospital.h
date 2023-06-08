@@ -17,7 +17,7 @@ public:
 	void agregarpaciente(cPaciente p);
 	void eliminarpaciente();
 	void imprimirhospital();
-	string To_stringh();
+	string To_stringhospital();
 	void buscarpaciente();
 
 private:
@@ -29,3 +29,4 @@ private:
 };
 
 void  operator ++ (const cPaciente& p);
+ostream& operator<<(ostream& out, cHospital& hospital);

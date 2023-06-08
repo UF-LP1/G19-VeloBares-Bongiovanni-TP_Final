@@ -59,27 +59,17 @@ void cPaciente::setfechanacimiento(time_t fechanacimiento)
 	return;
 }
 
-void cPaciente::imprimirpaciente()
+ostream& operator<<(ostream& out, cPaciente& paciente)
 {
-	/*string getnombrepaciente();
-	string getapellidopaciente();
-	cHospital gethospital();
-	bool getalergias();
-	string getradio();
-	string getproblema();
-	unsigned int getcodigopaciente();*/
+	out << paciente.To_stringpaciente();
 
-	return;
+	return out;
 }
 
-string cPaciente::To_string()
+string cPaciente::To_stringpaciente()
 {
-
 	string auxpaciente = this->getnombrepaciente() + this->getapellidopaciente() + to_string(this->getalergias()) + this->getradio() + this->getproblema() + to_string(getcodigopaciente());
 
 	return auxpaciente;
 }
-ostream& operator<<(ostream& out, cPaciente& pac)
-{
-	out << pac.To_string();
-}
+

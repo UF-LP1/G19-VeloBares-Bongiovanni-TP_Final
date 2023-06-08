@@ -38,26 +38,39 @@ void cHospital::agregarpaciente(cPaciente p)
 	return;
 }
 
-void cHospital::eliminarpaciente()//hacerloo
+void cHospital::eliminarpaciente()
 {
 	return;
 }
 
-void cHospital::imprimirhospital()
+ostream& operator<<(ostream& out, cHospital& hospital)
 {
-	//string getnombrehospital();
-	//vector <cMedico> getvectormedico();
-	//vector <cPaciente> getvectorpaciente();
+	out << hospital.To_stringhospital();
 
-	return;
+	return out;
 }
 
-string cHospital::To_stringh()
+string cHospital::To_stringhospital()
 {
 	string auxhos;
-	//es igual al to string de pacientes y medicos
+
+	vector <cPaciente> aux1 = this->getvectorpaciente();
+
+	for (int i = 0; i < this->getvectorpaciente().size(); i++)
+	{
+		auxhos += aux1[i].To_stringpaciente();
+	}
+
+	vector <cMedico> aux2 = this->getvectormedico();
+
+	for (int i = 0; i < this->getvectormedico().size(); i++)
+	{
+		auxhos += aux2[i].To_stringmedico();
+	}
+
 	return auxhos;
 }
+
 void cHospital::buscarpaciente() 
 {
 	return;

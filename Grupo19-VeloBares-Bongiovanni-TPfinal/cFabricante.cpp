@@ -39,17 +39,19 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 	return p;
 }
 	
-void cFabricante::imprimirfabricante()
+ostream& operator<<(ostream& out, cFabricante& fabricante)
 {
-	//string getnombredefabricante();
-	//string getdirecciondefabricante();
-	
-	return;
+	out << fabricante.To_stringfabricante();
+
+	return out;
 }
 
-string cFabricante::to_string()
+string cFabricante::To_stringfabricante()
 {
-	return string();
+	string auxpaciente = this->getnombredefabricante() + this->getdirecciondefabricante();
+	
+	return auxpaciente;
+	
 }
 
 void cFabricante::recibirsolicitud()

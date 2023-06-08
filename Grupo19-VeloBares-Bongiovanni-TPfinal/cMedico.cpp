@@ -61,18 +61,24 @@ vector<cProtesis> cMedico::recetarprotesis(cPaciente pte, cOrtopedia o)//necesit
 		
 }
 
-void cMedico::imprimirmedico()
+ostream& operator<<(ostream& out, cMedico& medico)
 {
-	//string getnombremedico();
-	//string getapellidomedico();
-	//string getmatricula();
-	//vector <cProtesis> getlista();
+	out << medico.To_stringmedico();
 
-	return;
+	return out;
 }
 
-string cMedico::to_string()
+string cMedico::To_stringmedico()
 {
-	return string();
+	string auxmedico = this-> getnombremedico()+ this-> getapellidomedico() + this->getmatricula();
+
+	vector <cProtesis> aux1 = this->getlista();
+
+	for (int i = 0; i < this->getlista().size(); i++)
+	{
+		auxmedico += aux1[i].To_stringprotesis();
+	}
+
+	return auxmedico;
 }
 

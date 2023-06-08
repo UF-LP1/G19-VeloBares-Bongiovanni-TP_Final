@@ -9,7 +9,7 @@ public:
     ~cNoquirurgica();
     void ajustardimensiones();//es necesaria, se puede?
     void imprimirprotesis();
-    string to_string();
+    string To_stringno();
 
 private: 
    

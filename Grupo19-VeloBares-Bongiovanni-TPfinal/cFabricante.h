@@ -14,7 +14,7 @@ public:
 	string getdirecciondefabricante();
 	cProtesis hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
 	void imprimirfabricante();
-	string to_string();
+	string To_stringfabricante();
 	void recibirsolicitud();//recibe solicitud y la rechaza o no
 
 private:
@@ -23,5 +23,5 @@ private:
 	unsigned int nhabilitacion;
 };
 
-
+ostream& operator<<(ostream& out, cFabricante& fabricante);
 

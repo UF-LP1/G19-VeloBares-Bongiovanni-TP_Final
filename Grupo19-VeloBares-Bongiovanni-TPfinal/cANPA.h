@@ -11,7 +11,7 @@ public:
 	~cANPA();
 	vector <cOrtopedia> getlistao();
 	vector <cHospital>  getlistah();
-	string To_string();
+	string To_stringanpa();
 	void buscarprotesis();
 
 private:

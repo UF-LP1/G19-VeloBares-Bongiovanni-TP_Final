@@ -24,7 +24,7 @@ public:
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento);
 	void imprimirpaciente();
-	string To_string();
+	string To_stringpaciente();
 
 private:
 
@@ -38,6 +38,5 @@ private:
 	unsigned int codigopaciente;
 
 };
-
 
 ostream& operator << (ostream& out, cPaciente& pac);

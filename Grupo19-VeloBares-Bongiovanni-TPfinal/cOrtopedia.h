@@ -14,7 +14,7 @@ public:
 	void setdireccionortopedia(string direccionortopedia);
 	void llamarfabricante();
 	void imprimirortopedias();
-	string to_string();
+	string To_stringortopedia();
 
 private:
 	unsigned int cantidadstock;
@@ -24,3 +24,4 @@ private:
 
 };
 
+ostream& operator<<(ostream& out, cOrtopedia& ortopedia);

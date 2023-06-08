@@ -14,14 +14,14 @@ cRegistro::~cRegistro()
 {
 }
 
-cHospital cRegistro::gethospital()
+cHospital* cRegistro::gethospital()
 {
-	//return this->hospital; //como se hace
+	return this->hospital; 
 }
 
-cMedico cRegistro::getmedico()
+cMedico* cRegistro::getmedico()
 {
-	//return this->medico;
+	return this->medico;
 }
 
 time_t cRegistro::getfechasolicitud()
@@ -36,7 +36,7 @@ void cRegistro::setfechaentrega(time_t fechaentrega)
 
 cProtesis* cRegistro::getprotesis()
 {
-	//return this->protesis;
+	return this->protesis;
 }
 
 cPaciente* cRegistro::getpaciente()
@@ -44,18 +44,44 @@ cPaciente* cRegistro::getpaciente()
 	return this->paciente;
 }
 
-void cRegistro::imprimirregistro()
+ostream& operator<<(ostream& out, cRegistro& registro)
 {
-	/*cHospital gethospital();
-	cMedico getmedico();
-	time_t getfechasolicitud();
-	cProtesis getprotesis();
-	cPaciente getpaciente();*/
+	out << registro.To_stringregistro();
 
-	return;
+	return out;
 }
 
-string cRegistro::to_string()
+string cRegistro::To_stringregistro()
 {
-	return string();
+	string auxregistro;//como va el time_t? time_t getfechasolicitud()
+
+	vector <cHospital> aux1 = this->gethospital();
+
+	for (int i = 0; i < this->gethospital().size(); i++)
+	{
+		auxregistro += aux1[i].To_stringhospital();
+	}
+
+	vector <cMedico> aux2 = this->getmedico();
+
+	for (int i = 0; i < this->getmedico().size(); i++)
+	{
+		auxregistro += aux2[i].To_stringmedico();
+	}
+
+	vector <cPaciente> aux3 = this->getpaciente();
+
+	for (int i = 0; i < this->getpaciente().size(); i++)
+	{
+		auxregistro += aux3[i].To_stringpaciente();
+	}
+
+	vector <cProtesis> aux4 = this->getprotesis();
+
+	for (int i = 0; i < this->getprotesis().size(); i++)
+	{
+		auxregistro += aux4[i].To_stringprotesis();
+	}
+
+	return auxregistro;
 }

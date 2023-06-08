@@ -24,9 +24,15 @@ void cNoquirurgica::imprimirprotesis()
 	return;
 }
 
-string cNoquirurgica::to_string()
+string cNoquirurgica::To_stringno()
 {
-	return string();
+	string auxnoq = "\0";
+
+	//asi es con herencia?
+	string auxnoq = this->getdimensiones() + this->getmaterial()+ this->getfabricante() + to_string(this->getcodigo());
+
+	return auxnoq;
+
 }
 
 

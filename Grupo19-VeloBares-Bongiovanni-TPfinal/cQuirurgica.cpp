@@ -25,8 +25,13 @@ void cQuirurgica::imprimirprotesis()
 	return;
 }
 
-string cQuirurgica::to_string()
+string cQuirurgica::To_stringq()
 {
-	return string();
+	string auxq = "\0";
+
+	//asi es con herencia?
+	string auxq = this->getdimensiones() + this->getmaterial() + this->getfabricante() + to_string(this->getcodigo());
+
+	return auxq;
 }
 

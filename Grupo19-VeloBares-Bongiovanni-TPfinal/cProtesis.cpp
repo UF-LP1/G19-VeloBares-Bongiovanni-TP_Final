@@ -48,7 +48,11 @@ void cProtesis::imprimirprotesis()
 	return;
 }
 
-string cProtesis::to_string()
+string cProtesis::To_stringprotesis()
 {
-	return string();
+	string auxprotesis = "\0";
+
+	string auxprotesis = this->getdimensiones() + this->getmaterial() + this->getfabricante() + to_string(this->getcodigo());
+
+	return auxprotesis;
 }
