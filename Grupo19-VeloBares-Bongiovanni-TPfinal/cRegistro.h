@@ -3,6 +3,7 @@
 #include "cProtesis.h"
 #include "cPaciente.h" //medico que esta en hospital, tiene a paciente, esta bien que este aca?
 #include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
+
 using namespace std;
 #ifndef _CREGISTRO_H
 #define _CREGISTRO_H*
@@ -20,6 +21,7 @@ public:
 	cProtesis* getprotesis();
 	cPaciente* getpaciente();
 	string To_stringregistro();
+	void listasdepacientes(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante);
 
 private:
 	cHospital *hospital;

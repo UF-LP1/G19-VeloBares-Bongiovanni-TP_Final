@@ -30,7 +30,7 @@ public:
 private:
 
 	string nombrepaciente;
-	string apellidopaciente;
+	string apellidopaciente; 
 	time_t fechadenacimiento;
 	bool alergia;
 	string problema;

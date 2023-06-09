@@ -14,6 +14,7 @@ public:
 	vector <cHospital>  getlistah();
 	string To_stringanpa();
 	void buscarprotesis();
+	void tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante);
 
 private:
 	vector< cOrtopedia> ortopediaa;

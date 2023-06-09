@@ -85,3 +85,22 @@ string cRegistro::To_stringregistro()
 
 	return auxregistro;
 }
+
+void cRegistro::listasdepacientes(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
+{
+	//esta funcion cuenta cuantas protesis se solicitaron y entregaron
+	int contsolicitadas = 0;
+	int contortogadas = 0;
+	vector <cProtesis> posiblesprotesis = m.recetarprotesis(pte,  o,  fabricante,  protesis, m); 
+	if(!m.posiblesprotesis.empty())//tratarlo comno vector pero no nos toma
+	{
+		contortogadas++;
+	}
+
+	else
+	{
+		contsolicitadas++;
+	}
+
+	return;
+}

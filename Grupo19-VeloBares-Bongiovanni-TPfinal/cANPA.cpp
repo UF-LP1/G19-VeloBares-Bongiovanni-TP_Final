@@ -52,3 +52,9 @@ void cANPA::buscarprotesis()
 	return;
 }
 
+void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
+{
+	registro.listasdepacientes( protesis,  m,  pte,  o,  fabricante); //para que el anpa tenga el registro de las listas
+	return;
+}
+

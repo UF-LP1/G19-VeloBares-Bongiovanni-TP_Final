@@ -21,7 +21,7 @@ public:
 	string getmatricula();
 	vector <cProtesis> getlista();
 	string To_stringmedico();
-	vector<cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o);
+	vector<cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
 
 private:
 	vector <cProtesis> vectorpr;

@@ -38,11 +38,21 @@ void cHospital::agregarpaciente(cPaciente p)
 	return;
 }
 
-void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
+void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p, vector<cPaciente> &vectorpa)
 {
-		cPaciente eliminado= buscarpaciente(codigo__, p);// llamo funcion buscar para encontrar el paciente que quiero eliminar.
-		vectorpa.erase(eliminado);// donde esta eliminado deberia ir una posicion
+		cPaciente eliminado= buscarpaciente(codigo__, p); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
+		for (int i = 0; i < vectorpa.size(); i++)
+		{
+			if (eliminado.codigopaciente == vectorpa.at(i).codigopaciente)
+			{
+				vectorpa.erase(vectorpa.begin() + i); //elimino desde el principio, Is posiciones mas de ahi
+				break;
+			}
+			i++;
+		}  
 		return;
+
+		
 }
 
 ostream& operator<<(ostream& out, cHospital& hospital)
@@ -83,15 +93,16 @@ cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__, cPaciente p)
 		}
 		else
 		{
-			return ; //ver q devyrlvr
+			return  ; //ver q devyrlvr
 		}
 	}
 	
 }
 
-void cHospital::operator++(const cPaciente& p)
+/*cHospital */cHospital  operator ++ (const cPaciente& p)
 {
 	vectorpa.push_back(p);
+	
 	return;
 }
 

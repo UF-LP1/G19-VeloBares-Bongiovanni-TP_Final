@@ -33,8 +33,13 @@ void cOrtopedia::setdireccionortopedia(string direccionortopedia)
 	return;
 }
 
-void cOrtopedia::llamarfabricante()
+void cOrtopedia::llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro) // lo que tiene tambien la funcion hacerprotesis.
 {
+	if (o.getstock() <= 0)
+	{
+		fabricante.hacerprotesis(p, m, pro);
+	}
+
 	return;
 }
 
