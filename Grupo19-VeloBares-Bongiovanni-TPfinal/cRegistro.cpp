@@ -92,7 +92,8 @@ void cRegistro::listasdepacientes(cProtesis protesis, cMedico m, cPaciente pte, 
 	int contsolicitadas = 0;
 	int contortogadas = 0;
 	vector <cProtesis> posiblesprotesis = m.recetarprotesis(pte,  o,  fabricante,  protesis, m); 
-	if(!m.posiblesprotesis.empty())//tratarlo comno vector pero no nos toma
+
+	if(!posiblesprotesis.empty())
 	{
 		contortogadas++;
 	}

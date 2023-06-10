@@ -19,8 +19,6 @@ public:
 	void eliminarpaciente(unsigned int codigo__, cPaciente p,vector<cPaciente> &vectorpa);
 	string To_stringhospital();
 	cPaciente buscarpaciente(unsigned int codigopaciente__, cPaciente p);
-	//cHospital operator ++ (const cPaciente& p);
-
 
 private:
 	string nombrehospital;
@@ -31,9 +29,7 @@ private:
 };
 
 ostream& operator <<(ostream& out, cHospital& hospital);
-//cHospital operator ++ (const cPaciente& p);
+void operator + (const cPaciente& p, cHospital h);
+void operator -- (cHospital h);
 
-//funciones eliminar
-//void operator -- (const cPaciente& p);
-//void operator --(); 
 #endif

@@ -51,7 +51,6 @@ void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p, vector<cPac
 			i++;
 		}  
 		return;
-
 		
 }
 
@@ -93,22 +92,23 @@ cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__, cPaciente p)
 		}
 		else
 		{
-			return  ; //ver q devyrlvr
+			return; // ver q devuelve
 		}
 	}
 	
 }
 
-/*cHospital */cHospital  operator ++ (const cPaciente& p)
+void operator + (const cPaciente& p, cHospital h)
 {
-	vectorpa.push_back(p);
+	h.getvectorpaciente().push_back(p);
 	
 	return;
 }
 
-void cHospital::operator++()
+void operator -- (cHospital h)
 {
-	cPaciente p;
-	vectorpa.push_back(p);
+	h.getvectorpaciente().pop_back();
+
 	return;
 }
+

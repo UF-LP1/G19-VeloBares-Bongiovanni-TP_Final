@@ -3,7 +3,7 @@
 #include "cProtesis.h"
 #include "cPaciente.h" //medico que esta en hospital, tiene a paciente, esta bien que este aca?
 #include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
-
+#include "cMedico.h"//si no pngo, no toma cMedico en los atributos
 using namespace std;
 #ifndef _CREGISTRO_H
 #define _CREGISTRO_H*

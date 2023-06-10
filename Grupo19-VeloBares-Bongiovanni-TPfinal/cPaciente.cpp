@@ -28,7 +28,6 @@ string cPaciente::getapellidopaciente()
 	return this->apellidopaciente;
 }
 
-
 bool cPaciente::getalergias()
 {
 	return false;
