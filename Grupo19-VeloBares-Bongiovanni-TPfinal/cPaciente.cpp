@@ -2,7 +2,7 @@
 using namespace std;
 #include <string>
 
-cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_,  bool alergias_, string problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_)
+cPaciente::cPaciente(string nombrepaciente_, string apellidopaciente_, time_t fechanacimiento_,  bool alergias_, bool problema_, unsigned int telefonocontacto_, string radio_, unsigned int codigopaciente_)
 {
 	this->nombrepaciente = nombrepaciente_;
 	this->apellidopaciente = apellidopaciente_;
@@ -38,9 +38,9 @@ string cPaciente::getradio()
 	return this->radio;
 }
 
-string cPaciente::getproblema()
+bool cPaciente::getproblema()
 {
-	return this-> problema;
+	return true; //si es true, es QUIRURGICA, si es false es NO QUIRURGICA
 }
 
 void cPaciente::settelefonocontacto(unsigned int telefonocontacto)

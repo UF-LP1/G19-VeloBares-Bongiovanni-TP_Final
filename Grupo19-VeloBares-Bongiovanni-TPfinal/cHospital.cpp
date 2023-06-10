@@ -31,12 +31,12 @@ vector<cPaciente> cHospital::getvectorpaciente()
 {
 	return vector<cPaciente>();
 }
-
-void cHospital::agregarpaciente(cPaciente p)
-{
-	vectorpa.push_back(p);
-	return;
-}
+//
+//void cHospital::agregarpaciente(cPaciente p, cHospital h)
+//{ //agregar la sobrecarga
+//	
+//	return;
+//}
 
 void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p, vector<cPaciente> &vectorpa)
 {
@@ -105,7 +105,7 @@ void operator + (const cPaciente& p, cHospital h)
 	return;
 }
 
-void operator -- (cHospital h)
+void operator - (cHospital h)
 {
 	h.getvectorpaciente().pop_back();
 
