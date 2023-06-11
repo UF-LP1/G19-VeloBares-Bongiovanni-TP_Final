@@ -4,7 +4,8 @@
 #include <iostream>
 #include "cProtesis.h"
 #include "cOrtopedia.h"
-#include "cHospital.h"
+#include "cFabricante.h"
+#include "cHospital.h"//medico y hospital se tiene ambos 
 using namespace std;
 #ifndef _CQMEDICO_H
 #define _CMEDICO_H*
@@ -22,7 +23,9 @@ public:
 	vector <cProtesis> getlista();
 	string To_stringmedico();
 	vector<cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
-	cProtesis quetipoes(cProtesis p, vector <cProtesis> vectorpr);
+	void llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro);
+	//cProtesis quetipoes(cProtesis p, vector <cProtesis> vectorpr);
+
 private:
 	vector <cProtesis> vectorpr;
 	string  nombremedico;

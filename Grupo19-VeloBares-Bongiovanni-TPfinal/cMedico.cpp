@@ -34,18 +34,17 @@ vector<cProtesis> cMedico::getlista()
 
  vector<cProtesis> cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)//necesitamos que devuleva uno no toda la lista
  {
-	string radio = pte.getradio();																						// los primeros son de la funcion recetar y los ultimos son de llamarprot 
+	string radio = pte.getradio();																						 //los primeros son de la funcion recetar y los ultimos son de llamarprot 
 	bool alergia = pte.getalergias();
 	vector<cProtesis> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
+	int valor = pte.getproblema(); //si es par es quirurgica, pero de que me sirve saber?
 	
-
 	for ( cProtesis& p: vectorpr ) //SINTAXIS DEL FOR PARA LOS VECTOR.
 	{
 		if ((p.getdimensiones() == radio) && !alergia)
 
 			{
 			posiblesprotesis.push_back(p);
-
 			}
 	}
 
@@ -57,12 +56,23 @@ vector<cProtesis> cMedico::getlista()
 	
 	else
 	{
-		o.llamarfabricante(fabricante, o, pte, m, pro);
-		cout << "no hay tal protesis." << endl;
-		return{ posiblesprotesis }; //sino, devuelvo la lista que debería estar vacia si llego hasta acá
+		m.llamarfabricante(fabricante, o, pte, m, pro);
+		pro=fabricante.hacerprotesis( pte,  m,  pro);
+		return{ pro }; //por que toma? no tengo que devolver un vector?
+		//devuelvo la protesis nueva recien echa 
 	}
 		
 }
+
+void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
+ {
+	 if (o.getstock() <= 0)
+	 {
+		 fabricante.hacerprotesis(p, m, pro);
+	 }
+
+	 return;
+ }
 
 ostream& operator<<(ostream& out, cMedico& medico)
 {
@@ -83,8 +93,4 @@ string cMedico::To_stringmedico()
 	}
 
 	return auxmedico;
-}
-
-cProtesis cMedico::quetipoes( p, vector <cProtesis> vectorpr) {
-	cNoquirurgica
 }

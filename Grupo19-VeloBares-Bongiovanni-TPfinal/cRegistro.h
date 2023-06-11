@@ -21,7 +21,7 @@ public:
 	cProtesis* getprotesis();
 	cPaciente* getpaciente();
 	string To_stringregistro();
-	void listasdepacientes(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante);
+	void listasdeprotesis(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante);
 
 private:
 	cHospital *hospital;

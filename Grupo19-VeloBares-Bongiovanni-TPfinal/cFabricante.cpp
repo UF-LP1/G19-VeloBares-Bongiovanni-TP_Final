@@ -23,17 +23,22 @@ string cFabricante::getdirecciondefabricante()
 
 cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 {
+	int rechazo = recibirsolicitud(); //si es par no la rechaza
 	string radio = pte.getradio(); //guardo el radio
 	bool alergia = pte.getalergias(); //guardo las alergias
 	vector<cProtesis> vectorpr = m.getlista(); //guardo mi lista de protesis que esta en medicos
 	
 	for (int i =0; i<vectorpr.size(); i++)
 	{
-		if ((p.getdimensiones() == radio) && !alergia) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
+		if ((p.getdimensiones() == radio) && !alergia && rechazo%2==0) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
 		{
 			p = vectorpr.at(i);
 			break;
 		}
+
+		else
+			return p; //como hago para devolver una protesis que sea igual a 0, osea que este vacia?
+		//quiero que si no entra al if no la puede crear y devulva vacio
 	}
 	return p;
 }
@@ -53,7 +58,8 @@ string cFabricante::To_stringfabricante()
 	
 }
 
-void cFabricante::recibirsolicitud()
+int cFabricante::recibirsolicitud()
 {
-	return;
+	int rechazo = 1 + rand() % 100;
+	return rechazo;
 }

@@ -31,12 +31,12 @@ vector<cPaciente> cHospital::getvectorpaciente()
 {
 	return vector<cPaciente>();
 }
-//
-//void cHospital::agregarpaciente(cPaciente p, cHospital h)
-//{ //agregar la sobrecarga
-//	
-//	return;
-//}
+
+/*void cHospital::agregarpaciente(cPaciente p, cHospital h)
+{ 
+	vector <cPaciente> nuevovectorpa = operator + (p, h);
+	return;
+}*/
 
 void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p, vector<cPaciente> &vectorpa)
 {
@@ -50,8 +50,7 @@ void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p, vector<cPac
 			}
 			i++;
 		}  
-		return;
-		
+		return;		
 }
 
 ostream& operator<<(ostream& out, cHospital& hospital)
@@ -63,7 +62,7 @@ ostream& operator<<(ostream& out, cHospital& hospital)
 
 string cHospital::To_stringhospital()
 {
-	string auxhos; //que tiene?
+	string auxhos; 
 
 	vector <cPaciente> aux1 = this->getvectorpaciente(); // igual el vector de pacientes que tiene el hospital
 

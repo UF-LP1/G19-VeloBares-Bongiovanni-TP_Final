@@ -38,9 +38,10 @@ string cPaciente::getradio()
 	return this->radio;
 }
 
-bool cPaciente::getproblema()
+int cPaciente::getproblema()
 {
-	return true; //si es true, es QUIRURGICA, si es false es NO QUIRURGICA
+	int valor = 1 + rand() % 100;
+	return valor;
 }
 
 void cPaciente::settelefonocontacto(unsigned int telefonocontacto)

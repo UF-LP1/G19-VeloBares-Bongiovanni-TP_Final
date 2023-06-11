@@ -48,7 +48,7 @@ unsigned int randint(unsigned int min, unsigned int max)
 stack<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una "pila" de pacientes  con todos sus atributos random
     stack<cPaciente*> MisPacientes;
 
-    for (unsigned int i = 0; i < cantidad; i++) 
+    for (unsigned int i = 0; i < cantidad; i++) //por que no toma?
         MisPacientes.push(new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())],to_string(randint(1000000000, 9999999999)), (bool)randint(0, 2)),(bool)randint(0, 2)), to_string(telefonoPac[randint(0, telefonoPac.size())]), radioPac[randint(0, radioPac.size())], to_string(codigoPac[randint(0, codigoPac.size())]);
 
     return MisPacientes; //me devuelve la lista de pacientes que se crea de manera random
@@ -59,8 +59,8 @@ int main()
     srand(time(NULL)); //simulacion todo randommm
     stack<cPaciente*> MisPaccientes = generador_pacientes(5);
 
-    cMedico* Richard = new cMedico ("")
+    cMedico* Richard = new cMedico("");
+    //Imprimir un listado de pacientes y prótesis.
 
 	return 0;
 }
-// llamr ostream(agregar) y hacer protesis

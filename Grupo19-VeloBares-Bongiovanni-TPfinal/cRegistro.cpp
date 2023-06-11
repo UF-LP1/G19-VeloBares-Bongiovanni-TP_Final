@@ -55,7 +55,7 @@ string cRegistro::To_stringregistro()
 {
 	string auxregistro;//como va el time_t? time_t getfechasolicitud()
 
-	vector <cHospital> aux1 = this-> gethospital(); // esta mal porque estamos igualando un vector con un solo elemento!!!!!
+	vector <cHospital> aux1 = this-> gethospital();//esta mal porque estamos igualando un vector con un solo elemento!
 
 	for (int i = 0; i < aux1.size(); i++)
 	{
@@ -86,22 +86,10 @@ string cRegistro::To_stringregistro()
 	return auxregistro;
 }
 
-void cRegistro::listasdepacientes(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
+void cRegistro::listasdeprotesis(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
 {
-	//esta funcion cuenta cuantas protesis se solicitaron y entregaron
-	int contsolicitadas = 0;
-	int contortogadas = 0;
 	vector <cProtesis> posiblesprotesis = m.recetarprotesis(pte,  o,  fabricante,  protesis, m); 
-
-	if(!posiblesprotesis.empty())
-	{
-		contortogadas++;
-	}
-
-	else
-	{
-		contsolicitadas++;
-	}
+	//cProtesis pro = m.recetarprotesis(pte, o, fabricante, protesis, m); //no me toma
 
 	return;
 }

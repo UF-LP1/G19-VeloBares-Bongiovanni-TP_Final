@@ -15,8 +15,7 @@ public:
 	string getnombreortopedia();
 	bool buscar(unsigned int codigo);
 	void setdireccionortopedia(string direccionortopedia);
-	void llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro);
-	string To_stringortopedia();
+    string To_stringortopedia();
 
 private:
 	static unsigned int cantidadstock;

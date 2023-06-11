@@ -21,11 +21,12 @@ public:
 	string getapellidopaciente();
 	bool getalergias();
 	string getradio();
-	bool getproblema();
+	int getproblema();
 	void settelefonocontacto(unsigned int telefonocontacto);
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento);
 	string To_stringpaciente();
+	//Buscar pacientes que ya poseen prótesis según la prótesis o el hospital
 
 private:
 
@@ -33,9 +34,9 @@ private:
 	string apellidopaciente; 
 	time_t fechadenacimiento;
 	bool alergia;
-	bool problema; //dependiendo tu problema, 
+	bool problema;//nos dice si necesita quirurgica o no quirurgica 
 	unsigned int telefonocontacto;
-	string radio;
+	string radio;//en caso de ser 0 el paciente no posee miembro amputado, pero si fuese 0 no vendria al hospital
 	unsigned int codigopaciente;
 
 };
