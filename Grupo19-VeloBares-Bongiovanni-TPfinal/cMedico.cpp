@@ -39,9 +39,11 @@ vector<cProtesis> cMedico::getlista()
 	vector<cProtesis> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
 	int valor = pte.getproblema(); //si es par es quirurgica, pero de que me sirve saber?
 	
+	// CHEQUEAR QUE ESTE EN EMPTY EL NUEVO VECTOR Y QUE NO TENGA BASURA.
+
 	for ( cProtesis& p: vectorpr ) //SINTAXIS DEL FOR PARA LOS VECTOR.
 	{
-		if ((p.getdimensiones() == radio) && !alergia)
+		if ((p.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
 
 			{
 			posiblesprotesis.push_back(p);
@@ -58,8 +60,7 @@ vector<cProtesis> cMedico::getlista()
 	{
 		m.llamarfabricante(fabricante, o, pte, m, pro);
 		pro=fabricante.hacerprotesis( pte,  m,  pro);
-		return{ pro }; //por que toma? no tengo que devolver un vector?
-		//devuelvo la protesis nueva recien echa 
+		return{ pro }; //devuelvo la protesis nueva recien fabricada por el fabricante
 	}
 		
 }
