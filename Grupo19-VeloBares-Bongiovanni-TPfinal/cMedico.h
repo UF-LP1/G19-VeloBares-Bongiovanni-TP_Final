@@ -22,7 +22,7 @@ public:
 	vector <cProtesis> getlista();
 	string To_stringmedico();
 	vector<cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
-
+	cProtesis quetipoes(cProtesis p, vector <cProtesis> vectorpr);
 private:
 	vector <cProtesis> vectorpr;
 	string  nombremedico;

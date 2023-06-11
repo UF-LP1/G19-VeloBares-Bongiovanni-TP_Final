@@ -85,3 +85,6 @@ string cMedico::To_stringmedico()
 	return auxmedico;
 }
 
+cProtesis cMedico::quetipoes( p, vector <cProtesis> vectorpr) {
+	cNoquirurgica
+}

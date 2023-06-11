@@ -55,30 +55,30 @@ string cRegistro::To_stringregistro()
 {
 	string auxregistro;//como va el time_t? time_t getfechasolicitud()
 
-	vector <cHospital> aux1 = this-> gethospital();
+	vector <cHospital> aux1 = this-> gethospital(); // esta mal porque estamos igualando un vector con un solo elemento!!!!!
 
-	for (int i = 0; i < this-> gethospital().size(); i++)
+	for (int i = 0; i < aux1.size(); i++)
 	{
 		auxregistro += aux1[i].To_stringhospital();
 	}
 
 	vector <cMedico> aux2 = this->getmedico();
 
-	for (int i = 0; i < this->getmedico().size(); i++)
+	for (int i = 0; i < aux2.size(); i++)
 	{
 		auxregistro += aux2[i].To_stringmedico();
 	}
 
 	vector <cPaciente> aux3 = this->getpaciente();
 
-	for (int i = 0; i < this->getpaciente().size(); i++)
+	for (int i = 0; i < aux3.size(); i++)
 	{
 		auxregistro += aux3[i].To_stringpaciente();
 	}
 
 	vector <cProtesis> aux4 = this->getprotesis();
 
-	for (int i = 0; i < this->getprotesis().size(); i++)
+	for (int i = 0; i < aux4.size(); i++)
 	{
 		auxregistro += aux4[i].To_stringprotesis();
 	}
