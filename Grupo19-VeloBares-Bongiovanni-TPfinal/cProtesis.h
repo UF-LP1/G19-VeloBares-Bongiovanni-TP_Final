@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "cPaciente.h"
+#include "cNoquirurgica.h"
 using namespace std;
 #ifndef _CPROTESIS_H
 #define _CPROTESIS_H*

@@ -1,5 +1,6 @@
 #include "cProtesis.h"
 
+
 cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_)
 {
 	this->dimensiones = dimensiones_;
@@ -57,10 +58,10 @@ string cProtesis::To_stringprotesis()
 	return auxprotesis;
 }
 
-/*cProtesis cProtesis::tipoprotesis(cNoquirurgica nq, vector <cProtesis> vectorpr)
-{
-	cNoquirurgica*aux = dynamic_cast<cNoquirurgica*>(vectorpr[0])
-	if(aux!= nullptr)
-		{aux= }
-	return cProtesis();
-}*/
+// cProtesis  cProtesis ::tipoprotesis(cNoquirurgica nq, vector <cProtesis> vectorpr)
+//{
+//	 cNoquirurgica* aux = dynamic_cast<cNoquirurgica*>(vectorpr[0]);
+//	if(aux!= nullptr)
+//		{aux= }
+//	return cProtesis();
+//}
