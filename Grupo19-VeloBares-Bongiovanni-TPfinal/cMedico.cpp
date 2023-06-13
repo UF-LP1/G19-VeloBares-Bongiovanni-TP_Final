@@ -90,7 +90,7 @@ string cMedico::To_stringmedico()
 
 	for (int i = 0; i < this->getlista().size(); i++)
 	{
-		auxmedico += aux1[i].To_stringprotesis();
+		auxmedico += aux1[i].To_stringprotesis(); 
 	}
 
 	return auxmedico;

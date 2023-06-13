@@ -40,5 +40,6 @@ private:
 	unsigned int codigopaciente;
 
 };
+
 ostream& operator << (ostream& out, cPaciente& pac);
 #endif

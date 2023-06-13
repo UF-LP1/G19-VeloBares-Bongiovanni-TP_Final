@@ -8,6 +8,7 @@ enum lado
     InferiorDerecha,
     InferiorIzquierda
 };
+
 #endif
 
 

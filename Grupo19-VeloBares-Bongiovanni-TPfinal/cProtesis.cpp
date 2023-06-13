@@ -1,6 +1,5 @@
 #include "cProtesis.h"
 
-
 cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_)
 {
 	this->dimensiones = dimensiones_;
