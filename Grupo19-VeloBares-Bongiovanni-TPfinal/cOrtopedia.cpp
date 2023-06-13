@@ -44,7 +44,4 @@ string cOrtopedia::To_stringortopedia()
 	return auxortopedia;
 }
 
-void cOrtopedia::buscarprotesis(cProtesis p, )
-{
-	return;
-}
+
