@@ -23,11 +23,6 @@ string cOrtopedia::getnombreortopedia()
 	return this->nombreortopedia;
 }
 
-bool cOrtopedia::buscar(unsigned int codigo)
-{
-	return false;
-}
-
 void cOrtopedia::setdireccionortopedia(string direccionortopedia)
 {
 	return;
@@ -47,4 +42,9 @@ string cOrtopedia::To_stringortopedia()
 	string auxortopedia = this->getnombreortopedia() + to_string(this->getstock());
 
 	return auxortopedia;
+}
+
+void cOrtopedia::buscarprotesis(cProtesis p, )
+{
+	return;
 }

@@ -38,9 +38,9 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return;
 }*/
 
-void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p, vector<cPaciente> &vectorpa)
+void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
 {
-		cPaciente eliminado= buscarpaciente(codigo__, p); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
+		cPaciente eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
 		for (int i = 0; i < vectorpa.size(); i++)
 		{
 			if (eliminado.codigopaciente == vectorpa.at(i).codigopaciente)
@@ -81,11 +81,11 @@ string cHospital::To_stringhospital()
 	return auxhos; // este tiene en modo string a los vectores de pacientes y medicos con toda su info adentro
 }
 
-cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__, cPaciente p) 
+cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__) 
 {
-	for(int i=0; i< vectorpa.size(); i++) // recorro el vector pacientes...
+	for (int i = 0; i < vectorpa.size(); i++) // recorro el vector pacientes...
 	{
-		if (p.getcodigopaciente() == codigopaciente__) // si el codigo de x paciente coincide con el que me dan...
+		if (vectorpa[i].getcodigopaciente() == codigopaciente__) // si el codigo de x paciente coincide con el que me dan...
 		{
 			return vectorpa.at(i); // devuelvo el paciente en esa posicion...
 		}

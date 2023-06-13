@@ -67,7 +67,7 @@ vector<cProtesis> cMedico::getlista()
 
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
-	 if (o.getstock() <= 0)
+	 if (o.getstock() = 0)
 	 {
 		 fabricante.hacerprotesis(p, m, pro);
 	 }
@@ -94,4 +94,15 @@ string cMedico::To_stringmedico()
 	}
 
 	return auxmedico;
+}
+
+cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar )
+{
+	for (int i = 0; i < vectorpr.size(); i++)
+	{
+		if (codigoprotesisabuscar == vectorpr[i].getcodigo())
+			return vectorpr[i];
+		break;
+	}
+	return;
 }

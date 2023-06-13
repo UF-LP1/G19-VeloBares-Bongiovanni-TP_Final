@@ -16,9 +16,9 @@ public:
 	vector<cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
 	//void agregarpaciente(cPaciente p, cHospital h); ya tenemos la sobregarga
-	void eliminarpaciente(unsigned int codigo__, cPaciente p,vector<cPaciente> &vectorpa);
+	void eliminarpaciente(unsigned int codigo__, cPaciente p);
 	string To_stringhospital();
-	cPaciente buscarpaciente(unsigned int codigopaciente__, cPaciente p);
+	cPaciente buscarpaciente(unsigned int codigopaciente__);
 
 private:
 	string nombrehospital;

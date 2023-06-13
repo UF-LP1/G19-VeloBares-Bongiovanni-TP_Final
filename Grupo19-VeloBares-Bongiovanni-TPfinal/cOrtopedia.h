@@ -13,7 +13,6 @@ public:
 	~cOrtopedia();
 	unsigned int getstock();
 	string getnombreortopedia();
-	bool buscar(unsigned int codigo);
 	void setdireccionortopedia(string direccionortopedia);
     string To_stringortopedia();
 
