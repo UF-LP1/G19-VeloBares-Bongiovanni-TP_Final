@@ -21,7 +21,7 @@ public:
 	void setfechafabricacion(time_t fechadefabricacion);
 	virtual void imprimirprotesis();
 	string To_stringprotesis();
-	//static cProtesis tipoprotesis(cProtesis p, vector <cProtesis> vectorpr);
+	//cProtesis tipoprotesis(cProtesis p, vector <cProtesis>* vectorpr);
 
 protected:
 	string dimensiones;

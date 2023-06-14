@@ -57,10 +57,12 @@ string cProtesis::To_stringprotesis()
 	return auxprotesis;
 }
 
-// cProtesis  cProtesis ::tipoprotesis(cNoquirurgica nq, vector <cProtesis> vectorpr)
-//{
-//	 cNoquirurgica* aux = dynamic_cast<cNoquirurgica*>(vectorpr[0]);
-//	if(aux!= nullptr)
-//		{aux= }
-//	return cProtesis();
-//}
+ cProtesis  cProtesis ::tipoprotesis(cNoquirurgica nq, vector <cProtesis> *vectorpr)
+{
+	 cNoquirurgica* aux = dynamic_cast<cNoquirurgica*>(vectorpr[0]);
+	if(aux!= nullptr)
+	{
+		aux = ;
+	}
+	return ;
+}

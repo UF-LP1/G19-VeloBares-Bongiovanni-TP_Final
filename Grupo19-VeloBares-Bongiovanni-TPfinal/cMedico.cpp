@@ -32,27 +32,33 @@ vector<cProtesis> cMedico::getlista()
 	return vector<cProtesis>();
 }
 
- vector<cProtesis> cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)//necesitamos que devuleva uno no toda la lista
- {
+vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
+{
 	string radio = pte.getradio();																						 //los primeros son de la funcion recetar y los ultimos son de llamarprot 
 	bool alergia = pte.getalergias();
 	vector<cProtesis> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
 	int valor = pte.getproblema(); //si es par es quirurgica, pero de que me sirve saber?
-	
+
 	// CHEQUEAR QUE ESTE EN EMPTY EL NUEVO VECTOR Y QUE NO TENGA BASURA.
 
-	for ( cProtesis& p: vectorpr ) //SINTAXIS DEL FOR PARA LOS VECTOR.
+	for (cProtesis& p : vectorpr) //SINTAXIS DEL FOR PARA LOS VECTOR.
 	{
 		if ((p.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
 
-			{
+		{
 			posiblesprotesis.push_back(p);
-			}
+		}
 	}
 
-	if (!posiblesprotesis.empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
+	return posiblesprotesis;
+}
+
+cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
+{
+	cProtesis *posiblesprotesis;
+	if (!posibilidades( pte,  o,  fabricante,  pro,  m).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
 	{
-		int M = rand() % posiblesprotesis.size();
+		int M = rand() % posibilidades(pte, o, fabricante, pro, m).size();
 		return { posiblesprotesis[M] };
 	}
 	
@@ -61,6 +67,7 @@ vector<cProtesis> cMedico::getlista()
 		m.llamarfabricante(fabricante, o, pte, m, pro);
 		pro=fabricante.hacerprotesis( pte,  m,  pro);
 		return{ pro }; //devuelvo la protesis nueva recien fabricada por el fabricante
+		//tengo que devolver null si no la hizo
 	}
 		
 }

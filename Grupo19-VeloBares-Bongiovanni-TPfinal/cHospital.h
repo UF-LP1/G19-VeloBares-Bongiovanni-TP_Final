@@ -15,7 +15,7 @@ public:
 	void setdireccionhospital(string direccionhospital);
 	vector<cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
-	//void agregarpaciente(cPaciente p, cHospital h); ya tenemos la sobregarga
+	void agregarpaciente (cHospital h, cPaciente p); //ya tenemos la sobregarga
 	void eliminarpaciente(unsigned int codigo__, cPaciente p);
 	string To_stringhospital();
 	cPaciente buscarpaciente(unsigned int codigopaciente__);
@@ -29,7 +29,7 @@ private:
 };
 
 ostream& operator <<(ostream& out, cHospital& hospital);
-void operator + (const cPaciente& p, cHospital h);
+void operator + (cHospital h, const cPaciente& p);
 void operator - (cHospital h);
 
 #endif

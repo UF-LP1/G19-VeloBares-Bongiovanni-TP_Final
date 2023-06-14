@@ -53,43 +53,27 @@ ostream& operator<<(ostream& out, cRegistro& registro)
 
 string cRegistro::To_stringregistro()
 {
-	string auxregistro;//como va el time_t? time_t getfechasolicitud()
+	string auxregistro;
+	
+	time_t getfechasolicitud();//como va el time_t? 
 
-	vector <cHospital> aux1 = this-> gethospital();//esta mal porque estamos igualando un vector con un solo elemento!
+	cHospital *aux1 =  gethospital();
 
-	for (int i = 0; i < aux1.size(); i++)
-	{
-		auxregistro += aux1[i].To_stringhospital();
-	}
+	cMedico *aux2 = getmedico();
 
-	vector <cMedico> aux2 = this->getmedico();
+	cPaciente *aux3 = getpaciente();
 
-	for (int i = 0; i < aux2.size(); i++)
-	{
-		auxregistro += aux2[i].To_stringmedico();
-	}
+	cProtesis *aux4 = getprotesis();
 
-	vector <cPaciente> aux3 = this->getpaciente();
-
-	for (int i = 0; i < aux3.size(); i++)
-	{
-		auxregistro += aux3[i].To_stringpaciente();
-	}
-
-	vector <cProtesis> aux4 = this->getprotesis();
-
-	for (int i = 0; i < aux4.size(); i++)
-	{
-		auxregistro += aux4[i].To_stringprotesis();
-	}
+	auxregistro += aux1->To_stringhospital() + aux2->To_stringmedico() + aux3->To_stringpaciente() + aux4->To_stringprotesis();
 
 	return auxregistro;
 }
 
 void cRegistro::listasdeprotesis(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
 {
-	vector <cProtesis> posiblesprotesis = m.recetarprotesis(pte,  o,  fabricante,  protesis, m); 
-	//cProtesis pro = m.recetarprotesis(pte, o, fabricante, protesis, m); //no me toma
+	vector <cProtesis> posiblesprotesis = m.posibilidades(pte,  o,  fabricante,  protesis, m); //lista de solicitadas
+	//cProtesis pro = m.recetarprotesis(pte, o, fabricante, protesis, m); //lista de otorgadas
 
 	return;
 }

@@ -32,11 +32,11 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return vector<cPaciente>();
 }
 
-/*void cHospital::agregarpaciente(cPaciente p, cHospital h)
+void cHospital::agregarpaciente(cHospital h, cPaciente p)
 { 
-	vector <cPaciente> nuevovectorpa = operator + (p, h);
+	h + p;
 	return;
-}*/
+}
 
 void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
 {
@@ -90,15 +90,26 @@ cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__)
 			return vectorpa.at(i); // devuelvo el paciente en esa posicion...
 		}
 		else
-		{
-			return; // ver q devuelve
+		{ 
+			return; // HACER EXCPETION
 		}
 	}
 	
 }
 
-void operator + (const cPaciente& p, cHospital h)
+void operator + (cHospital h, const cPaciente& p)
 {
+	bool serepite = false;
+	int i = 0;
+	while (i < h.getvectorpaciente().size()) {
+		if (h.getvectorpaciente().at(i) == p)
+		{
+			serepite = true; //se repite chau
+			break;
+		}
+		i++;
+	}
+	if(repetido==true)
 	h.getvectorpaciente().push_back(p);
 	
 	return;
@@ -111,3 +122,16 @@ void operator - (cHospital h)
 	return;
 }
 
+//bool repetido = false;
+//int i = 0;
+//while (i < lista.size()) {
+//	if (lista[i] == &C) {
+//		repetido = true;
+//		cout << "El paciente ya se encuentra en la lista." << endl;
+//		break;
+//	}
+//	i++;
+//}
+//if (repetido == false)
+//lista.push_back(&C);
+//return lista;

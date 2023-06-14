@@ -23,7 +23,8 @@ public:
 	vector <cProtesis> getlista();
 	string To_stringmedico();
 	cProtesis buscarprotesis(unsigned int codigoprotesisabuscar);
-	vector<cProtesis> recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
+	vector<cProtesis> posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
+	cProtesis recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
 	void llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro);
 	//cProtesis quetipoes(cProtesis p, vector <cProtesis> vectorpr);
 

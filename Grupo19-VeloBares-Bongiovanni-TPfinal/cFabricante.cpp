@@ -37,8 +37,7 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 		}
 
 		else
-			return p; //como hago para devolver una protesis que sea igual a 0, osea que este vacia?
-		//quiero que si no entra al if no la puede crear y devulva vacio
+			return p; //null ntiene que ser 
 	}
 	return p;
 }
