@@ -7,7 +7,7 @@
 #include "cPaciente.h"
 #include "cMedico.h"
 #include "cHospital.h"
-#include "cANPA.h"
+#include "cANPA.h"  
 #include "cFabricante.h"
 #include "cOrtopedia.h"
 #include "cRegistro.h"
@@ -20,7 +20,6 @@ const vector<string> nomPac = { // creamos un vector con nombres de clientes ran
 const vector<string> apellidoPac = { 
     "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez", "Thompson", "White", "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson", "Walker", "Young", "Hall", "Allen", "Torres", "Nguyen", "Wright", "King", "Scott", "Green", "Baker", "Adams", "Nelson", "Hill", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Turner", "Parker", "Collins", "Edwards", "Stewart", "Flores", "Morris", "Ng", "Murphy", "Cook"
 };
-
 
 const vector<time_t> fechanacimientoPac = { //por que no toma?
 1740787200, 1669852800, 1654041600, 1753923600, 1690848000, 1777770000, 1643673600, 1693526400, 1725062400, 1701475200, 1659312000, 1730160000, 1761872400, 1688256000, 1767142800, 1719792000, 1775091600, 1764550800, 1717113600, 1738108800, 1783040400, 1656633600, 1722384000, 1677628800, 1709424000, 1743379200, 1732838400, 1656633600, 1661990400, 1769821200, 1706745600, 1698796800, 1675209600, 1772413200, 1714521600, 1735430400, 1680307200, 1764550800, 1685577600, 1651363200, 1727740800, 1664582400, 1769821200, 1751331600, 1780362000, 1761872400, 1706745600, 1714521600, 1743379200, 1738108800, 1748653200, 1751331600, 1775091600, 1667260800, 1719792000, 1698796800, 1732838400, 1780362000, 1767142800, 1654041600, 1680307200, 1690848000, 1735430400, 1777770000, 1659312000, 1725062400, 1656633600, 1693526400, 1753923600 };
@@ -46,7 +45,7 @@ vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una 
     vector<cPaciente*> MisPacientes;
 
     for (unsigned int i = 0; i < cantidad; i++) //por que no toma?
-        MisPacientes.push_back(new cPaciente(nomPac[randint(0, fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2)),(bool)randint(0, 2)) , telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())];
+        MisPacientes.push_back(new cPaciente(nomPac[randint(0,nomPac.size())],apellidoPac[randint(0,apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2)), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
 
     return MisPacientes; //me devuelve la lista de pacientes que se crea de manera random
 }
@@ -75,10 +74,9 @@ unsigned int randint(unsigned int min, unsigned int max)
 
 vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero una "pila" de pacientes  con todos sus atributos random
     vector<cProtesis*> MisProtesis;
-
-    for (unsigned int i = 0; i < cantidad; i++) //por que no toma?
+    for (unsigned int i = 0; i < cantidad; i++) 
         MisProtesis.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], fabricante[randint(0, fabricante.size())], fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
-    //NO TOMA PORQUE SON ATRIBUTOS CONSTANTES, COMO HACEMOS EL RANDOM SINO?!?!?!
+    
     return MisProtesis; //me devuelve la lista de protesis que se crea de manera random
 }
 
