@@ -97,19 +97,19 @@ cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__)
 	
 }
 
-void operator + (cHospital h, const cPaciente& p)
+void operator + (cHospital h,  cPaciente& p)
 {
 	bool serepite = false;
 	int i = 0;
 	while (i < h.getvectorpaciente().size()) {
-		if (h.getvectorpaciente().at(i) == p)
+		if (p.getcodigopaciente() == h.getvectorpaciente().at(i).getcodigopaciente())
 		{
 			serepite = true; //se repite chau
 			break;
 		}
 		i++;
 	}
-	if(repetido==true)
+	if (serepite == true)
 	h.getvectorpaciente().push_back(p);
 	
 	return;
@@ -122,16 +122,3 @@ void operator - (cHospital h)
 	return;
 }
 
-//bool repetido = false;
-//int i = 0;
-//while (i < lista.size()) {
-//	if (lista[i] == &C) {
-//		repetido = true;
-//		cout << "El paciente ya se encuentra en la lista." << endl;
-//		break;
-//	}
-//	i++;
-//}
-//if (repetido == false)
-//lista.push_back(&C);
-//return lista;

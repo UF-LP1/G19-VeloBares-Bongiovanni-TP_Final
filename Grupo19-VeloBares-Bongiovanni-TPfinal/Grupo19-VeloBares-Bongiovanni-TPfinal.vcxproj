@@ -137,6 +137,7 @@
     <ClInclude Include="cProtesis.h" />
     <ClInclude Include="cQuirurgica.h" />
     <ClInclude Include="cRegistro.h" />
+    <ClInclude Include="exception.h" />
     <ClInclude Include="ladoenum.h" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,7 @@
     <ClCompile Include="cProtesis.cpp" />
     <ClCompile Include="cQuirurgica.cpp" />
     <ClCompile Include="cRegistro.cpp" />
+    <ClCompile Include="exception.cpp" />
     <ClCompile Include="ladoenum.cpp" />
     <ClCompile Include="MAIN.cpp" />
   </ItemGroup>

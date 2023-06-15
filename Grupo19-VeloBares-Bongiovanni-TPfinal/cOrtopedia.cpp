@@ -1,12 +1,13 @@
 #include "cOrtopedia.h"
 #include <iostream>
 
-unsigned int static cantidadstock_;
 
-cOrtopedia::cOrtopedia( string nombreortopedia_, string direccionortopedia_)
+
+cOrtopedia::cOrtopedia( string nombreortopedia_, string direccionortopedia_, unsigned int cantidadstock_)
 {
 	this->nombreortopedia = nombreortopedia_;
 	this->direccionortopedia = direccionortopedia_;
+	this->cantidadstock = cantidadstock_;
 }
 
 cOrtopedia::~cOrtopedia()

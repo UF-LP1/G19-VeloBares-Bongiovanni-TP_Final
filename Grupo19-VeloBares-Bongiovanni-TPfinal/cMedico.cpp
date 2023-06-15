@@ -72,9 +72,9 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 		
 }
 
-void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia o, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
+void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
-	 if (o.getstock() = 0)
+	 if (ortopedia.getstock() = 0)
 	 {
 		 fabricante.hacerprotesis(p, m, pro);
 	 }

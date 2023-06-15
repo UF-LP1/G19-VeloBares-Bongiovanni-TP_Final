@@ -21,32 +21,31 @@ const vector<string> apellidoPac = {
     "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez", "Thompson", "White", "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson", "Walker", "Young", "Hall", "Allen", "Torres", "Nguyen", "Wright", "King", "Scott", "Green", "Baker", "Adams", "Nelson", "Hill", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Turner", "Parker", "Collins", "Edwards", "Stewart", "Flores", "Morris", "Ng", "Murphy", "Cook"
 };
 
-const vector<time_t> fechanacimientoPac = { //por que no toma?
+const vector<time_t> fechanacimientoPac = { 
 1740787200, 1669852800, 1654041600, 1753923600, 1690848000, 1777770000, 1643673600, 1693526400, 1725062400, 1701475200, 1659312000, 1730160000, 1761872400, 1688256000, 1767142800, 1719792000, 1775091600, 1764550800, 1717113600, 1738108800, 1783040400, 1656633600, 1722384000, 1677628800, 1709424000, 1743379200, 1732838400, 1656633600, 1661990400, 1769821200, 1706745600, 1698796800, 1675209600, 1772413200, 1714521600, 1735430400, 1680307200, 1764550800, 1685577600, 1651363200, 1727740800, 1664582400, 1769821200, 1751331600, 1780362000, 1761872400, 1706745600, 1714521600, 1743379200, 1738108800, 1748653200, 1751331600, 1775091600, 1667260800, 1719792000, 1698796800, 1732838400, 1780362000, 1767142800, 1654041600, 1680307200, 1690848000, 1735430400, 1777770000, 1659312000, 1725062400, 1656633600, 1693526400, 1753923600 };
 
-const vector<unsigned int> telefonoPac = { //por que no toma?
-1123456789, 1145678901, 1167890123, 1190123456, 1156789012, 1189012345, 1112345678, 1165432109, 1134567890, 1178901234, 1167890123, 1112345678, 1145678901, 1156789012, 1190123456, 1189012345, 1123456789, 1134567890, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1189012345, 1190123456, 1156789012, 1134567890, 1123456789, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1156789012, 1190123456, 1189012345, 1123456789, 1134567890, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1189012345, 1190123456, 1156789012, 1134567890, 1123456789, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1156789012, 1190123456, 1189012345. };
+const vector<unsigned int> telefonoPac = {
+1123456789, 1145678901, 1167890123, 1190123456, 1156789012, 1189012345, 1112345678, 1165432109, 1134567890, 1178901234, 1167890123, 1112345678, 1145678901, 1156789012, 1190123456, 1189012345, 1123456789, 1134567890, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1189012345, 1190123456, 1156789012, 1134567890, 1123456789, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1156789012, 1190123456, 1189012345, 1123456789, 1134567890, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1189012345, 1190123456, 1156789012, 1134567890, 1123456789, 1165432109, 1178901234, 1167890123, 1112345678, 1145678901, 1156789012, 1190123456, 1189012345};
 
 const vector<string> radioPac = {
 "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "15.1", "15.2", "15.3", "15.4", "15.5", "15.6", "15.7", "15.8", "15.9", "16.1", "16.2", "16.3", "16.4", "16.5", "16.6", "16.7", "16.8", "16.9", "17.1", "17.2", "17.3", "17.4", "17.5", "17.6", "17.7", "17.8", "17.9", "18.1", "18.2", "18.3", "18.4", "18.5", "18.6", "18.7", "18.8", "18.9", "19.1", "19.2", "19.3", "19.4", "19.5", "19.6", "19.7", "19.8", "19.9"
 };
 
-const vector<unsigned int> codigoPac = { //por que no toma?
-100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159. };
+const vector<unsigned int> codigoPac = {
+100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159};
 
 unsigned int randint(unsigned int min, unsigned int max) 
 {
     return rand() % (max - min) + min;
 }
 
-//nombre,apellido,fecha,alergia,problema,telefono,radio,codigo
-
 vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una "pila" de pacientes  con todos sus atributos random
     vector<cPaciente*> MisPacientes;
 
-    for (unsigned int i = 0; i < cantidad; i++) //por que no toma?
-        MisPacientes.push_back(new cPaciente(nomPac[randint(0,nomPac.size())],apellidoPac[randint(0,apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2)), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
-
+    for (unsigned int i = 0; i < cantidad; i++)
+    {
+        MisPacientes.push_back(new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]));
+    }
     return MisPacientes; //me devuelve la lista de pacientes que se crea de manera random
 }
 
@@ -89,8 +88,8 @@ int main()
     vector <cHospital> hospital;
     vector <cOrtopedia> ortopedia;
 
-    cMedico* Richard = new cMedico(MisProtesis, "Richard", "Gomez","35356362"); //si es constante igual es asi?
-    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes); //por que no toma?
+    cMedico* Richard = new cMedico( MisProtesis, "Richard", "Gomez","35356362");
+    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes);
     cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
     cOrtopedia* Ortopedia = new cOrtopedia("Ortopedia", "av Corrientes");
