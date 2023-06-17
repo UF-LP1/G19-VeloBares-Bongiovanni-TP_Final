@@ -24,7 +24,7 @@ public:
 	int getproblema();
 	void settelefonocontacto(unsigned int telefonocontacto);
 	unsigned int getcodigopaciente();
-	void setfechanacimiento(time_t fechanacimiento);
+	void setfechanacimiento(time_t fechanacimiento1);
 	string To_stringpaciente();
 	//Buscar pacientes que ya poseen prótesis según la prótesis o el hospital
 

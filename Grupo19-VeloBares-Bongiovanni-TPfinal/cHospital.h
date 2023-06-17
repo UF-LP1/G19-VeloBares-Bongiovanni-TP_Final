@@ -12,7 +12,7 @@ public:
 	cHospital(string nombrehoispital_, string direccionhospital_, vector <cMedico> vectorm_, vector <cPaciente> vectorpa_);
 	~cHospital();
 	string getnombrehospital();
-	void setdireccionhospital(string direccionhospital);
+	void setdireccionhospital(string direccionhospital1);
 	vector<cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
 	void agregarpaciente (cHospital h, cPaciente p); //ya tenemos la sobregarga

@@ -33,8 +33,9 @@ unsigned int cProtesis::getcodigo()
 	return this->codigo;
 }
 
-void cProtesis::setfechafabricacion(time_t fechadefabricacion)
+void cProtesis::setfechafabricacion(time_t fechadefabricacion1)
 {
+	this->fechadefabricacion = fechadefabricacion1;
 	return;
 }
 

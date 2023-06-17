@@ -18,7 +18,7 @@ public:
 	string getmaterial();
 	string getfabricante();
 	unsigned int getcodigo();
-	void setfechafabricacion(time_t fechadefabricacion);
+	void setfechafabricacion(time_t fechadefabricacion1);
 	virtual void imprimirprotesis();
 	string To_stringprotesis();
 	//cProtesis tipoprotesis(cProtesis p, vector <cProtesis>* vectorpr);

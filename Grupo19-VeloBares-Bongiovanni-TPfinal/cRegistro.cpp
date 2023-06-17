@@ -29,8 +29,9 @@ time_t cRegistro::getfechasolicitud()
 	return this->fechadesolicitud;
 }
 
-void cRegistro::setfechaentrega(time_t fechaentrega)
+void cRegistro::setfechaentrega(time_t fechaentrega1)
 {
+	this->fechaentrega = fechaentrega1;
 	return;
 }
 

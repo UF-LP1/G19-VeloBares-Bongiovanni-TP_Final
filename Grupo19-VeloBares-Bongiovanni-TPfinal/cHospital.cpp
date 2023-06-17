@@ -17,8 +17,9 @@ string cHospital::getnombrehospital()
 	return this->nombrehospital;
 }
 
-void cHospital::setdireccionhospital(string direccionhospital)
-{
+void cHospital::setdireccionhospital(string direccionhospital1)
+{ 
+	this->direccionhospital = direccionhospital1;
 	return;
 }
 
@@ -93,8 +94,7 @@ cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__)
 		{ 
 			return; // HACER EXCPETION
 		}
-	}
-	
+	}	
 }
 
 void operator + (cHospital h,  cPaciente& p)

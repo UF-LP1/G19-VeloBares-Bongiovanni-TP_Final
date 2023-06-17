@@ -53,8 +53,7 @@ string cFabricante::To_stringfabricante()
 {
 	string auxpaciente = this->getnombredefabricante() + this->getdirecciondefabricante();
 	
-	return auxpaciente;
-	
+	return auxpaciente;	
 }
 
 int cFabricante::recibirsolicitud()

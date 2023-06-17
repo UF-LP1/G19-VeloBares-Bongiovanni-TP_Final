@@ -22,7 +22,7 @@ string cMedico::getapellidomedico()
 	return this->apellidomedico;
 }
 
-string cMedico::getmatricula() 
+const string cMedico::getmatricula() 
 {
 	return this->matricula;
 }
@@ -74,7 +74,7 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
-	 if (ortopedia.getstock() = 0)
+	 if (ortopedia.getstock() = 0) //chequear esto
 	 {
 		 fabricante.hacerprotesis(p, m, pro);
 	 }

@@ -19,7 +19,7 @@ public:
 	~cMedico();
 	string getnombremedico();
 	string getapellidomedico();
-	string getmatricula();
+	const string getmatricula();
 	vector <cProtesis> getlista();
 	string To_stringmedico();
 	cProtesis buscarprotesis(unsigned int codigoprotesisabuscar);

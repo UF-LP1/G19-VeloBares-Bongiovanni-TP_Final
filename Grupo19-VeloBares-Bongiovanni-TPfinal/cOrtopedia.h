@@ -13,7 +13,7 @@ public:
 	~cOrtopedia();
 	unsigned int getstock();
 	string getnombreortopedia();
-	void setdireccionortopedia(string direccionortopedia);
+	void setdireccionortopedia(string direccionortopedia1);
     string To_stringortopedia();
 
 private:

@@ -17,7 +17,7 @@ public:
 	cHospital* gethospital();
 	cMedico* getmedico();
 	time_t getfechasolicitud();
-	void setfechaentrega(time_t fechaentrega);
+	void setfechaentrega(time_t fechaentrega1);
 	cProtesis* getprotesis();
 	cPaciente* getpaciente();
 	string To_stringregistro();

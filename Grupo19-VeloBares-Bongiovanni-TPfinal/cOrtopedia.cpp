@@ -24,8 +24,9 @@ string cOrtopedia::getnombreortopedia()
 	return this->nombreortopedia;
 }
 
-void cOrtopedia::setdireccionortopedia(string direccionortopedia)
+void cOrtopedia::setdireccionortopedia(string direccionortopedia1)
 {
+	this->direccionortopedia = direccionortopedia1;
 	return;
 }
 

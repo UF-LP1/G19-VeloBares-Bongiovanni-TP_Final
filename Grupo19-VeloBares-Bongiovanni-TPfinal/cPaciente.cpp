@@ -44,8 +44,9 @@ int cPaciente::getproblema()
 	return valor;
 }
 
-void cPaciente::settelefonocontacto(unsigned int telefonocontacto)
+void cPaciente::settelefonocontacto(unsigned int telefonocontacto1)
 {
+	this->telefonocontacto = telefonocontacto1;
 	return;
 }
 
