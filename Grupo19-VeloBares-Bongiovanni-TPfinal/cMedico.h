@@ -5,7 +5,6 @@
 #include "cProtesis.h"
 #include "cOrtopedia.h"
 #include "cFabricante.h"
-#include "cHospital.h"//medico y hospital se tiene ambos 
 using namespace std;
 #ifndef _CQMEDICO_H
 #define _CMEDICO_H*

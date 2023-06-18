@@ -115,8 +115,7 @@ int main()
         if (Madison->buscarpaciente(codigopaciente__, *MisPacientes[Pa]) == *MisPacientes[Pa]->getcodigopaciente())
         {
                  Richard->recetarprotesis(*MisPacientes[Pa], *Ortopedia, *Raul, *MisProtesis[Pro], *Richard); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
-        }
-       
+        } 
 
     }
 

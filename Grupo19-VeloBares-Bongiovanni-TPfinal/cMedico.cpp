@@ -65,16 +65,17 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 	else
 	{
 		m.llamarfabricante(fabricante, o, pte, m, pro);
-		pro=fabricante.hacerprotesis( pte,  m,  pro);
-		return{ pro }; //devuelvo la protesis nueva recien fabricada por el fabricante
-		//tengo que devolver null si no la hizo
+		pro* = fabricante.hacerprotesis(pte, m, pro);
+		return{ pro }; 
+		if(pro==nullptr)//devuelvo la protesis nueva recien fabricada por el fabricante
+		throw exception("No se pudo recetar la protesis");
 	}
 		
 }
 
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
-	 if (ortopedia.getstock() = 0) //chequear esto
+	 if (ortopedia.getstock() <= 0) //chequear esto
 	 {
 		 fabricante.hacerprotesis(p, m, pro);
 	 }

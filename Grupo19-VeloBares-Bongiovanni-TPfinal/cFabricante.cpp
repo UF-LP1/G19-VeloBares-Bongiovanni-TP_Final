@@ -37,7 +37,8 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 		}
 
 		else
-			return p; //null ntiene que ser 
+			return p;
+		throw exception("No se puede otorgar la protesis solicitada"); //null ntiene que ser 
 	}
 	return p;
 }
