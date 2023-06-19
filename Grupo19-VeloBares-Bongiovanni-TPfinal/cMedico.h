@@ -23,8 +23,6 @@ public:
 	vector<cProtesis> posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
 	cProtesis recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante &fabricante, cProtesis pro, cMedico m);
 	void llamarfabricante (cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro);
-	bool entregadas(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m);
-	bool solicitadas(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m);	
 
 private:
 	vector <cProtesis*> vectorpr;

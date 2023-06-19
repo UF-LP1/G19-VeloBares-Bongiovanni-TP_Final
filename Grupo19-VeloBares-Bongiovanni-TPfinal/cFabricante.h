@@ -12,7 +12,7 @@ public:
 	~cFabricante();
 	string getnombredefabricante();
 	string getdirecciondefabricante();
-	cProtesis* hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
+	cProtesis hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
 	string To_stringfabricante();
 	int recibirsolicitud();//recibe solicitud y la rechaza o no
 

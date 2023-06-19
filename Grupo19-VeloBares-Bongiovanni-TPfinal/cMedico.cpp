@@ -27,9 +27,9 @@ const string cMedico::getmatricula()
 	return this->matricula;
 }
 
-vector<cProtesis> cMedico::getlista()
+vector <cProtesis*> cMedico::getlista()
 {
-	return vector<cProtesis>();
+	return vector<cProtesis*>();
 }
 
 vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
@@ -77,7 +77,6 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fab
 	}
 	
 }
-
 	
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
@@ -100,11 +99,11 @@ string cMedico::To_stringmedico()
 {
 	string auxmedico = this-> getnombremedico()+ this-> getapellidomedico() + this->getmatricula();
 
-	vector <cProtesis> aux1 = this->getlista();
+	vector <cProtesis*> aux1 = this->getlista();
 
 	for (int i = 0; i < this->getlista().size(); i++)
 	{
-		auxmedico += aux1[i].To_stringprotesis(); 
+		auxmedico += aux1[i].To_stringprotesis();
 	}
 
 	return auxmedico;

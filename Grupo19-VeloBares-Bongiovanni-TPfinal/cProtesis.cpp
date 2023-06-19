@@ -8,7 +8,10 @@ cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, 
 	this-> fechadefabricacion =  fechadefabricacion_;
 	this->codigo = codigo_;
 }
+cProtesis::cProtesis()
+{
 
+}
 cProtesis::~cProtesis()
 {
 }
