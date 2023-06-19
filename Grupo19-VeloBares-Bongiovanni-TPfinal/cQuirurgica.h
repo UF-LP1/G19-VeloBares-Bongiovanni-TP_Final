@@ -1,8 +1,6 @@
 #pragma once
 #include "cProtesis.h"
 #include "ladoenum.h"
-#ifndef _CQUIRURGICA_H
-#define _CQUIRURGICA_H*
 
 class cQuirurgica :
     public cProtesis
@@ -21,4 +19,4 @@ private:
     static time_t  tiemporecupQ;
 };
 
-#endif 
+

@@ -1,7 +1,7 @@
 #include "cMedico.h"
 using namespace std;
 
-cMedico::cMedico(vector <cProtesis> vectorpr_, string nombremedico_, string apellidomedico_, const string matricula_):  matricula(matricula_)//inicializo matricula con lista de inicializacion
+cMedico::cMedico(vector <cProtesis*> vectorpr_, string nombremedico_, string apellidomedico_, const string matricula_):  matricula(matricula_)//inicializo matricula con lista de inicializacion
 {
 	this->vectorpr = vectorpr_; 
 	this->nombremedico = nombremedico_;
@@ -34,19 +34,19 @@ vector<cProtesis> cMedico::getlista()
 
 vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
 {
-	string radio = pte.getradio();																						 //los primeros son de la funcion recetar y los ultimos son de llamarprot 
+	string radio = pte.getradio(); //los primeros son de la funcion recetar y los ultimos son de llamarprot 
 	bool alergia = pte.getalergias();
 	vector<cProtesis> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
 	int valor = pte.getproblema(); //si es par es quirurgica, pero de que me sirve saber?
 
 	if (!posiblesprotesis.empty())
 	{
-		for (cProtesis& p : vectorpr) //SINTAXIS DEL FOR PARA LOS VECTOR.
+		for (int i = 0; i < vectorpr.size(); i++) //SINTAXIS DEL FOR PARA LOS VECTOR.
 		{
-			if ((p.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
+			if ((pro.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
 
 			{
-				posiblesprotesis.push_back(p);
+				posiblesprotesis.push_back(pro);
 			}
 		}
 	}
@@ -68,7 +68,7 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fab
 	else
 	{
 		m.llamarfabricante(fabricante, o, pte, m, pro);
-		cProtesis* prot = &fabricante.hacerprotesis(pte, m, pro);
+		cProtesis* prot = fabricante.hacerprotesis(pte, m, pro);
 		return { *prot };
 		if (prot == nullptr) {
 			posiblesprotesis = nullptr;
@@ -81,7 +81,7 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fab
 	
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
-	 if (ortopedia.getstock() <= 0) //chequear esto
+	 if (ortopedia.getstock() <= 0) 
 	 {
 		 fabricante.hacerprotesis(p, m, pro);
 	 }
@@ -114,8 +114,8 @@ cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar )
 {
 	for (int i = 0; i < vectorpr.size(); i++)
 	{
-		if (codigoprotesisabuscar == vectorpr[i].getcodigo())
-			return vectorpr[i];
+		if (codigoprotesisabuscar == vectorpr[i]->getcodigo())
+			return *vectorpr[i];
 		break;
 	}
 	return;

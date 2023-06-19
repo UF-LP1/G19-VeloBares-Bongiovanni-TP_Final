@@ -60,7 +60,7 @@ vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una 
  };
 vector<string> fabricante = {
 "Sofía", "Luis", "Valentina", "Diego", "Lucía", "Carlos", "Isabella", "Juan", "Camila", "Miguel", "María", "Alejandro", "Ana", "Gabriel", "Valeria", "Pedro", "Fernanda", "Andrés", "Laura", "Javier", "Paula", "Raúl", "Daniela", "Gonzalo", "Carolina", "Jorge", "Adriana", "José", "Elena", "Fernando", "Olivia", "Emilio", "Renata", "Sebastián", "Clara", "Ricardo", "Sara", "Hugo", "Catalina", "Matías", "Gabriela", "Andrés", "Isabel", "Esteban", "Martina", "Ignacio", "Victoria", "Mario", "Julia", "Óscar", "Emily", "Rodrigo", "Abril", "Alberto", "René", "Guillermo", "Natalia", "Tomás", "Alicia", "Emmanuel", "Antonella"
- };3
+ };
 
 
  vector<unsigned int> codigo = {
@@ -81,55 +81,60 @@ vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero una "
 }
 
 int main()
-{
+{ 
+  
     srand(time(NULL)); //simulacion todo randommm
     vector <cPaciente*> MisPacientes = generador_pacientes(5);
     vector <cProtesis*> MisProtesis = generador_protesis(5);
-    vector <cMedico> medico;
-    vector <cHospital> hospital;
-    vector <cOrtopedia> ortopedia;
+    vector <cMedico*> medico;
+    vector <cHospital*> hospital;
+    vector <cOrtopedia*> ortopedia;
+
+    int Pa = rand() % MisPacientes.size();
+    int Pro = rand() % MisProtesis.size();
 
     time_t fechasolicitud = time(NULL);
     time_t fechaotorgamiento = time(NULL);
     cHospital *santacruz;
     cMedico* leximissyou;
 
-    cMedico* Richard = new cMedico( &MisProtesis[0], "Richard", "Gomez", "35356362");
-    cHospital* Madison = new cHospital("Madison", "av Santa Fe", &medico, &MisPacientes);
+    cMedico* Richard = new cMedico(MisProtesis, "Richard", "Gomez", "42500"); //VA EN EL ORDEN DEL CONSTRUCTOR DE LA PARTE PUBLIC
+    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes); 
     cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
-    cOrtopedia* Ortopedia = new cOrtopedia (3, "Ortopediahappyplace", "av Corrientes");
-    cRegistro* Registro = new cRegistro(&santacruz, &leximissyou, fechasolicitud, fechaotorgamiento, MisProtesis, MisPacientes); 
+    cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes", 3 );
+    cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
+
     unsigned int codigopaciente__;
-
-    int Pa = rand() % MisPacientes.size();
-    int Pro = rand() % MisProtesis.size();
-
-    Richard->recetarprotesis(*MisPacientes[Pa], *Ortopedia, *Raul, *MisProtesis[Pro], *Richard);
-    Raul->hacerprotesis(*MisPacientes[Pa], *Richard , *MisProtesis[Pro]);
-
-    Madison->buscarpaciente(codigopaciente__, *MisPacientes[Pa]);
-    Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa], *MisProtesis[Pa]);
-
-    ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopedia, *Raul);
-
-    ostream& operator<<(ostream & out, cPaciente & paciente);
-    MisProtesis->imprimirprotesis();
-    
-    while (!(MisPacientes.empty())) // mientras hayan pacientes se va a dar todo lo siguiente...
+     
+    while (!(MisPacientes.empty())) //mientras hayan pacientes se va a dar todo lo siguiente...
     {
-        if (Madison->buscarpaciente(codigopaciente__, *MisPacientes[Pa]) == *MisPacientes[Pa]->getcodigopaciente())
+    
+        if (&Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa])
         {
-                 Richard->recetarprotesis(*MisPacientes[Pa], *Ortopedia, *Raul, *MisProtesis[Pro], *Richard); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
+            /*cout << "Desea agregar un paciente ? Si es asi, ingrese su codigo" << endl;
+            cin >> codigopaciente__;
+            Madison->agregarpaciente(*Madison, *MisPacientes[Pa]);*/
+
+            cout << "Desea eliminar un paciente ? Si es asi, ingrese su codigo" << endl;
+            cin >> codigopaciente__;
+
+            Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
+
+            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro], *Richard); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
         } 
 
     }
+
+    ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, *Raul);
+    cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
+    cProtesis imprimirprotesis();
 
     delete Richard;
     delete Madison;
     delete Raul;
     delete ANPA;
-    delete Ortopedia;
+    delete Ortopediahappyplace;
     delete Registro;
 
 	return 0;

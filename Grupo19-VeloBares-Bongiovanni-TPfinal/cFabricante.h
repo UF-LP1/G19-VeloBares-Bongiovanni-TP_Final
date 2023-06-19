@@ -4,8 +4,6 @@
 #include "cProtesis.h"
 #include "cPaciente.h"
 using namespace std;
-#ifndef _CFABRICANTE_H
-#define _CFABRICANTE_H*
 
 class cFabricante
 {
@@ -14,7 +12,7 @@ public:
 	~cFabricante();
 	string getnombredefabricante();
 	string getdirecciondefabricante();
-	cProtesis hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
+	cProtesis* hacerprotesis(cPaciente pte, cMedico m, cProtesis p);
 	string To_stringfabricante();
 	int recibirsolicitud();//recibe solicitud y la rechaza o no
 
@@ -25,4 +23,4 @@ private:
 };
 
 ostream& operator<<(ostream& out, cFabricante& fabricante);
-#endif
+

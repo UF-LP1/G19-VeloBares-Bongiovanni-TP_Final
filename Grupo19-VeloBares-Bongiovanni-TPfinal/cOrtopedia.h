@@ -2,8 +2,6 @@
 #include "cFabricante.h"
 #include <string>
 using namespace std;
-#ifndef _CORTOPEDIAA_H
-#define _CORTOPEDIA_H*
 
 class cOrtopedia
 {
@@ -24,4 +22,3 @@ private:
 };
 
 ostream& operator<<(ostream& out, cOrtopedia& ortopedia);
-#endif

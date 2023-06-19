@@ -1,8 +1,6 @@
 #pragma once
 #include "cProtesis.h"
 #include "ladoenum.h"
-#ifndef _CNOQUIRURGICA_H
-#define _CNOQUIRURGICA_H*
 
 class cNoquirurgica : public cProtesis 
 {
@@ -20,4 +18,4 @@ private:
     lado ladoprotesis;
     static time_t  tiemporecupNQ;
 };
-#endif
+

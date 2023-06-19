@@ -4,9 +4,6 @@
 #include "cPaciente.h" //medico que esta en hospital, tiene a paciente, esta bien que este aca?
 #include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
 #include "cMedico.h"//si no pngo, no toma cMedico en los atributos
-using namespace std;
-#ifndef _CREGISTRO_H
-#define _CREGISTRO_H*
 
 class cRegistro
 {
@@ -21,7 +18,7 @@ public:
 	cProtesis* getprotesis();
 	cPaciente* getpaciente();
 	string To_stringregistro();
-	void crearregistro(cProtesis protesisquetiene, cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m);
+	void crearregistro(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m);
 
 private:
 	cHospital *hospital;
@@ -34,6 +31,5 @@ private:
 
 };
 
-ostream& operator<<(ostream& out, cRegistro& registro);
-#endif
+
 

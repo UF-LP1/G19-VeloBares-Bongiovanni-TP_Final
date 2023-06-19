@@ -1,7 +1,7 @@
 #include "cANPA.h"
 using namespace std;
 
-cANPA::cANPA(vector <cOrtopedia> ortopediaa_, vector <cHospital> hospitall_)
+cANPA::cANPA(vector <cOrtopedia*> ortopediaa_, vector <cHospital*> hospitall_)
 {
 	this-> ortopediaa= ortopediaa_;
 	this-> hospitall= hospitall_;
@@ -48,14 +48,14 @@ string cANPA::To_stringanpa()
 }
 
 
-void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis protesisquetiene)
+void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
 {
 	vector <cRegistro*> listado;
 	do
 	{
+		registro.crearregistro(pte, o, fabricante, protesis, m);
         //para que el anpa tenga el registro de la lista
-		listado.crearregistro(protesisquetiene, pte, o, fabricante, protesis, m);
-		listado->crearregistro(protesisquetiene, pte, o, fabricante, protesis, m).push_back();
+		listado.push_back(&registro);
 
 	} while (true);
     

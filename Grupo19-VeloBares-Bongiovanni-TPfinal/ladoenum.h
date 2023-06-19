@@ -1,5 +1,4 @@
-#ifndef _CLADOENUM_H
-#define _CLADOENUM_H*
+
 
 enum lado
 {
@@ -9,7 +8,7 @@ enum lado
     InferiorIzquierda
 };
 
-#endif
+
 
 
 

@@ -72,7 +72,7 @@ string cRegistro::To_stringregistro()
 	return auxregistro;
 }
 
-void cRegistro::crearregistro(cProtesis protesisquetiene, cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m)
+void cRegistro::crearregistro(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m)
 {
 	string nombrepaciente = paciente->getnombrepaciente();
 	string nombremedico = medico->getnombremedico();

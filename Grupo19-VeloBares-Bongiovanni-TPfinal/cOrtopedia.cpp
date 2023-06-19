@@ -1,8 +1,6 @@
 #include "cOrtopedia.h"
 #include <iostream>
 
-
-
 cOrtopedia::cOrtopedia( string nombreortopedia_, string direccionortopedia_, unsigned int cantidadstock_)
 {
 	this->nombreortopedia = nombreortopedia_;

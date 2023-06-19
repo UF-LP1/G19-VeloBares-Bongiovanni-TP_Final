@@ -21,8 +21,9 @@ string cFabricante::getdirecciondefabricante()
 	return this->direccionfabricante;
 }
 
-cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
-{
+cProtesis* cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
+{ 
+	cProtesis* protesisfinal;
 	int rechazo = recibirsolicitud(); //si es par no la rechaza
 	string radio = pte.getradio(); //guardo el radio
 	bool alergia = pte.getalergias(); //guardo las alergias
@@ -30,17 +31,17 @@ cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
 	
 	for (int i =0; i<vectorpr.size(); i++)
 	{
-		if ((p.getdimensiones() == radio) && !alergia && rechazo%2==0) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
+		if ((p.getdimensiones() == radio) && !alergia && rechazo % 2 == 0) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
 		{
-			p = vectorpr.at(i);
+			*protesisfinal = vectorpr.at(i);
 			break;
 		}
 
 		else
-			return p;
-		throw exception("No se puede otorgar la protesis solicitada"); //null ntiene que ser 
+			protesisfinal = nullptr;
+			return protesisfinal;
 	}
-	return p;
+
 }
 	
 ostream& operator<<(ostream& out, cFabricante& fabricante)

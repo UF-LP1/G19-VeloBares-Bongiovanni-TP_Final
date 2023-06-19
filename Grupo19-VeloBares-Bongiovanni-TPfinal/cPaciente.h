@@ -4,8 +4,6 @@
 #include <string>
 #include <iostream>
 using namespace std;
-#ifndef _CPACIENTE_H
-#define _CPACIENTE_H*
 
 class cPaciente
 {
@@ -26,7 +24,6 @@ public:
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento1);
 	string To_stringpaciente();
-	//Buscar pacientes que ya poseen prótesis según la prótesis o el hospital
 
 private:
 
@@ -42,4 +39,3 @@ private:
 };
 
 ostream& operator << (ostream& out, cPaciente& pac);
-#endif

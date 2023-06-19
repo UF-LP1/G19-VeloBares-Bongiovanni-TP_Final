@@ -4,8 +4,6 @@
 #include "cNoquirurgica.h" //SI NO PONEMOS LOS .H DE LAS HIJAS, NO LO TOMA
 #include "cQuirurgica.h" // NO NOS GUSTA LA RECURSIVIDAD PERO SINO NO PODEMOS AVANZAR.
 using namespace std;
-#ifndef _CPROTESIS_H
-#define _CPROTESIS_H*
 
 class cProtesis
 {
@@ -33,5 +31,5 @@ protected:
 
 };
 
-#endif
+
 
