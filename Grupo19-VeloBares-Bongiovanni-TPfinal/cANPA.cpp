@@ -48,9 +48,17 @@ string cANPA::To_stringanpa()
 }
 
 
-void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
+void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis protesisquetiene)
 {
-	registro.listasdeprotesis( protesis,  m,  pte,  o,  fabricante); //para que el anpa tenga el registro de la lista
+	vector <cRegistro*> listado;
+	do
+	{
+        //para que el anpa tenga el registro de la lista
+		listado.crearregistro(protesisquetiene, pte, o, fabricante, protesis, m);
+		listado->crearregistro(protesisquetiene, pte, o, fabricante, protesis, m).push_back();
+
+	} while (true);
+    
 	return;
 }
 

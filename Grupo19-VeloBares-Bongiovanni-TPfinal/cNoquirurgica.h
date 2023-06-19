@@ -12,9 +12,12 @@ public:
     void ajustardimensiones();
     string To_stringno();
     void imprimirprotesis();
+    void recuperacionNOquirurgica(time_t tiemporecupNQ);
+
 
 private: 
-   
+
     lado ladoprotesis;
+    static time_t  tiemporecupNQ;
 };
 #endif

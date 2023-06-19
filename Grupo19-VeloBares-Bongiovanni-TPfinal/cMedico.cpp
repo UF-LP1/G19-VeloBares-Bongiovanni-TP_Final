@@ -55,7 +55,7 @@ vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricant
 
 	return posiblesprotesis;
 }
-
+// van muchas cosas en las funciones porque no tengo punteros. en registros no es asi pues tiene todo ptr
 cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m)
 {
 	cProtesis *posiblesprotesis;
@@ -75,13 +75,10 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fab
 			return *posiblesprotesis;
 		}
 	}
-		
+	
 }
-		//
-		//
-		//return{ pro }; 
-		//if(pro==nullptr)//devuelvo la protesis nueva recien fabricada por el fabricante
-		//throw exception("No se pudo recetar la protesis");
+
+	
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
 	 if (ortopedia.getstock() <= 0) //chequear esto

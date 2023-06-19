@@ -13,11 +13,12 @@ public:
     void norechazo(bool alergias);
     void imprimirprotesis();
     string To_stringq();
+    void recuperacionquirurgica(time_t tiemporecupQ);
 
 private:
   
     lado ladoprotesis;
-
+    static time_t  tiemporecupQ;
 };
 
 #endif 

@@ -12,7 +12,7 @@ class cRegistro
 {
 public:
 	friend class cHospital;
-	cRegistro(cHospital *hospital_, cMedico *medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis *protesis_, cPaciente *paciente_); 
+	cRegistro(cHospital *hospital_, cMedico *medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis *protesis_, cPaciente *paciente_, bool entregado_); 
 	~cRegistro();
 	cHospital* gethospital();
 	cMedico* getmedico();
@@ -21,7 +21,7 @@ public:
 	cProtesis* getprotesis();
 	cPaciente* getpaciente();
 	string To_stringregistro();
-	void listasdeprotesis(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante);
+	void crearregistro(cProtesis protesisquetiene, cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m);
 
 private:
 	cHospital *hospital;
@@ -30,6 +30,7 @@ private:
 	time_t fechaentrega;
 	cProtesis *protesis;
 	cPaciente *paciente;
+	bool entregado;
 
 };
 

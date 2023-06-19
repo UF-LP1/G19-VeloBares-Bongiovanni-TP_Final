@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include "cPaciente.h"
-#include "cNoquirurgica.h"
+#include "cNoquirurgica.h" //SI NO PONEMOS LOS .H DE LAS HIJAS, NO LO TOMA
+#include "cQuirurgica.h" // NO NOS GUSTA LA RECURSIVIDAD PERO SINO NO PODEMOS AVANZAR.
 using namespace std;
 #ifndef _CPROTESIS_H
 #define _CPROTESIS_H*
@@ -21,7 +22,7 @@ public:
 	void setfechafabricacion(time_t fechadefabricacion1);
 	virtual void imprimirprotesis();
 	string To_stringprotesis();
-	//cProtesis tipoprotesis(cProtesis p, vector <cProtesis>* vectorpr);
+	void tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
 
 protected:
 	string dimensiones;

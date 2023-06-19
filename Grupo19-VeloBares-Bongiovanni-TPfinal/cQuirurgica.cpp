@@ -29,9 +29,14 @@ string cQuirurgica::To_stringq()
 {
 	string auxq = "\0";
 
-	//asi es con herencia?
 	string auxq = this->getdimensiones() + this->getmaterial() + this->getfabricante() + to_string(this->getcodigo());
 
 	return auxq;
+}
+
+void cQuirurgica::recuperacionquirurgica(time_t tiemporecupQ)
+{
+	time_t fechaderecuperacion = time(NULL) + 90; //se va a recuperar en 90 dias a partir de que se apico la protesis
+	return;
 }
 

@@ -1,6 +1,6 @@
 #include "cRegistro.h"
 
-cRegistro::cRegistro(cHospital *hospital_, cMedico *medico_, time_t fechasolicitud_, time_t fechaentrega_, cProtesis *protesis_, cPaciente *paciente_)
+cRegistro::cRegistro(cHospital *hospital_, cMedico *medico_, time_t fechasolicitud_, time_t fechaentrega_, cProtesis *protesis_, cPaciente *paciente_, bool entregado_)
 {
 	this->hospital = hospital_;
 	this->medico = medico_;
@@ -8,6 +8,7 @@ cRegistro::cRegistro(cHospital *hospital_, cMedico *medico_, time_t fechasolicit
 	this->fechaentrega = fechaentrega_;
 	this->protesis = protesis_;
 	this->paciente = paciente_;
+	this->entregado = entregado_;
 }
 
 cRegistro::~cRegistro()
@@ -56,7 +57,7 @@ string cRegistro::To_stringregistro()
 {
 	string auxregistro;
 	
-	time_t getfechasolicitud();//como va el time_t? 
+	time_t getfechasolicitud();
 
 	cHospital *aux1 =  gethospital();
 
@@ -71,10 +72,12 @@ string cRegistro::To_stringregistro()
 	return auxregistro;
 }
 
-void cRegistro::listasdeprotesis(cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
+void cRegistro::crearregistro(cProtesis protesisquetiene, cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m)
 {
-	vector <cProtesis> posiblesprotesis = m.posibilidades(pte,  o,  fabricante,  protesis, m); //lista de solicitadas
-	//cProtesis pro = m.recetarprotesis(pte, o, fabricante, protesis, m); //lista de otorgadas
+	string nombrepaciente = paciente->getnombrepaciente();
+	string nombremedico = medico->getnombremedico();
+	cProtesis protesisquetiene = medico->recetarprotesis( pte,  o,  fabricante,  pro,  m);
+	string nombrehospital = hospital->getnombrehospital();
 
 	return;
 }
