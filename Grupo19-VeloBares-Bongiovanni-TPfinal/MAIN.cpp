@@ -60,7 +60,8 @@ vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una 
  };
 vector<string> fabricante = {
 "Sofía", "Luis", "Valentina", "Diego", "Lucía", "Carlos", "Isabella", "Juan", "Camila", "Miguel", "María", "Alejandro", "Ana", "Gabriel", "Valeria", "Pedro", "Fernanda", "Andrés", "Laura", "Javier", "Paula", "Raúl", "Daniela", "Gonzalo", "Carolina", "Jorge", "Adriana", "José", "Elena", "Fernando", "Olivia", "Emilio", "Renata", "Sebastián", "Clara", "Ricardo", "Sara", "Hugo", "Catalina", "Matías", "Gabriela", "Andrés", "Isabel", "Esteban", "Martina", "Ignacio", "Victoria", "Mario", "Julia", "Óscar", "Emily", "Rodrigo", "Abril", "Alberto", "René", "Guillermo", "Natalia", "Tomás", "Alicia", "Emmanuel", "Antonella"
- };
+ };3
+
 
  vector<unsigned int> codigo = {
 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059
@@ -88,12 +89,17 @@ int main()
     vector <cHospital> hospital;
     vector <cOrtopedia> ortopedia;
 
-    cMedico* Richard = new cMedico( MisProtesis, "Richard", "Gomez","35356362");
-    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes);
+    time_t fechasolicitud = time(NULL);
+    time_t fechaotorgamiento = time(NULL);
+    cHospital *santacruz;
+    cMedico* leximissyou;
+
+    cMedico* Richard = new cMedico( &MisProtesis[0], "Richard", "Gomez", "35356362");
+    cHospital* Madison = new cHospital("Madison", "av Santa Fe", &medico, &MisPacientes);
     cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
-    cOrtopedia* Ortopedia = new cOrtopedia("Ortopedia", "av Corrientes");
-    cRegistro* Registro = new cRegistro(hospital, medico, MisProtesis, MisPacientes); //time_t fechadesolicitud; time_t fechaentrega;
+    cOrtopedia* Ortopedia = new cOrtopedia (3, "Ortopediahappyplace", "av Corrientes");
+    cRegistro* Registro = new cRegistro(&santacruz, &leximissyou, fechasolicitud, fechaotorgamiento, MisProtesis, MisPacientes); 
     unsigned int codigopaciente__;
 
     int Pa = rand() % MisPacientes.size();

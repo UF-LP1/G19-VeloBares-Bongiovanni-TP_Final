@@ -39,21 +39,24 @@ vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricant
 	vector<cProtesis> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
 	int valor = pte.getproblema(); //si es par es quirurgica, pero de que me sirve saber?
 
-	// CHEQUEAR QUE ESTE EN EMPTY EL NUEVO VECTOR Y QUE NO TENGA BASURA.
-
-	for (cProtesis& p : vectorpr) //SINTAXIS DEL FOR PARA LOS VECTOR.
+	if (!posiblesprotesis.empty())
 	{
-		if ((p.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
-
+		for (cProtesis& p : vectorpr) //SINTAXIS DEL FOR PARA LOS VECTOR.
 		{
-			posiblesprotesis.push_back(p);
+			if ((p.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
+
+			{
+				posiblesprotesis.push_back(p);
+			}
 		}
 	}
+	else
+		posiblesprotesis.clear();
 
 	return posiblesprotesis;
 }
 
-cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
+cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m)
 {
 	cProtesis *posiblesprotesis;
 	if (!posibilidades( pte,  o,  fabricante,  pro,  m).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
@@ -65,14 +68,20 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 	else
 	{
 		m.llamarfabricante(fabricante, o, pte, m, pro);
-		pro* = fabricante.hacerprotesis(pte, m, pro);
-		return{ pro }; 
-		if(pro==nullptr)//devuelvo la protesis nueva recien fabricada por el fabricante
-		throw exception("No se pudo recetar la protesis");
+		cProtesis* prot = &fabricante.hacerprotesis(pte, m, pro);
+		return { *prot };
+		if (prot == nullptr) {
+			posiblesprotesis = nullptr;
+			return *posiblesprotesis;
+		}
 	}
 		
 }
-
+		//
+		//
+		//return{ pro }; 
+		//if(pro==nullptr)//devuelvo la protesis nueva recien fabricada por el fabricante
+		//throw exception("No se pudo recetar la protesis");
 void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
  {
 	 if (ortopedia.getstock() <= 0) //chequear esto
