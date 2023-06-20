@@ -11,10 +11,7 @@ cNoquirurgica::~cNoquirurgica()
 {
 }
 
-void cNoquirurgica::ajustardimensiones()
-{
-	return;
-}
+
 
 void cNoquirurgica::imprimirprotesis()
 {

@@ -9,11 +9,6 @@ cQuirurgica::~cQuirurgica()
 {
 }
 
-void cQuirurgica::norechazo(bool alergias)
-{
-	bool getalergias();
-	string getmaterial();	
-}
 
 void cQuirurgica::imprimirprotesis()
 {

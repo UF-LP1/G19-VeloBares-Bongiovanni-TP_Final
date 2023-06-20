@@ -1,6 +1,5 @@
 #include <vector>
 #include <string>
-#include <stack>
 #include <iostream>
 #include "iostream"
 #include "cProtesis.h"
@@ -81,8 +80,7 @@ vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero una "
 }
 
 int main()
-{ 
-  
+{
     srand(time(NULL)); //simulacion todo randommm
     vector <cPaciente*> MisPacientes = generador_pacientes(5);
     vector <cProtesis*> MisProtesis = generador_protesis(5);

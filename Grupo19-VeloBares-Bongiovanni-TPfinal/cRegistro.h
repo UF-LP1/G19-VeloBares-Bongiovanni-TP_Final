@@ -8,7 +8,7 @@
 class cRegistro
 {
 public:
-	friend class cHospital;
+	/*friend class cHospital;*/
 	cRegistro(cHospital *hospital_, cMedico *medico_,time_t fechasolicitud_, time_t fechaentrega_,  cProtesis *protesis_, cPaciente *paciente_, bool entregado_); 
 	~cRegistro();
 	cHospital* gethospital();
