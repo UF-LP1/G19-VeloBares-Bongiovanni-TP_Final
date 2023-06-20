@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
-#include "cPaciente.h"
-#include "cNoquirurgica.h" //SI NO PONEMOS LOS .H DE LAS HIJAS, NO LO TOMA
-#include "cQuirurgica.h" // NO NOS GUSTA LA RECURSIVIDAD PERO SINO NO PODEMOS AVANZAR.
+#include "cNoquirurgica.h"
+#include "cQuirurgica.h"
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class cProtesis

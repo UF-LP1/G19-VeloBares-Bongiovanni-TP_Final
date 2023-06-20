@@ -1,9 +1,6 @@
 #pragma once
 #include <string>
-#include "cProtesis.h"
-#include "cPaciente.h" //medico que esta en hospital, tiene a paciente, esta bien que este aca?
-#include "cHospital.h"//si esto esta aca, el friend no hay que sacar? 
-#include "cMedico.h"//si no pngo, no toma cMedico en los atributos
+#include "cHospital.h"
 
 class cRegistro
 {

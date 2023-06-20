@@ -11,8 +11,6 @@ cNoquirurgica::~cNoquirurgica()
 {
 }
 
-
-
 void cNoquirurgica::imprimirprotesis()
 {
 	cout << this->getdimensiones() << endl;

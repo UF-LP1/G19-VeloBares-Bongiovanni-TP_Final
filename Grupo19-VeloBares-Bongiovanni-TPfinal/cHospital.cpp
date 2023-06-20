@@ -44,7 +44,7 @@ void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
 		cPaciente eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
 		for (int i = 0; i < vectorpa.size(); i++)
 		{
-			if (eliminado.codigopaciente == vectorpa.at(i)->getcodigopaciente())
+			if (eliminado.getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
 			{
 				vectorpa.erase(vectorpa.begin() + i); //elimino desde el principio, Is posiciones mas de ahi
 				break;

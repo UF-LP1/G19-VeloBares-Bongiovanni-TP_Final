@@ -1,7 +1,7 @@
 #pragma once
 #include <string> 
 #include <vector>
-#include "cMedico.h"//medico y hospital se tiene ambos 
+#include "cMedico.h"
 using namespace std;
 
 class cHospital

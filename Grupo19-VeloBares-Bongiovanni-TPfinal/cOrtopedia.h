@@ -1,5 +1,6 @@
 #pragma once
 #include "cFabricante.h"
+#include "cProtesis.h"
 #include <string>
 using namespace std;
 

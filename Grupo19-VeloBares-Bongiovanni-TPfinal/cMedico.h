@@ -2,9 +2,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "cProtesis.h"
+#include "cPaciente.h"
 #include "cOrtopedia.h"
-#include "cFabricante.h"
 using namespace std;
 
 class cMedico
@@ -21,7 +20,7 @@ public:
 	string To_stringmedico();
 	cProtesis buscarprotesis(unsigned int codigoprotesisabuscar);
 	vector<cProtesis> posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
-	cProtesis recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante &fabricante, cProtesis pro, cMedico m);
+	cProtesis recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m);
 	void llamarfabricante (cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro);
 
 private:

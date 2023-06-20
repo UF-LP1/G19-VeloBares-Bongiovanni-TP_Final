@@ -1,8 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "cProtesis.h"
-#include "cPaciente.h"
+#include "cANPA.h"
 using namespace std;
 
 class cFabricante

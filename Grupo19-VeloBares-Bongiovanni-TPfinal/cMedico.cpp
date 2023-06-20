@@ -56,7 +56,7 @@ vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricant
 	return posiblesprotesis;
 }
 // van muchas cosas en las funciones porque no tengo punteros. en registros no es asi pues tiene todo ptr
-cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante& fabricante, cProtesis pro, cMedico m)
+cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
 {
 	cProtesis *posiblesprotesis;
 	if (!posibilidades( pte,  o,  fabricante,  pro,  m).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
