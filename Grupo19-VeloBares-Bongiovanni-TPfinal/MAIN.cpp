@@ -1,7 +1,6 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include "iostream"
 #include "cProtesis.h"
 #include "cPaciente.h"
 #include "cMedico.h"
@@ -10,6 +9,7 @@
 #include "cFabricante.h"
 #include "cOrtopedia.h"
 #include "cRegistro.h"
+
 using namespace std;
 
 const vector<string> nomPac = { //creamos un vector con nombres de clientes random
