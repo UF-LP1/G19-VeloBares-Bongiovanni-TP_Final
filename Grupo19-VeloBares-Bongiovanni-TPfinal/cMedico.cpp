@@ -32,7 +32,7 @@ vector <cProtesis*> cMedico::getlista()
 	return vector<cProtesis*>();
 }
 
-vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
+vector<cProtesis> cMedico::posibilidades(cPaciente pte, cProtesis pro)
 {
 	string radio = pte.getradio(); //los primeros son de la funcion recetar y los ultimos son de llamarprot 
 	bool alergia = pte.getalergias();
@@ -56,19 +56,19 @@ vector<cProtesis> cMedico::posibilidades(cPaciente pte, cOrtopedia o, cFabricant
 	return posiblesprotesis;
 }
 // van muchas cosas en las funciones porque no tengo punteros. en registros no es asi pues tiene todo ptr
-cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m)
+cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro)
 {
 	cProtesis *posiblesprotesis;
-	if (!posibilidades( pte,  o,  fabricante,  pro,  m).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
+	if (!posibilidades( pte, pro).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
 	{
-		int M = rand() % posibilidades(pte, o, fabricante, pro, m).size();
+		int M = rand() % posibilidades(pte, pro).size();
 		return { posiblesprotesis[M] };
 	}
 	
 	else
 	{
-		m.llamarfabricante(fabricante, o, pte, m, pro);
-		cProtesis* prot = fabricante.hacerprotesis(pte, m, pro);
+		llamarfabricante(fabricante, o);
+		cProtesis* prot = fabricante.hacerprotesis(pte,m, pro); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
 		return { *prot };
 		if (prot == nullptr) {
 			posiblesprotesis = nullptr;
@@ -78,15 +78,15 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 	
 }
 	
-void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia, cPaciente p, cMedico m, cProtesis pro) //lo que tiene tambien la funcion hacerprotesis.
+void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia) //lo que tiene tambien la funcion hacerprotesis.
  {
-	 if (ortopedia.getstock() <= 0) 
+	 if (ortopedia.getstock() < 0) 
 	 {
 		 fabricante.hacerprotesis(p, m, pro);
 	 }
 
 	 return;
- }
+} //para mi esta no va y hay que llamarla directo en el main.
 
 ostream& operator<<(ostream& out, cMedico& medico)
 {

@@ -8,7 +8,7 @@ class cOrtopedia
 {
 public:
 	//friend class cMedico;//asi se si tiene stock!
-	cOrtopedia(string nombreortopedia_, string direccionortopedia_, unsigned int  cantidadstock_);
+	cOrtopedia(string nombreortopedia_, string direccionortopedia_);
 	~cOrtopedia();
 	unsigned int getstock();
 	string getnombreortopedia();
@@ -16,7 +16,7 @@ public:
     string To_stringortopedia();
 
 private:
-	unsigned int cantidadstock;
+	static unsigned int cantidadstock;
 	string nombreortopedia;
 	string direccionortopedia;
 

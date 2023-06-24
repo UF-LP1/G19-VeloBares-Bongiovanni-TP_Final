@@ -21,10 +21,10 @@ string cFabricante::getdirecciondefabricante()
 	return this->direccionfabricante;
 }
 
-cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p)
+cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p, int solicitud)
 { 
 	cProtesis* protesisfinal;
-	int rechazo = recibirsolicitud(); //si es par no la rechaza
+	int rechazo = recibirsolicitud(solicitud); //si es par no la rechaza
 	string radio = pte.getradio(); //guardo el radio
 	bool alergia = pte.getalergias(); //guardo las alergias
 	vector<cProtesis*> vectorpr = m.getlista(); //guardo mi lista de protesis que esta en medicos
@@ -58,8 +58,12 @@ string cFabricante::To_stringfabricante()
 	return auxpaciente;	
 }
 
-int cFabricante::recibirsolicitud()
+int cFabricante::recibirsolicitud (int solicitud)
 {
-	int rechazo = 1 + rand() % 100;
-	return rechazo;
+	if (solicitud % 2 == 0)
+	{
+		return solicitud;
+	}
+	 //CHEQUEAR
+
 }

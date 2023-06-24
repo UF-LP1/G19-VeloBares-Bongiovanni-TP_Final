@@ -100,7 +100,7 @@ int main()
     cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes); 
     cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
-    cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes", 3 );
+    cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes");
     cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
     unsigned int codigopaciente__;
@@ -110,17 +110,17 @@ int main()
     
         if (&Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa])
         {
+            cout << "Desea eliminar ese paciente? Si es asi, ingrese su codigo" << endl;
+            cin >> codigopaciente__;
+            Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
+            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro]); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
+        } 
+        else
+        {
             /*cout << "Desea agregar un paciente ? Si es asi, ingrese su codigo" << endl;
             cin >> codigopaciente__;
             Madison->agregarpaciente(*Madison, *MisPacientes[Pa]);*/
-
-            cout << "Desea eliminar un paciente ? Si es asi, ingrese su codigo" << endl;
-            cin >> codigopaciente__;
-
-            Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
-
-            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro], *Richard); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
-        } 
+        }
 
     }
 
