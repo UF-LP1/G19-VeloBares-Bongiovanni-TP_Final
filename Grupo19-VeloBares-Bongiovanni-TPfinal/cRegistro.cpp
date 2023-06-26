@@ -72,11 +72,11 @@ string cRegistro::To_stringregistro()
 	return auxregistro;
 }
 
-void cRegistro::crearregistro(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, cMedico m, int solicitud)
+void cRegistro::crearregistro(cPaciente pte, cOrtopedia o, cFabricante* fabricante, cProtesis pro, cMedico m, int solicitud)
 {
 	string nombrepaciente = paciente->getnombrepaciente();
 	string nombremedico = medico->getnombremedico();
-	cProtesis* protesisquetiene = medico->recetarprotesis( pte,  o,  fabricante,  pro, solicitud);
+	cProtesis* protesisquetiene = medico->recetarprotesis( pte,  o,  pro,  solicitud, fabricante);
 	string nombrehospital = hospital->getnombrehospital();
 
 	return;

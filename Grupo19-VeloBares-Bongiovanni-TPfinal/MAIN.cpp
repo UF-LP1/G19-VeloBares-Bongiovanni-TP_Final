@@ -1,9 +1,11 @@
 #include <vector>
 #include <string>
+#include <cstdlib>
 #include <iostream>
 #include "cHospital.h"
 #include "cANPA.h"  
 #include "cFabricante.h"
+#include "cProtesis.h"
 
 using namespace std;
 
@@ -61,10 +63,10 @@ vector<string> fabricante = {
 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059
  };
 
-unsigned int randint(unsigned int min, unsigned int max)
-{
-    return rand() % (max - min) + min;
-}
+//unsigned int randint(unsigned int min, unsigned int max)
+//{
+//    return rand() % (max - min) + min;
+//}
 
 vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random
     vector<cProtesis*> MisProtesis;
@@ -98,8 +100,6 @@ int main()
 
     time_t fechasolicitud = time(NULL);
     time_t fechaotorgamiento = time(NULL);
-    cHospital *santacruz;
-    cMedico* leximissyou;
 
     cMedico* Richard = new cMedico(MisProtesis, "Richard", "Gomez", "42500"); //VA EN EL ORDEN DEL CONSTRUCTOR DE LA PARTE PUBLIC
     cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes); 
@@ -108,19 +108,22 @@ int main()
     cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes");
     cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
-    unsigned int codigopaciente__;
-    int solicitud;
+   unsigned int codigopaciente__=0;
+  
      
     while (!(MisPacientes.empty())) //mientras hayan pacientes se va a dar todo lo siguiente...
     {
-    
-        if (&Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa])
-        {
+            cout << "Ingrese el codigo del paciente recien ingresado" << endl;
+            cin >> codigopaciente__;
             cout << "Desea eliminar ese paciente? Si es asi, ingrese su codigo" << endl;
             cin >> codigopaciente__;
+
+        if (Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa])
+        {
+          
             Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
 
-            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro], solicitud); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
+            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace,  *MisProtesis[Pro], 4, Raul); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
         } 
         else
         {
@@ -131,9 +134,9 @@ int main()
 
     }
 
-    ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, *Raul, 6);
+   /* ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, *Raul, 6);
     cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
-    cProtesis imprimirprotesis();
+    cProtesis imprimirprotesis();*/
 
     delete Richard;
     delete Madison;

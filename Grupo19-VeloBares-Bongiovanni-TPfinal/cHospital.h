@@ -14,10 +14,10 @@ public:
 	void setdireccionhospital(string direccionhospital1);
 	vector<cMedico> getvectormedico();
 	vector <cPaciente> getvectorpaciente();
-	void agregarpaciente  (cPaciente p);
+	//void agregarpaciente  (cPaciente p);
 	void eliminarpaciente(unsigned int codigo__, cPaciente p);
 	string To_stringhospital();
-	cPaciente buscarpaciente(unsigned int codigopaciente__);
+	cPaciente* buscarpaciente(unsigned int codigopaciente__);
 
 private:
 	string nombrehospital;

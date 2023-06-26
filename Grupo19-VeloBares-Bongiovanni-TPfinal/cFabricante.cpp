@@ -29,23 +29,22 @@ vector<cProtesis*> cFabricante::getvectorprotesisfab()
 }
 
 cProtesis* cFabricante::hacerprotesis(cPaciente pte, cProtesis p, int solicitud)
-{ 
-	cProtesis* protesisfinal=nullptr;
+{
+	cProtesis* protesisfinal = nullptr;
 	bool rechazo = recibirsolicitud(solicitud); //si es par no la rechaza
 	string radio = pte.getradio(); //guardo el radio
 	bool alergia = pte.getalergias(); //guardo las alergias
-	
-	for (int i =0; i<vectorprfab.size(); i++)
+	int i = 0;
+	while (i < this->vectorprfab.size())
 	{
-		if ((p.getdimensiones() == radio) && !alergia && rechazo==true) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
+		if ((p.getdimensiones() == radio) && !alergia && rechazo == true) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
 		{
-			protesisfinal = vectorprfab.at(i); // si todos los datos que el medico le manda al fabricante coinciden Y acepta la solicitud, entonces se la da
-			break;
+			protesisfinal = this->vectorprfab.at(i); // si todos los datos que el medico le manda al fabricante coinciden Y acepta la solicitud, entonces se la da
+
 		}
-
-			return protesisfinal; // ASUMIMOS QUE EL FABRICANTE SE LA DA SI O SI
+		i++;
 	}
-
+	 return protesisfinal; // ASUMIMOS QUE EL FABRICANTE SE LA DA SI O SI
 }
 	
 ostream& operator<<(ostream& out, cFabricante& fabricante)

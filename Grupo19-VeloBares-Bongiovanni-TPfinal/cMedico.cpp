@@ -56,26 +56,23 @@ vector<cProtesis*> cMedico::posibilidades(cPaciente pte, cProtesis* pro)
 	return { posiblesprotesis };
 }
 
-cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, int solicitud)
+cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o,  cProtesis pro, int solicitud, cFabricante *fabricc)
 { 
-	 int solicitud;
 	 cProtesis* protesisfinal= nullptr;
 	 int M = rand() % posibilidades(pte, &pro).size();
 	 if (!posibilidades(pte, &pro).empty() && (o.getstock() != 0)) //si la lista de posibilidades no esta vacia y hay stock
-	
 	 {
 		 protesisfinal= posibilidades(pte, &pro)[M]; // dame una random total es lo mismo
 	 }
 	
 	else
 	{
-		//llamarfabricante(fabricante, o); NO HACE FALTA ESA FUNCION.
-		cProtesis* prot = fabricante.hacerprotesis(pte, pro, solicitud); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
+		cProtesis* prot = fabricc->hacerprotesis(pte, pro, solicitud); 
 		if (prot != nullptr)
 		{
 			protesisfinal = prot;
-		}
-		
+			
+		}	
 	}
 	 return protesisfinal;
 }
@@ -112,14 +109,15 @@ string cMedico::To_stringmedico()
 	return auxmedico;
 }
 
-cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar)
+cProtesis* cMedico::buscarprotesis(unsigned int codigoprotesisabuscar)
 {
 	for (int i = 0; i < vectorpr.size(); i++)
 	{
 		if (codigoprotesisabuscar == vectorpr[i]->getcodigo())
-			return *vectorpr[i];
+		return vectorpr[i];
 		break;
 	}
+	return nullptr;
 }
 
 void cMedico::tiemporecuperacion(time_t tiemporecup)

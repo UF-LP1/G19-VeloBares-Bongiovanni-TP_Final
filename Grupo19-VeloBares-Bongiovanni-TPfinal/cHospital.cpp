@@ -33,18 +33,18 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return vector<cPaciente>();
 }
 
-void cHospital::agregarpaciente(cPaciente p)
-{ 
-	vectorpa + p;
-	return;
-}
+//void cHospital::agregarpaciente(cPaciente p)
+//{ 
+//	vectorpa + p;
+//	return;
+//}
 
 void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
 {
-		cPaciente eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
+		cPaciente* eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
 		for (int i = 0; i < vectorpa.size(); i++)
 		{
-			if (eliminado.getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
+			if (eliminado->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
 			{
 				vectorpa.erase(vectorpa.begin() + i); //elimino desde el principio, Is posiciones mas de ahi
 				break;
@@ -82,19 +82,17 @@ string cHospital::To_stringhospital()
 	return auxhos; // este tiene en modo string a los vectores de pacientes y medicos con toda su info adentro
 }
 
-cPaciente cHospital::buscarpaciente(unsigned int codigopaciente__) 
+cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__) 
 {
 	for (int i = 0; i < vectorpa.size(); i++) // recorro el vector pacientes...
 	{
 		if (vectorpa.at(i)->getcodigopaciente() == codigopaciente__) // si el codigo de x paciente coincide con el que me dan...
 		{
-			return *vectorpa.at(i); // devuelvo el paciente en esa posicion...
+			return vectorpa.at(i); // devuelvo el paciente en esa posicion...
 		}
-		else
-		{ 
-			return; // HACER EXCPETION
-		}
+		i++;
 	}	
+			return nullptr; // HACER EXCPETION
 }
 
 void operator + (cHospital h,  cPaciente& p)

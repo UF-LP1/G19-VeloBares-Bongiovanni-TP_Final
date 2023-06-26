@@ -21,7 +21,7 @@ void cQuirurgica::imprimirprotesis()
 
 string cQuirurgica::To_stringq()
 {
-	string auxq = "\0";
+	//string auxq /*= "\0"*/;
 
 	string auxq = this->getdimensiones() + this->getmaterial() + this->getfabricante() + to_string(this->getcodigo());
 

@@ -1,15 +1,17 @@
 #include "cOrtopedia.h"
 #include <iostream>
 
-static unsigned int cantidadstock = 0;
+unsigned int cOrtopedia ::cantidadstock = 0;
 cOrtopedia::cOrtopedia( string nombreortopedia_, string direccionortopedia_)
 {
 	this->nombreortopedia = nombreortopedia_;
 	this->direccionortopedia = direccionortopedia_;
+	++cantidadstock;
 }
 
 cOrtopedia::~cOrtopedia()
 {
+	--cantidadstock;
 }
  
 unsigned int cOrtopedia::getstock()
@@ -37,8 +39,6 @@ ostream& operator<<(ostream& out, cOrtopedia& ortopedia)
 
 string cOrtopedia::To_stringortopedia()
 {
-	string auxortopedia = "\0";
-
 	string auxortopedia = this->getnombreortopedia() + to_string(this->getstock());
 
 	return auxortopedia;

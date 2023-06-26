@@ -8,10 +8,10 @@ cProtesis::cProtesis(string dimensiones_, string material_, string fabricante_, 
 	this-> fechadefabricacion =  fechadefabricacion_;
 	this->codigo = codigo_;
 }
-cProtesis::cProtesis()
-{
-
-}
+//cProtesis::cProtesis()
+//{
+//
+//}
 cProtesis::~cProtesis()
 {
 }
@@ -54,7 +54,7 @@ void cProtesis::imprimirprotesis()
 
 string cProtesis::To_stringprotesis()
 {
-	string auxprotesis = "\0";
+	//string auxprotesis /*= "\0"*/;
 
 	string auxprotesis = this->getdimensiones() + this->getmaterial() + this->getfabricante() + to_string(this->getcodigo());
 

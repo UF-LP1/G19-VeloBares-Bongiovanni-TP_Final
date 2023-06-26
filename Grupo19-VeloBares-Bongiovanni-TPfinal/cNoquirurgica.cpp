@@ -28,7 +28,7 @@ void cNoquirurgica::recuperacionNOquirurgica(time_t tiemporecupNQ)
 
 string cNoquirurgica::To_stringno()
 {
-	string auxnoq = "\0";
+	//string auxnoq /*= "\0"*/;
 
 	string auxnoq = this->getdimensiones() + this->getmaterial()+ this->getfabricante() + to_string(this->getcodigo());
 
