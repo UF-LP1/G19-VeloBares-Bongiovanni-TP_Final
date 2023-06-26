@@ -1,14 +1,9 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include "cProtesis.h"
-#include "cPaciente.h"
-#include "cMedico.h"
 #include "cHospital.h"
 #include "cANPA.h"  
 #include "cFabricante.h"
-#include "cOrtopedia.h"
-#include "cRegistro.h"
 
 using namespace std;
 
@@ -114,6 +109,7 @@ int main()
     cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
     unsigned int codigopaciente__;
+    int solicitud;
      
     while (!(MisPacientes.empty())) //mientras hayan pacientes se va a dar todo lo siguiente...
     {
@@ -124,7 +120,7 @@ int main()
             cin >> codigopaciente__;
             Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
 
-            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro]); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
+            Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro], solicitud); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
         } 
         else
         {
@@ -135,7 +131,7 @@ int main()
 
     }
 
-    ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, *Raul);
+    ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, *Raul, 6);
     cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
     cProtesis imprimirprotesis();
 

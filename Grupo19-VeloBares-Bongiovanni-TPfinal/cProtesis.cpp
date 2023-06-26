@@ -61,32 +61,6 @@ string cProtesis::To_stringprotesis()
 	return auxprotesis;
 }
 
-void cProtesis::tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup)
-{
-	for (int i = 0; i < listaprotesis.size(); i++)
-	{
-		cNoquirurgica* auxNQ = dynamic_cast<cNoquirurgica*>(listaprotesis.at(i));
-		if (auxNQ != nullptr)
-		{
-			auxNQ->recuperacionNOquirurgica(tiemporecup);
-
-		}
-	}
-	
-	for (int i = 0; i < listaprotesis.size(); i++)
-	{
-		cQuirurgica* auxQ = dynamic_cast<cQuirurgica*>(listaprotesis.at(i));
-		if (auxQ != nullptr)
-		{
-			auxQ->recuperacionquirurgica(tiemporecup);
-
-		}
-	}
-	return;
-}
-
-
-
 
 
 

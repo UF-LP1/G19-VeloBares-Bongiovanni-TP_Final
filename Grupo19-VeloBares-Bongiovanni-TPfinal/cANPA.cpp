@@ -48,12 +48,12 @@ string cANPA::To_stringanpa()
 }
 
 
-void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante)
+void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante, int solicitud)
 {
 	vector <cRegistro*> listado;
 	do
 	{
-		registro.crearregistro(pte, o, fabricante, protesis, m);
+		registro.crearregistro(pte, o, fabricante, protesis, m, solicitud);
         //para que el anpa tenga el registro de la lista
 		listado.push_back(&registro);
 

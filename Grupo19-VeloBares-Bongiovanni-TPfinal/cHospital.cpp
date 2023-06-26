@@ -33,9 +33,9 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return vector<cPaciente>();
 }
 
-void cHospital::agregarpaciente(cHospital h, cPaciente p)
+void cHospital::agregarpaciente(cPaciente p)
 { 
-	h + p;
+	vectorpa + p;
 	return;
 }
 
@@ -115,7 +115,7 @@ void operator + (cHospital h,  cPaciente& p)
 	return;
 }
 
-void operator - (cHospital h)
+void operator - (cHospital h, cPaciente& p)
 {
 	h.getvectorpaciente().pop_back();
 

@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
-#include "cNoquirurgica.h"
-#include "cQuirurgica.h"
 #include <iostream>
 #include <vector>
+
 using namespace std;
+
 
 class cProtesis
 {
@@ -19,7 +19,6 @@ public:
 	void setfechafabricacion(time_t fechadefabricacion1);
 	virtual void imprimirprotesis();
 	string To_stringprotesis();
-	void tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
 
 protected:
 	string dimensiones;

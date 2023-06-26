@@ -1,11 +1,11 @@
 #pragma once
 #include "cProtesis.h"
-#include "ladoenum.h"
+
 
 class cNoquirurgica : public cProtesis 
 {
 public:
-    cNoquirurgica(string dimensiones_, string material_, string fabricante_, time_t fechafabricacion_, unsigned int codigo_,lado ladoprotesis_);
+    cNoquirurgica(string dimensiones_, string material_, string fabricante_, time_t fechafabricacion_, unsigned int codigo_);
     ~cNoquirurgica();
     string To_stringno();
     void imprimirprotesis();
@@ -14,7 +14,6 @@ public:
 
 private: 
 
-    lado ladoprotesis;
     static time_t  tiemporecupNQ;
 };
 

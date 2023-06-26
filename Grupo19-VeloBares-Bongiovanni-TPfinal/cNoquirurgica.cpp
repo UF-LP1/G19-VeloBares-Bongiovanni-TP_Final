@@ -2,9 +2,8 @@
 
 static time_t tiemporecup_ = 0;
 
-cNoquirurgica::cNoquirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_,lado ladoprotesis_) : cProtesis(dimensiones_, material_, fabricante_, fechadefabricacion_, codigo_)
+cNoquirurgica::cNoquirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_) : cProtesis(dimensiones_, material_, fabricante_, fechadefabricacion_, codigo_)
 {
-	this->ladoprotesis = ladoprotesis_;
 }
 
 cNoquirurgica::~cNoquirurgica()

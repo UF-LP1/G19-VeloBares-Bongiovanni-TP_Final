@@ -56,8 +56,9 @@ vector<cProtesis*> cMedico::posibilidades(cPaciente pte, cProtesis* pro)
 	return { posiblesprotesis };
 }
 
-cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro)
+cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, int solicitud)
 { 
+	 int solicitud;
 	 cProtesis* protesisfinal= nullptr;
 	 int M = rand() % posibilidades(pte, &pro).size();
 	 if (!posibilidades(pte, &pro).empty() && (o.getstock() != 0)) //si la lista de posibilidades no esta vacia y hay stock
@@ -69,7 +70,7 @@ cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fab
 	else
 	{
 		//llamarfabricante(fabricante, o); NO HACE FALTA ESA FUNCION.
-		cProtesis* prot = fabricante.hacerprotesis(pte, pro); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
+		cProtesis* prot = fabricante.hacerprotesis(pte, pro, solicitud); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
 		if (prot != nullptr)
 		{
 			protesisfinal = prot;
@@ -119,4 +120,28 @@ cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar)
 			return *vectorpr[i];
 		break;
 	}
+}
+
+void cMedico::tiemporecuperacion(time_t tiemporecup)
+{
+	for (int i = 0; i < vectorpr.size(); i++)
+	{
+		cNoquirurgica* auxNQ = dynamic_cast<cNoquirurgica*>(vectorpr.at(i));
+		if (auxNQ != nullptr)
+		{
+			auxNQ->recuperacionNOquirurgica(tiemporecup);
+
+		}
+	}
+
+	for (int i = 0; i < vectorpr.size(); i++)
+	{
+		cQuirurgica* auxQ = dynamic_cast<cQuirurgica*>(vectorpr.at(i));
+		if (auxQ != nullptr)
+		{
+			auxQ->recuperacionquirurgica(tiemporecup);
+
+		}
+	}
+	return;
 }

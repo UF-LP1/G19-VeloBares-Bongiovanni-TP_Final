@@ -13,7 +13,7 @@ public:
 	vector <cOrtopedia> getlistao();
 	vector <cHospital>  getlistah();
 	string To_stringanpa();
-	void tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante);
+	void tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante fabricante, int solicitud);
 
 private:
 	vector< cOrtopedia*> ortopediaa;

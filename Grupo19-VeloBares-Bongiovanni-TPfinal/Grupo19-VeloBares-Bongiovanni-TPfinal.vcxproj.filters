@@ -45,9 +45,6 @@
     <ClInclude Include="cNoquirurgica.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ladoenum.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="exception.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -84,9 +81,6 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="MAIN.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="ladoenum.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="exception.cpp">

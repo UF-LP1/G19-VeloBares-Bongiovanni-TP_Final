@@ -5,7 +5,9 @@
 #include "cPaciente.h"
 #include "cProtesis.h"
 #include "cOrtopedia.h"
-//#include "cFabricante.h" // NO DEBERIA ESTAR ACA ESTE PERO SINO COMO HAGO PARA QUE LO TOME? bueno lo borre de fabricante y lo tomo(?
+#include "cNoquirurgica.h"
+#include "cQuirurgica.h"
+#include "cFabricante.h" // NO DEBERIA ESTAR ACA ESTE PERO SINO COMO HAGO PARA QUE LO TOME? bueno lo borre de fabricante y lo tomo(?
 
 using namespace std;
 
@@ -21,8 +23,9 @@ public:
 	string To_stringmedico();
 	cProtesis buscarprotesis(unsigned int codigoprotesisabuscar);
 	vector<cProtesis*> posibilidades(cPaciente pte, cProtesis* pro);
-	cProtesis* recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro);
-	void llamarfabricante (cFabricante fabricante, cOrtopedia ortopedia);
+	cProtesis* recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro, int solicitud);
+	//void llamarfabricante (cFabricante fabricante, cOrtopedia ortopedia);
+	void tiemporecuperacion(time_t tiemporecup);
 
 private:
 	vector <cProtesis*> vectorpr;
