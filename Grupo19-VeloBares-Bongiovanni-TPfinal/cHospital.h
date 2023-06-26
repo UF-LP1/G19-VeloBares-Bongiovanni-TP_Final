@@ -2,6 +2,7 @@
 #include <string> 
 #include <vector>
 #include "cMedico.h"
+#include "cPaciente.h"
 using namespace std;
 
 class cHospital

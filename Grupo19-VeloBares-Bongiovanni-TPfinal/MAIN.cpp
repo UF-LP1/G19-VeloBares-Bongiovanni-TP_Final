@@ -71,7 +71,7 @@ unsigned int randint(unsigned int min, unsigned int max)
     return rand() % (max - min) + min;
 }
 
-vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero una "pila" de pacientes  con todos sus atributos random
+vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random
     vector<cProtesis*> MisProtesis;
     for (unsigned int i = 0; i < cantidad; i++) 
         MisProtesis.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], fabricante[randint(0, fabricante.size())], fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
@@ -79,17 +79,27 @@ vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero una "
     return MisProtesis; //me devuelve la lista de protesis que se crea de manera random
 }
 
+vector<cProtesis*> generador_protesisfabricante(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random PARA EL FABRICANTE
+    vector<cProtesis*> MisProtesisfabricante;
+    for (unsigned int i = 0; i < cantidad; i++)
+        MisProtesisfabricante.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], fabricante[randint(0, fabricante.size())], fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
+
+    return MisProtesisfabricante;
+}
+
 int main()
 {
     srand(time(NULL)); //simulacion todo randommm
     vector <cPaciente*> MisPacientes = generador_pacientes(5);
     vector <cProtesis*> MisProtesis = generador_protesis(5);
+    vector <cProtesis*> MisProtesisfabricante = generador_protesisfabricante(5);
     vector <cMedico*> medico;
     vector <cHospital*> hospital;
     vector <cOrtopedia*> ortopedia;
 
     int Pa = rand() % MisPacientes.size();
     int Pro = rand() % MisProtesis.size();
+    int ProF = rand() % MisProtesisfabricante.size();
 
     time_t fechasolicitud = time(NULL);
     time_t fechaotorgamiento = time(NULL);
@@ -98,7 +108,7 @@ int main()
 
     cMedico* Richard = new cMedico(MisProtesis, "Richard", "Gomez", "42500"); //VA EN EL ORDEN DEL CONSTRUCTOR DE LA PARTE PUBLIC
     cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes); 
-    cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999);
+    cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999, MisProtesisfabricante);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
     cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes");
     cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
@@ -113,6 +123,7 @@ int main()
             cout << "Desea eliminar ese paciente? Si es asi, ingrese su codigo" << endl;
             cin >> codigopaciente__;
             Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
+
             Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *Raul, *MisProtesis[Pro]); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
         } 
         else

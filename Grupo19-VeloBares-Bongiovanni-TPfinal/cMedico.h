@@ -3,14 +3,15 @@
 #include <vector>
 #include <iostream>
 #include "cPaciente.h"
+#include "cProtesis.h"
 #include "cOrtopedia.h"
+//#include "cFabricante.h" // NO DEBERIA ESTAR ACA ESTE PERO SINO COMO HAGO PARA QUE LO TOME? bueno lo borre de fabricante y lo tomo(?
+
 using namespace std;
 
 class cMedico
 {
 public:
-	//friend class cRegistro;
-	//friend class cmedico;//para pasarle la lista de protesis cuando haga la nueva protesis
 	cMedico(vector <cProtesis*> vectorpr_, string nombremedico_, string apellidomedico_, const string matricula_);
 	~cMedico();
 	string getnombremedico();

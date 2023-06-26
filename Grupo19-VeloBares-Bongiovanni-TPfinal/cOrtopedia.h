@@ -1,13 +1,11 @@
 #pragma once
-#include "cFabricante.h"
-#include "cProtesis.h"
 #include <string>
 using namespace std;
 
 class cOrtopedia
 {
 public:
-	//friend class cMedico;//asi se si tiene stock!
+	friend class cMedico;//asi se si tiene stock!
 	cOrtopedia(string nombreortopedia_, string direccionortopedia_);
 	~cOrtopedia();
 	unsigned int getstock();

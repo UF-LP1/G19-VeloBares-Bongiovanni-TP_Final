@@ -55,11 +55,10 @@ vector<cProtesis> cMedico::posibilidades(cPaciente pte, cProtesis pro)
 
 	return posiblesprotesis;
 }
-// van muchas cosas en las funciones porque no tengo punteros. en registros no es asi pues tiene todo ptr
 cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro)
 {
 	cProtesis *posiblesprotesis;
-	if (!posibilidades( pte, pro).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
+	if (!posibilidades (pte, pro).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
 	{
 		int M = rand() % posibilidades(pte, pro).size();
 		return { posiblesprotesis[M] };
@@ -67,7 +66,7 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 	
 	else
 	{
-		llamarfabricante(fabricante, o);
+		//llamarfabricante(fabricante, o); NO HACE FALTA ESA FUNCION.
 		cProtesis* prot = fabricante.hacerprotesis(pte,m, pro); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
 		return { *prot };
 		if (prot == nullptr) {
@@ -78,14 +77,14 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 	
 }
 	
-void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia) //lo que tiene tambien la funcion hacerprotesis.
- {
-	 if (ortopedia.getstock() < 0) 
-	 {
-		 fabricante.hacerprotesis(p, m, pro);
-	 }
-
-	 return;
+//void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia) //lo que tiene tambien la funcion hacerprotesis.
+// {
+//	 if (ortopedia.getstock() < 0) 
+//	 {
+//		 fabricante.hacerprotesis(p, m, pro);
+//	 }
+//
+//	 return;
 } //para mi esta no va y hay que llamarla directo en el main.
 
 ostream& operator<<(ostream& out, cMedico& medico)
@@ -103,7 +102,8 @@ string cMedico::To_stringmedico()
 
 	for (int i = 0; i < this->getlista().size(); i++)
 	{
-		auxmedico += aux1[i].To_stringprotesis();
+		auxmedico += aux1[i].To_stringprotesis();//ahora es un puntero
+
 	}
 
 	return auxmedico;

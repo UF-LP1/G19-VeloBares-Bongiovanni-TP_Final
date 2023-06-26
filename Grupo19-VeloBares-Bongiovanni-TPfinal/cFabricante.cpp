@@ -1,10 +1,11 @@
 #include "cFabricante.h"
 
-cFabricante::cFabricante(string nombrefabricante_, string direccionfabricante_, unsigned int nhabilitacion_)
+cFabricante::cFabricante(string nombrefabricante_, string direccionfabricante_, unsigned int nhabilitacion_, vector<cProtesis*> vectorprfab_)
 {
 	this->nombrefabricante = nombrefabricante_;
 	this->direccionfabricante = direccionfabricante_;
 	this->nhabilitacion = nhabilitacion_;
+	this->vectorprfab = vectorprfab_;
 }
 
 cFabricante::~cFabricante()
@@ -19,27 +20,30 @@ string cFabricante::getnombredefabricante()
 string cFabricante::getdirecciondefabricante()
 {
 	return this->direccionfabricante;
+
 }
 
-cProtesis cFabricante::hacerprotesis(cPaciente pte, cMedico m, cProtesis p, int solicitud)
+vector<cProtesis*> cFabricante::getvectorprotesisfab()
+{
+	return this->vectorprfab;
+}
+
+cProtesis* cFabricante::hacerprotesis(cPaciente pte, cProtesis p, int solicitud)
 { 
-	cProtesis* protesisfinal;
-	int rechazo = recibirsolicitud(solicitud); //si es par no la rechaza
+	cProtesis* protesisfinal=nullptr;
+	bool rechazo = recibirsolicitud(solicitud); //si es par no la rechaza
 	string radio = pte.getradio(); //guardo el radio
 	bool alergia = pte.getalergias(); //guardo las alergias
-	vector<cProtesis*> vectorpr = m.getlista(); //guardo mi lista de protesis que esta en medicos
 	
-	for (int i =0; i<vectorpr.size(); i++)
+	for (int i =0; i<vectorprfab.size(); i++)
 	{
-		if ((p.getdimensiones() == radio) && !alergia && rechazo % 2 == 0) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
+		if ((p.getdimensiones() == radio) && !alergia && rechazo==true) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
 		{
-			protesisfinal = vectorpr.at(i);
+			protesisfinal = vectorprfab.at(i); // si todos los datos que el medico le manda al fabricante coinciden Y acepta la solicitud, entonces se la da
 			break;
 		}
 
-		else
-			protesisfinal = nullptr;
-			return *protesisfinal;
+			return protesisfinal; // ASUMIMOS QUE EL FABRICANTE SE LA DA SI O SI
 	}
 
 }
@@ -58,12 +62,14 @@ string cFabricante::To_stringfabricante()
 	return auxpaciente;	
 }
 
-int cFabricante::recibirsolicitud (int solicitud)
+bool cFabricante::recibirsolicitud (int solicitud)
 {
 	if (solicitud % 2 == 0)
 	{
-		return solicitud;
+		return true;
 	}
-	 //CHEQUEAR
-
+	else
+	{
+		return false;
+	}
 }

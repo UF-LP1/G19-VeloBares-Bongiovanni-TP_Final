@@ -2,6 +2,7 @@
 #include <string>
 #include "cRegistro.h"
 #include "cOrtopedia.h"
+
 using namespace std;
 
 class cANPA
