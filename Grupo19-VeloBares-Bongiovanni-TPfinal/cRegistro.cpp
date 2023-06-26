@@ -76,7 +76,7 @@ void cRegistro::crearregistro(cPaciente pte, cOrtopedia o, cFabricante& fabrican
 {
 	string nombrepaciente = paciente->getnombrepaciente();
 	string nombremedico = medico->getnombremedico();
-	cProtesis protesisquetiene = medico->recetarprotesis( pte,  o,  fabricante,  pro,  m);
+	cProtesis* protesisquetiene = medico->recetarprotesis( pte,  o,  fabricante,  pro);
 	string nombrehospital = hospital->getnombrehospital();
 
 	return;

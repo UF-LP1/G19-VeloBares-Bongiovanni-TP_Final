@@ -32,18 +32,18 @@ vector <cProtesis*> cMedico::getlista()
 	return vector<cProtesis*>();
 }
 
-vector<cProtesis> cMedico::posibilidades(cPaciente pte, cProtesis pro)
+vector<cProtesis*> cMedico::posibilidades(cPaciente pte, cProtesis* pro)
 {
 	string radio = pte.getradio(); //los primeros son de la funcion recetar y los ultimos son de llamarprot 
 	bool alergia = pte.getalergias();
-	vector<cProtesis> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
+	vector<cProtesis*> posiblesprotesis; //meto aca las protesis que cumplen con las condiciones del if.
 	int valor = pte.getproblema(); //si es par es quirurgica, pero de que me sirve saber?
 
-	if (!posiblesprotesis.empty())
+	if (!posiblesprotesis.empty()) 
 	{
-		for (int i = 0; i < vectorpr.size(); i++) //SINTAXIS DEL FOR PARA LOS VECTOR.
+		for (int i = 0; i < vectorpr.size(); i++) 
 		{
-			if ((pro.getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
+			if ((pro->getdimensiones() == radio) && !alergia) //TENDRIAMOS QUE MANDAR POR PARAMETRO UN RADIO!! ASI SIEMPRE SERAN IGUALES?
 
 			{
 				posiblesprotesis.push_back(pro);
@@ -53,28 +53,30 @@ vector<cProtesis> cMedico::posibilidades(cPaciente pte, cProtesis pro)
 	else
 		posiblesprotesis.clear();
 
-	return posiblesprotesis;
+	return { posiblesprotesis };
 }
-cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro)
-{
-	cProtesis *posiblesprotesis;
-	if (!posibilidades (pte, pro).empty() && (o.getstock() != 0)) //si es que se agregaron, agarrame alguna random total es lo mismo
-	{
-		int M = rand() % posibilidades(pte, pro).size();
-		return { posiblesprotesis[M] };
-	}
+
+cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro)
+{ 
+	 cProtesis* protesisfinal= nullptr;
+	 int M = rand() % posibilidades(pte, &pro).size();
+	 if (!posibilidades(pte, &pro).empty() && (o.getstock() != 0)) //si la lista de posibilidades no esta vacia y hay stock
+	
+	 {
+		 protesisfinal= posibilidades(pte, &pro)[M]; // dame una random total es lo mismo
+	 }
 	
 	else
 	{
 		//llamarfabricante(fabricante, o); NO HACE FALTA ESA FUNCION.
-		cProtesis* prot = fabricante.hacerprotesis(pte,m, pro); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
-		return { *prot };
-		if (prot == nullptr) {
-			posiblesprotesis = nullptr;
-			return *posiblesprotesis;
+		cProtesis* prot = fabricante.hacerprotesis(pte, pro); //LA ESTAMOS LLAMANDO DOS VECES A HACER PROTESIS. VOTO QUE LLAMAR FABRICANTE YA DEVUELVA ESA PROTESIS Y NO TENER QUE HACERLO DOS VECES
+		if (prot != nullptr)
+		{
+			protesisfinal = prot;
 		}
+		
 	}
-	
+	 return protesisfinal;
 }
 	
 //void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia) //lo que tiene tambien la funcion hacerprotesis.
@@ -85,7 +87,7 @@ cProtesis cMedico::recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabr
 //	 }
 //
 //	 return;
-} //para mi esta no va y hay que llamarla directo en el main.
+//} //para mi esta no va y hay que llamarla directo en el main.
 
 ostream& operator<<(ostream& out, cMedico& medico)
 {
@@ -102,14 +104,14 @@ string cMedico::To_stringmedico()
 
 	for (int i = 0; i < this->getlista().size(); i++)
 	{
-		auxmedico += aux1[i].To_stringprotesis();//ahora es un puntero
+		auxmedico += (*aux1[i]).To_stringprotesis();//ahora es un puntero
 
 	}
 
 	return auxmedico;
 }
 
-cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar )
+cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar)
 {
 	for (int i = 0; i < vectorpr.size(); i++)
 	{
@@ -117,5 +119,4 @@ cProtesis cMedico::buscarprotesis(unsigned int codigoprotesisabuscar )
 			return *vectorpr[i];
 		break;
 	}
-	return;
 }

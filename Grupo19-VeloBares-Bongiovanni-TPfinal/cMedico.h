@@ -20,8 +20,8 @@ public:
 	vector <cProtesis*> getlista();
 	string To_stringmedico();
 	cProtesis buscarprotesis(unsigned int codigoprotesisabuscar);
-	vector<cProtesis> posibilidades(cPaciente pte, cProtesis pro);
-	cProtesis recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro);
+	vector<cProtesis*> posibilidades(cPaciente pte, cProtesis* pro);
+	cProtesis* recetarprotesis(cPaciente pte, cOrtopedia o, cFabricante fabricante, cProtesis pro);
 	void llamarfabricante (cFabricante fabricante, cOrtopedia ortopedia);
 
 private:
