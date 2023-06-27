@@ -1,7 +1,6 @@
 #include "cNoquirurgica.h"
 
-static time_t tiemporecup_ = 0;
-
+time_t cNoquirurgica:: tiemporecupNQ = 0;
 cNoquirurgica::cNoquirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_) : cProtesis(dimensiones_, material_, fabricante_, fechadefabricacion_, codigo_)
 {
 }
@@ -28,8 +27,6 @@ void cNoquirurgica::recuperacionNOquirurgica(time_t tiemporecupNQ)
 
 string cNoquirurgica::To_stringno()
 {
-	//string auxnoq /*= "\0"*/;
-
 	string auxnoq = this->getdimensiones() + this->getmaterial()+ this->getfabricante() + to_string(this->getcodigo());
 
 	return auxnoq;

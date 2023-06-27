@@ -29,7 +29,7 @@ const string cMedico::getmatricula()
 
 vector <cProtesis*> cMedico::getlista()
 {
-	return vector<cProtesis*>();
+	return this->vectorpr;
 }
 
 vector<cProtesis*> cMedico::posibilidades(cPaciente pte, cProtesis* pro)
@@ -111,11 +111,15 @@ string cMedico::To_stringmedico()
 
 cProtesis* cMedico::buscarprotesis(unsigned int codigoprotesisabuscar)
 {
-	for (int i = 0; i < vectorpr.size(); i++)
+	int i = 0;
+	while (i < vectorpr.size())
 	{
 		if (codigoprotesisabuscar == vectorpr[i]->getcodigo())
-		return vectorpr[i];
-		break;
+		{
+			return vectorpr[i];
+			break;
+		}
+		i++;
 	}
 	return nullptr;
 }

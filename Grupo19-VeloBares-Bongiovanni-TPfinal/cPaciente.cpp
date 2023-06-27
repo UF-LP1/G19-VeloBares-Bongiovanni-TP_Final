@@ -38,10 +38,9 @@ string cPaciente::getradio()
 	return this->radio;
 }
 
-int cPaciente::getproblema()
+bool cPaciente::getproblema()
 {
-	int valor = 1 + rand() % 100;
-	return valor;
+ return false;
 }
 
 void cPaciente::settelefonocontacto(unsigned int telefonocontacto1)
@@ -57,6 +56,7 @@ unsigned int cPaciente::getcodigopaciente()
 
 void cPaciente::setfechanacimiento(time_t fechanacimiento)
 {
+	this->fechadenacimiento = fechanacimiento;
 	return;
 }
 

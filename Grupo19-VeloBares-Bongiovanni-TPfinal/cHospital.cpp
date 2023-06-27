@@ -33,25 +33,26 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return vector<cPaciente>();
 }
 
-//void cHospital::agregarpaciente(cPaciente p)
-//{ 
-//	vectorpa + p;
-//	return;
-//}
+void cHospital::agregarpaciente(cPaciente p)
+{ 
+	vectorpa + p;
+	return;
+}
 
 void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
 {
-		cPaciente* eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
-		for (int i = 0; i < vectorpa.size(); i++)
+		int i = 0;
+		while (i < vectorpa.size())
 		{
+			cPaciente* eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
 			if (eliminado->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
 			{
-				vectorpa.erase(vectorpa.begin() + i); //elimino desde el principio, Is posiciones mas de ahi
-				break;
+			vectorpa.erase(vectorpa.begin() + i); //elimino desde el principio, Is posiciones mas de ahi
+			break;
 			}
 			i++;
-		}  
-		return;		
+		}
+		return;
 }
 
 ostream& operator<<(ostream& out, cHospital& hospital)
@@ -92,7 +93,7 @@ cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__)
 		}
 		i++;
 	}	
-			return nullptr; // HACER EXCPETION
+			return nullptr; 
 }
 
 void operator + (cHospital h,  cPaciente& p)
@@ -107,9 +108,8 @@ void operator + (cHospital h,  cPaciente& p)
 		}
 		i++;
 	}
-	if (serepite == true)
+	if (serepite == false)
 	h.getvectorpaciente().push_back(p);
-	
 	return;
 }
 

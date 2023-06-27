@@ -13,7 +13,7 @@ public:
 	string getapellidopaciente();
 	bool getalergias();
 	string getradio();
-	int getproblema();
+	bool getproblema();
 	void settelefonocontacto(unsigned int telefonocontacto);
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento1);

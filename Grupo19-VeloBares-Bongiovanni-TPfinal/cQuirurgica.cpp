@@ -1,5 +1,5 @@
 #include "cQuirurgica.h"
-
+time_t cQuirurgica::tiemporecupQ = 0;
 cQuirurgica::cQuirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_):cProtesis( dimensiones_,  material_,  fabricante_,  fechadefabricacion_,  codigo_)
 {
 }
@@ -7,7 +7,6 @@ cQuirurgica::cQuirurgica(string dimensiones_, string material_, string fabricant
 cQuirurgica::~cQuirurgica()
 {
 }
-
 
 void cQuirurgica::imprimirprotesis()
 {
@@ -21,7 +20,6 @@ void cQuirurgica::imprimirprotesis()
 
 string cQuirurgica::To_stringq()
 {
-	//string auxq /*= "\0"*/;
 
 	string auxq = this->getdimensiones() + this->getmaterial() + this->getfabricante() + to_string(this->getcodigo());
 

@@ -47,7 +47,6 @@ string cANPA::To_stringanpa()
 	return auxanpa;
 }
 
-
 void cANPA::tenerregistros(cRegistro registro, cProtesis protesis, cMedico m, cPaciente pte, cOrtopedia o, cFabricante *fabricante, int solicitud)
 {
 	vector <cRegistro*> listado;
