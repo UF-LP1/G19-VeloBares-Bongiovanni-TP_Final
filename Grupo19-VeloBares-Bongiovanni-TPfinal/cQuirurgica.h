@@ -1,8 +1,6 @@
 #pragma once
 #include "cProtesis.h"
 
-
-
 class cQuirurgica : public cProtesis
 {
 public:
@@ -13,7 +11,6 @@ public:
     void recuperacionquirurgica(time_t tiemporecupQ);
 
 private:
-  
     static time_t  tiemporecupQ;
 };
 

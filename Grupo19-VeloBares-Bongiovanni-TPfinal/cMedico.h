@@ -6,14 +6,13 @@
 #include "cOrtopedia.h"
 #include "cNoquirurgica.h"
 #include "cQuirurgica.h"
-
-class cFabricante{};
+#include "cFabricante.h"
 using namespace std;
 
 class cMedico
 {
 public:
-	friend class cFabricante;
+	//friend class cFabricante;
 	cMedico(vector <cProtesis*> vectorpr_, string nombremedico_, string apellidomedico_, const string matricula_);
 	~cMedico();
 	string getnombremedico();

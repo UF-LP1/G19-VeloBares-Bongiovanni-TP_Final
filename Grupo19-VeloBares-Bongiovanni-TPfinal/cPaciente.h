@@ -20,7 +20,6 @@ public:
 	string To_stringpaciente();
 
 private:
-
 	string nombrepaciente;
 	string apellidopaciente; 
 	time_t fechadenacimiento;

@@ -33,9 +33,9 @@ vector<cPaciente> cHospital::getvectorpaciente()
 	return vector<cPaciente>();
 }
 
-void cHospital::agregarpaciente(cPaciente p)
+void cHospital::agregarpaciente(cPaciente *p)
 { 
-	vectorpa + p;
+	vectorpa.push_back(p);
 	return;
 }
 
@@ -96,7 +96,7 @@ cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__)
 			return nullptr; 
 }
 
-void operator + (cHospital h,  cPaciente& p)
+/*void operator + (cHospital h, cPaciente& p)
 {
 	bool serepite = false;
 	int i = 0;
@@ -111,12 +111,19 @@ void operator + (cHospital h,  cPaciente& p)
 	if (serepite == false)
 	h.getvectorpaciente().push_back(p);
 	return;
+}*/
+
+void operator + (cPaciente& p, cHospital h)
+{
+	//h.getvectorpaciente().push_back(p);
+	h.agregarpaciente(&p);
+	return;
+
 }
 
-void operator - (cHospital h, cPaciente& p)
+void operator - (cPaciente& p, cHospital h)
 {
 	h.getvectorpaciente().pop_back();
-
 	return;
 }
 

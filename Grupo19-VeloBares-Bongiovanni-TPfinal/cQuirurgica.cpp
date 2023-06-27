@@ -1,4 +1,5 @@
 #include "cQuirurgica.h"
+
 time_t cQuirurgica::tiemporecupQ = 0;
 cQuirurgica::cQuirurgica(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_):cProtesis( dimensiones_,  material_,  fabricante_,  fechadefabricacion_,  codigo_)
 {

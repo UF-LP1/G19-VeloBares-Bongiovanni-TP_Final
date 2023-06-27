@@ -2,9 +2,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
-
 using namespace std;
-
 
 class cProtesis
 {

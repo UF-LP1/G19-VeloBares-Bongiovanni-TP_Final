@@ -16,6 +16,7 @@ public:
 	string To_stringfabricante();
 	bool recibirsolicitud(int solicitud);//recibe solicitud y la rechaza o no
 	vector<cProtesis*> getvectorprotesisfab();
+
 private:
 	string nombrefabricante;
 	string direccionfabricante;

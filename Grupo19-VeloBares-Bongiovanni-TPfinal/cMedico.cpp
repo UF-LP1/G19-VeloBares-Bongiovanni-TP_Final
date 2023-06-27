@@ -62,7 +62,7 @@ cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o,  cProtesis pro,
 	 int M = rand() % posibilidades(pte, &pro).size();
 	 if (!posibilidades(pte, &pro).empty() && (o.getstock() != 0)) //si la lista de posibilidades no esta vacia y hay stock
 	 {
-		 protesisfinal= posibilidades(pte, &pro)[M]; // dame una random total es lo mismo
+		 protesisfinal= posibilidades(pte, &pro)[M]; //dame una random total es lo mismo
 	 }
 	
 	else
@@ -77,16 +77,6 @@ cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o,  cProtesis pro,
 	 return protesisfinal;
 }
 	
-//void cMedico::llamarfabricante(cFabricante fabricante, cOrtopedia ortopedia) //lo que tiene tambien la funcion hacerprotesis.
-// {
-//	 if (ortopedia.getstock() < 0) 
-//	 {
-//		 fabricante.hacerprotesis(p, m, pro);
-//	 }
-//
-//	 return;
-//} //para mi esta no va y hay que llamarla directo en el main.
-
 ostream& operator<<(ostream& out, cMedico& medico)
 {
 	out << medico.To_stringmedico();
@@ -103,7 +93,6 @@ string cMedico::To_stringmedico()
 	for (int i = 0; i < this->getlista().size(); i++)
 	{
 		auxmedico += (*aux1[i]).To_stringprotesis();//ahora es un puntero
-
 	}
 
 	return auxmedico;
@@ -132,7 +121,6 @@ void cMedico::tiemporecuperacion(time_t tiemporecup)
 		if (auxNQ != nullptr)
 		{
 			auxNQ->recuperacionNOquirurgica(tiemporecup);
-
 		}
 	}
 
@@ -142,7 +130,6 @@ void cMedico::tiemporecuperacion(time_t tiemporecup)
 		if (auxQ != nullptr)
 		{
 			auxQ->recuperacionquirurgica(tiemporecup);
-
 		}
 	}
 	return;

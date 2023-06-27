@@ -20,7 +20,6 @@ string cFabricante::getnombredefabricante()
 string cFabricante::getdirecciondefabricante()
 {
 	return this->direccionfabricante;
-
 }
 
 vector<cProtesis*> cFabricante::getvectorprotesisfab()
@@ -39,12 +38,12 @@ cProtesis* cFabricante::hacerprotesis(cPaciente pte, cProtesis p, int solicitud)
 	{
 		if ((p.getdimensiones() == radio) && !alergia && rechazo == true) //si yo recorro la lista de protesis y las dimensiones y el radio coinciden, me quedo con esa protesis.
 		{
-			protesisfinal = this->vectorprfab.at(i); // si todos los datos que el medico le manda al fabricante coinciden Y acepta la solicitud, entonces se la da
+			protesisfinal = this->vectorprfab.at(i); //si todos los datos que el medico le manda al fabricante coinciden Y acepta la solicitud, entonces se la da
 
 		}
 		i++;
 	}
-	 return protesisfinal; // ASUMIMOS QUE EL FABRICANTE SE LA DA SI O SI
+	 return protesisfinal; //ASUMIMOS QUE EL FABRICANTE SE LA DA SI O SI
 }
 	
 ostream& operator<<(ostream& out, cFabricante& fabricante)
