@@ -110,24 +110,25 @@ int main()
     {
             cout << "Ingrese el codigo del paciente recien ingresado" << endl;
             cin >> codigopaciente__;
-           
+            
 
         if (Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa])
-        {     
-            cout << "Desea eliminar ese paciente? Si es asi, ingrese su codigo" << endl;
-            cin >> codigopaciente__;
+        { 
+            cout << "Nombre:" << MisPacientes[Pa]->getnombrepaciente() << endl;
+            cout << "Desea eliminar ese paciente? Si es asi, ponga un" << endl;
+            //opcion de eliminar...
             Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
         } 
         else
         {
-            cout << "Desea agregar el paciente? Si es asi, ingrese su codigo" << endl;
-            cin >> codigopaciente__;
             Madison->agregarpaciente(MisPacientes[Pa]);
         }
 
         Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *MisProtesis[Pro], 4, Raul); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
-        //ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
-        }
+        ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
+
+        cout << Registro->To_stringregistro() << endl;
+    }
 
    /*cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
     cProtesis imprimirprotesis();*/

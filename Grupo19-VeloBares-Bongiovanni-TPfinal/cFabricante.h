@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include "cProtesis.h"
-#include "cHospital.h"
+#include "cPaciente.h"
 using namespace std;
 
 class cFabricante

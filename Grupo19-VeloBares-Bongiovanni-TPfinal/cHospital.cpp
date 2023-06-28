@@ -35,6 +35,18 @@ vector<cPaciente> cHospital::getvectorpaciente()
 
 void cHospital::agregarpaciente(cPaciente *p)
 { 
+	bool serepite = false;
+	int i = 0;
+	while (i <vectorpa.size()) {
+		if (p->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
+		{
+			serepite = true; //se repite chau
+			break;
+		}
+		i++;
+	}
+	if (serepite == false)
+	
 	vectorpa.push_back(p);
 	return;
 }
@@ -95,23 +107,6 @@ cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__)
 	}	
 			return nullptr; 
 }
-
-/*void operator + (cHospital h, cPaciente& p)
-{
-	bool serepite = false;
-	int i = 0;
-	while (i < h.getvectorpaciente().size()) {
-		if (p.getcodigopaciente() == h.getvectorpaciente().at(i).getcodigopaciente())
-		{
-			serepite = true; //se repite chau
-			break;
-		}
-		i++;
-	}
-	if (serepite == false)
-	h.getvectorpaciente().push_back(p);
-	return;
-}*/
 
 void operator + (cPaciente& p, cHospital h)
 {
