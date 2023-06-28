@@ -69,8 +69,19 @@ ostream& operator<<(ostream& out, cPaciente& paciente)
 
 string cPaciente::To_stringpaciente()
 {
-	string auxpaciente = "Nombre del paciente:" + this->getnombrepaciente()  + "Apellido del paciente:" + this->getapellidopaciente() + "¿Tiene alergia?" + to_string(this->getalergias()) + "El radio del miembro amputado es::" + this->getradio() + "Problemas en el paciente:" + to_string(this->getproblema()) + "El codigo de identificacion del paciente:" + to_string(getcodigopaciente());
+	string auxpaciente = "Nombre del paciente: " + this->getnombrepaciente()  + "\nApellido del paciente: " + this->getapellidopaciente() + "\n¿Tiene alergia? " + to_string(this->getalergias()) + "\nEl radio del miembro amputado es::" + this->getradio() + "\nProblemas en el paciente:" + to_string(this->getproblema()) + "\nEl codigo de identificacion del paciente:" + to_string(getcodigopaciente());
 
 	return auxpaciente;
 }
+
+bool cPaciente::operator==(cPaciente& p)
+{
+	bool flag = false;
+	if (p.getnombrepaciente() == this->nombrepaciente && p.getalergias() == alergia && p.getapellidopaciente() == this->apellidopaciente && p.getcodigopaciente() == this->codigopaciente && p.getproblema() == this->problema && p.getradio() == this->radio)
+	{
+		flag = true;
+	}
+	return flag;
+}
+
 

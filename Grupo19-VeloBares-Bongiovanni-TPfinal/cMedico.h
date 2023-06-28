@@ -13,6 +13,7 @@ class cMedico
 {
 public:
 	//friend class cFabricante;
+	friend class cHospital;
 	cMedico(vector <cProtesis*> vectorpr_, string nombremedico_, string apellidomedico_, const string matricula_);
 	~cMedico();
 	string getnombremedico();

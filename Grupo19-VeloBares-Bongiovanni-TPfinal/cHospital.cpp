@@ -37,20 +37,22 @@ void cHospital::agregarpaciente(cPaciente *p)
 { 
 	bool serepite = false;
 	int i = 0;
-	while (i <vectorpa.size()) {
-		if (p->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
+	while (i <vectorpa.size() && !serepite) { //==false
+		if ( p == vectorpa[i])
 		{
 			serepite = true; 
-			throw exception("Se va a repetir el paciente");
+			throw exception("Ya esta ingresado el paciente");
+			
 		}
 		i++;
 	}
 	if (serepite == false)
-	vectorpa.push_back(p);
+		vectorpa.push_back(p);
 	return;
+	
 }
 
-void cHospital::eliminarpaciente(unsigned int codigo__, cPaciente p)
+void cHospital::eliminarpaciente(unsigned int codigo__)
 {
 		int i = 0;
 		while (i < vectorpa.size())
@@ -109,17 +111,14 @@ cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__)
 			}
 }
 
-void operator + (cPaciente& p, cHospital h)
+void operator + ( cHospital h, cPaciente& p)
 {
 	//h.getvectorpaciente().push_back(p);
 	h.agregarpaciente(&p);
-	return;
-
 }
 
 void operator - (cPaciente& p, cHospital h)
 {
 	h.getvectorpaciente().pop_back();
-	return;
 }
 

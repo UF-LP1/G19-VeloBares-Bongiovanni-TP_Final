@@ -18,6 +18,7 @@ public:
 	unsigned int getcodigopaciente();
 	void setfechanacimiento(time_t fechanacimiento1);
 	string To_stringpaciente();
+	bool operator==(cPaciente& p);
 
 private:
 	string nombrepaciente;
