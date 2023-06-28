@@ -52,17 +52,16 @@ vector<cProtesis*> cMedico::posibilidades(cPaciente pte, cProtesis* pro)
 	}
 	else
 		posiblesprotesis.clear();
-
 	return { posiblesprotesis };
 }
 
 cProtesis* cMedico::recetarprotesis(cPaciente pte, cOrtopedia o,  cProtesis pro, int solicitud, cFabricante *fabricc)
 { 
 	 cProtesis* protesisfinal= nullptr;
-	 int M = rand() % posibilidades(pte, &pro).size();
+	 //int M = rand() % posibilidades(pte, &pro).size();
 	 if (!posibilidades(pte, &pro).empty() && (o.getstock() != 0)) //si la lista de posibilidades no esta vacia y hay stock
 	 {
-		 protesisfinal= posibilidades(pte, &pro)[M]; //dame una random total es lo mismo
+		 protesisfinal= posibilidades(pte, &pro)[0]; //dame una random total es lo mismo
 	 }
 	
 	else
@@ -96,21 +95,6 @@ string cMedico::To_stringmedico()
 	}
 
 	return auxmedico;
-}
-
-cProtesis* cMedico::buscarprotesis(unsigned int codigoprotesisabuscar)
-{
-	int i = 0;
-	while (i < vectorpr.size())
-	{
-		if (codigoprotesisabuscar == vectorpr[i]->getcodigo())
-		{
-			return vectorpr[i];
-			break;
-		}
-		i++;
-	}
-	return nullptr;
 }
 
 void cMedico::tiemporecuperacion(time_t tiemporecup)

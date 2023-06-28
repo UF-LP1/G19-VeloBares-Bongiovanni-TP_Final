@@ -7,7 +7,6 @@ using namespace std;
 class cProtesis
 {
 public:
-	cProtesis();
 	cProtesis(string dimensiones_, string material_, string fabricante_, time_t fechadefabricacion_, unsigned int codigo_);
 	~cProtesis();
 	string getdimensiones();

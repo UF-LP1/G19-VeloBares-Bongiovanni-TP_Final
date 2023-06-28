@@ -20,7 +20,6 @@ public:
 	const string getmatricula();
 	vector <cProtesis*> getlista();
 	string To_stringmedico();
-	cProtesis* buscarprotesis(unsigned int codigoprotesisabuscar);
 	vector<cProtesis*> posibilidades(cPaciente pte, cProtesis* pro);
 	cProtesis* recetarprotesis(cPaciente pte, cOrtopedia o, cProtesis pro, int solicitud, cFabricante *fabricc);
 	void tiemporecuperacion(time_t tiemporecup);

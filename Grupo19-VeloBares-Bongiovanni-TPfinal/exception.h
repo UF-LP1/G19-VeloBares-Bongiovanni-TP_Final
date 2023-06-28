@@ -3,7 +3,7 @@
 #include<string>
 using namespace std;
 
-class NoSeEncontro : public exception
+class Agregadox2 : public exception
 {
 	const char* what() const throw ();
 };

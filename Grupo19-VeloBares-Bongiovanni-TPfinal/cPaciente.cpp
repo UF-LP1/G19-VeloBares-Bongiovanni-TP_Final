@@ -69,7 +69,7 @@ ostream& operator<<(ostream& out, cPaciente& paciente)
 
 string cPaciente::To_stringpaciente()
 {
-	string auxpaciente = this->getnombrepaciente() + this->getapellidopaciente() + to_string(this->getalergias()) + this->getradio() + to_string(this->getproblema()) + to_string(getcodigopaciente());
+	string auxpaciente = "Nombre del paciente:" + this->getnombrepaciente()  + "Apellido del paciente:" + this->getapellidopaciente() + "¿Tiene alergia?" + to_string(this->getalergias()) + "El radio del miembro amputado es::" + this->getradio() + "Problemas en el paciente:" + to_string(this->getproblema()) + "El codigo de identificacion del paciente:" + to_string(getcodigopaciente());
 
 	return auxpaciente;
 }

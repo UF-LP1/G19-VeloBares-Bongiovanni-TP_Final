@@ -40,13 +40,12 @@ void cHospital::agregarpaciente(cPaciente *p)
 	while (i <vectorpa.size()) {
 		if (p->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
 		{
-			serepite = true; //se repite chau
-			break;
+			serepite = true; 
+			throw exception("Se va a repetir el paciente");
 		}
 		i++;
 	}
 	if (serepite == false)
-	
 	vectorpa.push_back(p);
 	return;
 }
@@ -97,15 +96,17 @@ string cHospital::To_stringhospital()
 
 cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__) 
 {
-	for (int i = 0; i < vectorpa.size(); i++) // recorro el vector pacientes...
-	{
-		if (vectorpa.at(i)->getcodigopaciente() == codigopaciente__) // si el codigo de x paciente coincide con el que me dan...
-		{
-			return vectorpa.at(i); // devuelvo el paciente en esa posicion...
-		}
-		i++;
-	}	
-			return nullptr; 
+			int i = 0;
+			while (i < vectorpa.size())
+			{
+					if (vectorpa.at(i)->getcodigopaciente() == codigopaciente__) // si el codigo de x paciente coincide con el que me dan...
+					{
+						return vectorpa.at(i); // devuelvo el paciente en esa posicion...
+						break;
+					}
+					//else throw exception("No se encontro al paciente");
+					i++;
+			}
 }
 
 void operator + (cPaciente& p, cHospital h)

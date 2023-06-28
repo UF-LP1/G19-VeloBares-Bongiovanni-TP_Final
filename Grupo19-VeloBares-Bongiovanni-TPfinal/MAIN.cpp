@@ -104,34 +104,39 @@ int main()
     cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
    unsigned int codigopaciente__=0;
-  
+   bool flag = -1;
      
     while (!(MisPacientes.empty())) //mientras hayan pacientes se va a dar todo lo siguiente...
     {
             cout << "Ingrese el codigo del paciente recien ingresado" << endl;
             cin >> codigopaciente__;
-            
-
-        if (Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa])
-        { 
             cout << "Nombre:" << MisPacientes[Pa]->getnombrepaciente() << endl;
-            cout << "Desea eliminar ese paciente? Si es asi, ponga un" << endl;
-            //opcion de eliminar...
+
+        if (Madison->buscarpaciente(codigopaciente__) == MisPacientes[Pa]&& flag==-1)
+        { 
+            cout << "Desea eliminar ese paciente? Si es asi, ponga un 0" << endl;
+            cin >> flag;
+            if (flag==0)
             Madison->eliminarpaciente(codigopaciente__, *MisPacientes[Pa]);
         } 
         else
         {
-            Madison->agregarpaciente(MisPacientes[Pa]);
+            try { Madison->agregarpaciente(MisPacientes[Pa]); }
+            catch (exception& e) { cerr << "Exception->" << e.what(); }
+            cout << "se agregó tu paciente" << endl;
         }
-
+        
         Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *MisProtesis[Pro], 4, Raul); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
-        ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
+        for (int i = 0; i < MisPacientes.size(); i++)
+            cout << MisPacientes[i]->To_stringpaciente() << endl;
+        for (int i = 0; i < MisProtesis.size(); i++)
+            MisProtesis[i]->imprimirprotesis();
 
-        cout << Registro->To_stringregistro() << endl;
     }
-
-   /*cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
-    cProtesis imprimirprotesis();*/
+ //ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
+  //      cout << Registro->To_stringregistro() << endl;
+ 
+    //cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
 
     delete Richard;
     delete Madison;
