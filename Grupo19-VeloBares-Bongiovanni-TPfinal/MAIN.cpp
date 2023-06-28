@@ -1,6 +1,6 @@
 #include <vector>
 #include <string>
-#include <cstdlib>
+#include <random>
 #include <iostream>
 #include "cHospital.h"
 #include "cANPA.h"  
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const vector<string> nomPac = { //creamos un vector con nombres de clientes random
+const vector<string> nomPac = { //creamos un vector con nombres de pacientes random
     "Emma", "Liam", "Olivia", "Noah", "Ava", "Sophia", "Isabella", "Mia", "Charlotte", "Amelia", "Harper", "Evelyn", "Abigail", "Emily", "Elizabeth", "Mila", "Ella", "Avery", "Sofia", "Camila", "Aria", "Scarlett", "Victoria", "Madison", "Luna", "Grace", "Chloe", "Penelope", "Layla", "Riley", "Zoey", "Nora", "Lily", "Eleanor", "Hannah", "Lillian", "Addison", "Aubrey", "Ellie", "Stella", "Natalie", "Zoe", "Leah", "Hazel", "Violet", "Aurora", "Savannah", "Audrey", "Brooklyn", "Bella", "Claire", "Skylar", "Lucy", "Paisley", "Everly", "Anna", "Caroline", "Nova", "Genesis"
 };
 
@@ -56,30 +56,26 @@ unsigned int randint(unsigned int min, unsigned int max)
  vector<time_t> fechadefabricacion = { 
 946684800, 946771200, 946857600, 946944000, 947030400, 947116800, 947203200, 947289600, 947376000, 947462400, 947548800, 947635200, 947721600, 947808000, 947894400, 947980800, 948067200, 948153600, 948240000, 948326400, 948412800, 948499200, 948585600, 948672000, 948758400, 948844800, 948931200, 949017600, 949104000, 949190400, 949276800, 949363200, 949449600, 949536000, 949622400, 949708800, 949795200, 949881600, 949968000, 950054400, 950140800, 950227200, 950313600, 950400000, 950486400, 950572800, 950659200, 950745600, 950832000, 950918400, 951004800, 951091200, 951177600, 951264000, 951350400, 951436800, 951523200, 951609600, 951696000, 951782400, 951868800, 951955200, 952041600, 952128000
  };
-//vector<string> fabricante = {
-//"Sofía", "Luis", "Valentina", "Diego", "Lucía", "Carlos", "Isabella", "Juan", "Camila", "Miguel", "María", "Alejandro", "Ana", "Gabriel", "Valeria", "Pedro", "Fernanda", "Andrés", "Laura", "Javier", "Paula", "Raúl", "Daniela", "Gonzalo", "Carolina", "Jorge", "Adriana", "José", "Elena", "Fernando", "Olivia", "Emilio", "Renata", "Sebastián", "Clara", "Ricardo", "Sara", "Hugo", "Catalina", "Matías", "Gabriela", "Andrés", "Isabel", "Esteban", "Martina", "Ignacio", "Victoria", "Mario", "Julia", "Óscar", "Emily", "Rodrigo", "Abril", "Alberto", "René", "Guillermo", "Natalia", "Tomás", "Alicia", "Emmanuel", "Antonella"
-// };
-
 
  vector<unsigned int> codigo = {
 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059
  };
 
-//vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random
-//    vector<cProtesis*> MisProtesis;
-//    for (unsigned int i = 0; i < cantidad; i++) 
-//        MisProtesis.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], "RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
-//    
-//    return MisProtesis; //me devuelve la lista de protesis que se crea de manera random
-//}
-//
-//vector<cProtesis*> generador_protesisfabricante(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random PARA EL FABRICANTE
-//    vector<cProtesis*> MisProtesisfabricante;
-//    for (unsigned int i = 0; i < cantidad; i++)
-//        MisProtesisfabricante.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())],"RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
-//
-//    return MisProtesisfabricante;
-//}
+vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random
+    vector<cProtesis*> MisProtesis;
+    for (unsigned int i = 0; i < cantidad; i++) 
+        MisProtesis.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], "RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
+    
+    return MisProtesis; //me devuelve la lista de protesis que se crea de manera random
+}
+
+vector<cProtesis*> generador_protesisfabricante(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random PARA EL FABRICANTE
+    vector<cProtesis*> MisProtesisfabricante;
+    for (unsigned int i = 0; i < cantidad; i++)
+        MisProtesisfabricante.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())],"RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
+
+    return MisProtesisfabricante;
+}
 
 int main()
 {   srand(time(NULL)); //simulacion todo randommm
@@ -119,7 +115,7 @@ int main()
 
    unsigned int codigopaciente__=0;
    int opcion;
-   while (true)
+   do
    {
        cout << "MENU HOSPITAL MADISON:" << endl;
        cout << "1. Opcion 1. Agregar un paciente. " << endl;
@@ -161,7 +157,7 @@ int main()
        default:
            break;
        }
-    }
+  while(!MisPacientes.empty()) 
         //ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
         //cout << Registro->To_stringregistro() << endl;
         //cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
