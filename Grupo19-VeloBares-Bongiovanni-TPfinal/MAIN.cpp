@@ -36,16 +36,16 @@ unsigned int randint(unsigned int min, unsigned int max)
     return rand() % (max - min) + min;
 }
 
-vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una "pila" de pacientes  con todos sus atributos random
-    vector<cPaciente*> MisPacientes;
-
-    for (unsigned int i = 0; i < cantidad; i++)
-    {
-        MisPacientes.push_back(new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]));
-    }
-
-    return MisPacientes; //me devuelve la lista de pacientes que se crea de manera random
-}
+//vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una "pila" de pacientes  con todos sus atributos random
+//    vector<cPaciente*> MisPacientes;
+//
+//    for (unsigned int i = 0; i < cantidad; i++)
+//    {
+//        MisPacientes.push_back(new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]));
+//    }
+//
+//    return MisPacientes; //me devuelve la lista de pacientes que se crea de manera random
+//}
 
  vector <string> dimension = { 
     "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "15.1", "15.2", "15.3", "15.4", "15.5", "15.6", "15.7", "15.8", "15.9", "16.1", "16.2", "16.3", "16.4", "16.5", "16.6", "16.7", "16.8", "16.9", "17.1", "17.2", "17.3", "17.4", "17.5", "17.6", "17.7", "17.8", "17.9", "18.1", "18.2", "18.3", "18.4", "18.5", "18.6", "18.7", "18.8", "18.9", "19.1", "19.2", "19.3", "19.4", "19.5", "19.6", "19.7", "19.8", "19.9" };
@@ -65,27 +65,28 @@ vector<cPaciente*> generador_pacientes(unsigned int cantidad) { //me genero una 
 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059
  };
 
-vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random
-    vector<cProtesis*> MisProtesis;
-    for (unsigned int i = 0; i < cantidad; i++) 
-        MisProtesis.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], "RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
-    
-    return MisProtesis; //me devuelve la lista de protesis que se crea de manera random
-}
-
-vector<cProtesis*> generador_protesisfabricante(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random PARA EL FABRICANTE
-    vector<cProtesis*> MisProtesisfabricante;
-    for (unsigned int i = 0; i < cantidad; i++)
-        MisProtesisfabricante.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())],"RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
-
-    return MisProtesisfabricante;
-}
+//vector<cProtesis*> generador_protesis(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random
+//    vector<cProtesis*> MisProtesis;
+//    for (unsigned int i = 0; i < cantidad; i++) 
+//        MisProtesis.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())], "RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
+//    
+//    return MisProtesis; //me devuelve la lista de protesis que se crea de manera random
+//}
+//
+//vector<cProtesis*> generador_protesisfabricante(unsigned int cantidad) { //me genero un vector de protesis con todos sus atributos random PARA EL FABRICANTE
+//    vector<cProtesis*> MisProtesisfabricante;
+//    for (unsigned int i = 0; i < cantidad; i++)
+//        MisProtesisfabricante.push_back(new cProtesis(dimension[randint(0, dimension.size())], material[randint(0, material.size())],"RAUL" /*fabricante[randint(0, fabricante.size())]*/, fechadefabricacion[randint(0, fechadefabricacion.size())], codigo[randint(0, codigo.size())]));
+//
+//    return MisProtesisfabricante;
+//}
 
 int main()
 {   srand(time(NULL)); //simulacion todo randommm
-    vector <cPaciente*> MisPacientes = generador_pacientes(5);
-    vector <cProtesis*> MisProtesis = generador_protesis(5);
-    vector <cProtesis*> MisProtesisfabricante = generador_protesisfabricante(5);
+
+    vector <cPaciente*> MisPacientes(5);//= generador_pacientes(5);
+    vector <cProtesis*> MisProtesis(5); //= generador_protesis(5);
+    vector <cProtesis*> MisProtesisfabricante(5);// = generador_protesisfabricante(5);
     vector <cMedico*> medico;
     vector <cHospital*> hospital;
     vector <cOrtopedia*> ortopedia;
@@ -104,12 +105,19 @@ int main()
     cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes");
     cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
-    cPaciente* pacientesobrecarga = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
-    
-   *Madison + *pacientesobrecarga;
+    cPaciente* pacientesobrecarga1 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    cPaciente* pacientesobrecarga2 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    cPaciente* pacientesobrecarga3 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    cPaciente* pacientesobrecarga4 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    cPaciente* pacientesobrecarga5 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+
+   *Madison + *pacientesobrecarga1;
+   *Madison + *pacientesobrecarga2;
+   *Madison + *pacientesobrecarga3;
+   *Madison + *pacientesobrecarga4;
+   *Madison + *pacientesobrecarga5;
 
    unsigned int codigopaciente__=0;
-  // bool flag = -1;
    int opcion;
    while (true)
    {
@@ -126,7 +134,11 @@ int main()
        case 1:
            cout << "Ingrese el codigo del paciente que desea ingresar: " << endl;
            cin >> codigopaciente__;
-       try { Madison->agregarpaciente(MisPacientes[Pa]); }
+       try 
+       {
+           Madison->agregarpaciente(MisPacientes[Pa]);
+           cout << "Se agregó el paciente correctamente" << endl;
+       }
        catch (exception& e) { cerr << "Exception->" << e.what()<< endl; }
            break;
 
@@ -149,30 +161,6 @@ int main()
        default:
            break;
        }
-
-   
-        // while (!(MisPacientes.empty())) //mientras hayan pacientes se va a dar todo lo siguiente...
-        // {
-        //        cout << "Ingrese el codigo del paciente recien ingresado" << endl;
-        //        cin >> codigopaciente__;
-        //        //cout << "Nombre:" << MisPacientes[Pa]->getnombrepaciente() << endl;
-        //        cout << "Si desea eliminar al paciente ingrese 0, si lo desea agregar ingrese -1" << endl;
- 
-          
-       
-        
- 
-        //   {
-        //       try { Madison->agregarpaciente(MisPacientes[Pa], codigopaciente__); }
-        //       catch (exception& e) { cerr << "Exception->" << e.what(); }
-        //   }
-      
-        //      Richard->recetarprotesis(*MisPacientes[Pa], *Ortopediahappyplace, *MisProtesis[Pro], 4, Raul); //aca ya llama al fabricante y da la protesis si no tiene stock la ortopedia
-        //     ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
-        //    cout << Registro->To_stringregistro() << endl;
-
-        
-
     }
         //ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
         //cout << Registro->To_stringregistro() << endl;
@@ -184,9 +172,5 @@ int main()
         delete ANPA;
         delete Ortopediahappyplace;
         delete Registro;
-
-
-        
-
 	return 0;
 }

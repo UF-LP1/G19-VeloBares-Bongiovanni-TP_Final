@@ -38,7 +38,7 @@ void cHospital::agregarpaciente(cPaciente *p)
 	bool serepite = false;
 	int i = 0;
 	while (i <vectorpa.size() && !serepite) { //==false
-		if ( p == vectorpa[i])
+		if ( *p == *(vectorpa.at(i)))
 		{
 			serepite = true; 
 			throw exception("Ya esta ingresado el paciente");

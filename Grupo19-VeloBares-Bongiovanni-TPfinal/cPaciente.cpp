@@ -74,10 +74,10 @@ string cPaciente::To_stringpaciente()
 	return auxpaciente;
 }
 
-bool cPaciente::operator==(cPaciente& p)
+bool cPaciente::operator==(cPaciente &p)
 {
 	bool flag = false;
-	if (p.getnombrepaciente() == this->nombrepaciente && p.getalergias() == alergia && p.getapellidopaciente() == this->apellidopaciente && p.getcodigopaciente() == this->codigopaciente && p.getproblema() == this->problema && p.getradio() == this->radio)
+	if (this->nombrepaciente == p.getnombrepaciente() && this-> alergia == p.getalergias()  && this->apellidopaciente == p.getapellidopaciente() && this->codigopaciente ==  p.getcodigopaciente() && this->problema == p.getproblema()  && this->radio == p.getradio())
 	{
 		flag = true;
 	}
