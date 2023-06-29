@@ -74,7 +74,7 @@ string cPaciente::To_stringpaciente()
 	return auxpaciente;
 }
 
-bool cPaciente::operator==(const cPaciente &p)
+bool cPaciente::operator==(cPaciente p)
 {
 	bool flag = false;
 	if (this->nombrepaciente == p.nombrepaciente && this-> alergia == p.alergia  && this->apellidopaciente == p.apellidopaciente && this->codigopaciente ==  p.codigopaciente && this->problema == p.problema  && this->radio == p.radio)
