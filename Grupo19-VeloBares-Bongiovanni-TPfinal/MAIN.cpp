@@ -51,7 +51,7 @@ unsigned int randint(unsigned int min, unsigned int max)
     "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "15.1", "15.2", "15.3", "15.4", "15.5", "15.6", "15.7", "15.8", "15.9", "16.1", "16.2", "16.3", "16.4", "16.5", "16.6", "16.7", "16.8", "16.9", "17.1", "17.2", "17.3", "17.4", "17.5", "17.6", "17.7", "17.8", "17.9", "18.1", "18.2", "18.3", "18.4", "18.5", "18.6", "18.7", "18.8", "18.9", "19.1", "19.2", "19.3", "19.4", "19.5", "19.6", "19.7", "19.8", "19.9" };
 
  vector<string> material = {
-"Plástico", "Metal", "Fibra de carbono", "Silicona", "Goma", "Madera", "Aluminio", "Titanio", "Acero inoxidable", "Polipropileno", "Nylon", "Teflón", "Cerámica", "Espuma de poliuretano", "Elastómero", "Resina", "Polietileno", "Caucho", "Poliéster", "Fibra de vidrio", "Porcelana", "Cromo", "Bambú", "Vidrio", "Cobre", "Platino", "Latón", "PVC", "EVA", "Polimetilmetacrilato", "Fibra natural", "Espuma de látex", "Composite", "Aleación de magnesio", "Dacron", "Tungsteno", "Polioximetileno", "Cerámica bioactiva", "Polimetilpenteno", "Polisulfona", "Polimetacrilato de metilo", "Poliuretano termoplástico", "Gel de sílice", "Polietileno de alta densidad", "Polibutileno tereftalato", "Polipropileno reforzado con fibra de vidrio", "Polipropileno reforzado con fibra de carbono", "Silicona médica", "Fibra de polietileno de alta densidad", "Cristal líquido", "Tetrafluoroetileno", "Fibra de polietileno reticulado", "Polipropileno microporoso", "Algodón", "Yute", "Hilo de sutura", "Hilo de polipropileno", "Caucho termoplástico", "Poliestireno expandido" };
+"Plástico", "Metal", "Fibra de carbono", "Silicona", "Goma", "Madera", "Aluminio", "Titanio", "Acero inoxidable", "Polipropileno", "Nylon", "Teflon", "Ceramica", "Espuma de poliuretano", "Elastomero", "Resina", "Polietileno", "Caucho", "Poliester", "Fibra de vidrio", "Porcelana", "Cromo", "Bambu", "Vidrio", "Cobre", "Platino", "Laton", "PVC", "EVA", "Polimetilmetacrilato", "Fibra natural", "Espuma de latex", "Composite", "Aleacion de magnesio", "Dacron", "Tungsteno", "Polioximetileno", "Cerámica bioactiva", "Polimetilpenteno", "Polisulfona", "Polimetacrilato de metilo", "Poliuretano termoplástico", "Gel de sílice", "Polietileno de alta densidad", "Polibutileno tereftalato", "Polipropileno reforzado con fibra de vidrio", "Polipropileno reforzado con fibra de carbono", "Silicona médica", "Fibra de polietileno de alta densidad", "Cristal líquido", "Tetrafluoroetileno", "Fibra de polietileno reticulado", "Polipropileno microporoso", "Algodón", "Yute", "Hilo de sutura", "Hilo de polipropileno", "Caucho termoplástico", "Poliestireno expandido" };
 
  vector<time_t> fechadefabricacion = { 
 946684800, 946771200, 946857600, 946944000, 947030400, 947116800, 947203200, 947289600, 947376000, 947462400, 947548800, 947635200, 947721600, 947808000, 947894400, 947980800, 948067200, 948153600, 948240000, 948326400, 948412800, 948499200, 948585600, 948672000, 948758400, 948844800, 948931200, 949017600, 949104000, 949190400, 949276800, 949363200, 949449600, 949536000, 949622400, 949708800, 949795200, 949881600, 949968000, 950054400, 950140800, 950227200, 950313600, 950400000, 950486400, 950572800, 950659200, 950745600, 950832000, 950918400, 951004800, 951091200, 951177600, 951264000, 951350400, 951436800, 951523200, 951609600, 951696000, 951782400, 951868800, 951955200, 952041600, 952128000
@@ -82,7 +82,7 @@ int main()
     srand(time(NULL)); //simulacion todo randommm
 
     vector <cPaciente*> MisPacientes(5);//= generador_pacientes(5);
-    vector <cProtesis*> MisProtesis(5); //= generador_protesis(5);
+    vector <cProtesis*> MisProtesis = generador_protesis(5);
     vector <cProtesis*> MisProtesisfabricante(5);// = generador_protesisfabricante(5);
     vector <cMedico*> medico;
     vector <cHospital*> hospital;
@@ -102,17 +102,29 @@ int main()
     cOrtopedia* Ortopediahappyplace = new cOrtopedia("Ortopediahappyplace", "av Corrientes");
     cRegistro* Registro = new cRegistro(Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
-    cPaciente* pacientesobrecarga1 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
-    cPaciente* pacientesobrecarga2 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
-    cPaciente* pacientesobrecarga3 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
-    cPaciente* pacientesobrecarga4 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
-    cPaciente* pacientesobrecarga5 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    //cPaciente* paciente1 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    //cPaciente* paciente2 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    //cPaciente* paciente3 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    //cPaciente* paciente4 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    //cPaciente* paciente5 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
 
-    *Madison + *pacientesobrecarga1;
-    *Madison + *pacientesobrecarga2;
-    *Madison + *pacientesobrecarga3;
-    *Madison + *pacientesobrecarga4;
-    *Madison + *pacientesobrecarga5;
+    cPaciente* paciente6 = new cPaciente("Flor", "vb", 19 / 8 / 2003, true, true, 156346, "16", 100);
+    MisPacientes.push_back(paciente6);
+    cPaciente* paciente7 = new cPaciente("lola", "vb", 19 / 8 / 2003, true, true, 156346, "16", 101);
+    MisPacientes.push_back(paciente7);
+    cPaciente* paciente8 = new cPaciente("ana", "vb", 19 / 8 / 2003, true, true, 156346, "16", 103);
+    MisPacientes.push_back(paciente8);
+    cPaciente* paciente9 = new cPaciente("luli", "vb", 19 / 8 / 2003, true, true, 156346, "16", 104);
+    MisPacientes.push_back(paciente9);
+    cPaciente* paciente10 = new cPaciente("ona", "vb", 19 / 8 / 2003, true, true, 156346, "16", 105);
+    MisPacientes.push_back(paciente10);
+
+
+    //*Madison + *paciente1;
+    //*Madison + *paciente2;
+    //*Madison + *paciente3;
+    //*Madison + *paciente4;
+    //*Madison + *paciente5;
 
     unsigned int codigopaciente__ = 0;
     int opcion;
@@ -133,7 +145,8 @@ int main()
             cin >> codigopaciente__;
             try
             {
-                Madison->agregarpaciente(MisPacientes[Pa]);
+                Madison->agregarpaciente(MisPacientes[Pa]); 
+               // *Madison + *MisPacientes[Pa]; //deberia agregar el pte con ese codigo....
                 cout << "Se agregó el paciente correctamente" << endl;
             }
             catch (exception& e) { cerr << "Exception->" << e.what() << endl; }
