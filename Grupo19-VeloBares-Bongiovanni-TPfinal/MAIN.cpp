@@ -153,8 +153,12 @@ int main()
         case 2:
             cout << "Ingrese el codigo del paciente que desea eliminar: " << endl;
             cin >> codigopaciente__;
-            Madison.eliminarpaciente(codigopaciente__);
-            cout << "Se elimino el paciente correctamente" << endl;
+            if (Madison.buscarpaciente(codigopaciente__) == nullptr)
+                cout << "No se encontro el apciente que desea eliminar" <<endl;
+            else {
+                Madison.eliminarpaciente(codigopaciente__);
+                cout << "Se elimino el paciente correctamente" << endl;
+            }
             break;
 
         case 3:
