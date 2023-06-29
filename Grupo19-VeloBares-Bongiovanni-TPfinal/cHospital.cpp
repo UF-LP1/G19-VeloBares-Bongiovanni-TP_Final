@@ -38,7 +38,7 @@ void cHospital::agregarpaciente(cPaciente *p)
 	bool serepite = false;
 	int i = 0;
 	while (i <vectorpa.size() && !serepite) { //==false
-		if ( *p == *(vectorpa.at(i)))
+		if (*vectorpa.at(i) == *p) //ahi no comparo las direc de memoria de los punteros sino los contenidos de los punteros que apuntan a un obj de cPaciente.
 		{
 			serepite = true; 
 			throw exception("Ya esta ingresado el paciente");

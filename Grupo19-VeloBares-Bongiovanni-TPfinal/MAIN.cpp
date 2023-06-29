@@ -78,7 +78,8 @@ vector<cProtesis*> generador_protesisfabricante(unsigned int cantidad) { //me ge
 }
 
 int main()
-{   srand(time(NULL)); //simulacion todo randommm
+{
+    srand(time(NULL)); //simulacion todo randommm
 
     vector <cPaciente*> MisPacientes(5);//= generador_pacientes(5);
     vector <cProtesis*> MisProtesis(5); //= generador_protesis(5);
@@ -95,11 +96,11 @@ int main()
     time_t fechaotorgamiento = time(NULL);
 
     cMedico* Richard = new cMedico(MisProtesis, "Richard", "Gomez", "42500"); //VA EN EL ORDEN DEL CONSTRUCTOR DE LA PARTE PUBLIC
-    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes); 
+    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes);
     cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999, MisProtesisfabricante);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
-    cOrtopedia* Ortopediahappyplace = new cOrtopedia ("Ortopediahappyplace", "av Corrientes");
-    cRegistro* Registro = new cRegistro( Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
+    cOrtopedia* Ortopediahappyplace = new cOrtopedia("Ortopediahappyplace", "av Corrientes");
+    cRegistro* Registro = new cRegistro(Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
 
     cPaciente* pacientesobrecarga1 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
     cPaciente* pacientesobrecarga2 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
@@ -107,60 +108,63 @@ int main()
     cPaciente* pacientesobrecarga4 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
     cPaciente* pacientesobrecarga5 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
 
-   *Madison + *pacientesobrecarga1;
-   *Madison + *pacientesobrecarga2;
-   *Madison + *pacientesobrecarga3;
-   *Madison + *pacientesobrecarga4;
-   *Madison + *pacientesobrecarga5;
+    *Madison + *pacientesobrecarga1;
+    *Madison + *pacientesobrecarga2;
+    *Madison + *pacientesobrecarga3;
+    *Madison + *pacientesobrecarga4;
+    *Madison + *pacientesobrecarga5;
 
-   unsigned int codigopaciente__=0;
-   int opcion;
-   do
-   {
-       cout << "MENU HOSPITAL MADISON:" << endl;
-       cout << "1. Opcion 1. Agregar un paciente. " << endl;
-       cout << "2. Opcion 2. Eliminar un paciente." << endl;
-       cout << "3. Opcion 3. Listar los pacientes. " << endl;
-       cout << "4. Opcion 4. Listar las protesis." << endl;
-       cout << "Ingrese una opcion: " << endl;
-       cin >> opcion;
+    unsigned int codigopaciente__ = 0;
+    int opcion;
+    do
+    {
+        cout << "MENU HOSPITAL MADISON:" << endl;
+        cout << "1. Opcion 1. Agregar un paciente. " << endl;
+        cout << "2. Opcion 2. Eliminar un paciente." << endl;
+        cout << "3. Opcion 3. Listar los pacientes. " << endl;
+        cout << "4. Opcion 4. Listar las protesis." << endl;
+        cout << "Ingrese una opcion: " << endl;
+        cin >> opcion;
 
-       switch (opcion)
-       {
-       case 1:
-           cout << "Ingrese el codigo del paciente que desea ingresar: " << endl;
-           cin >> codigopaciente__;
-       try 
-       {
-           Madison->agregarpaciente(MisPacientes[Pa]);
-           cout << "Se agregó el paciente correctamente" << endl;
-       }
-       catch (exception& e) { cerr << "Exception->" << e.what()<< endl; }
-           break;
+        switch (opcion)
+        {
+        case 1:
+            cout << "Ingrese el codigo del paciente que desea ingresar: " << endl;
+            cin >> codigopaciente__;
+            try
+            {
+                Madison->agregarpaciente(MisPacientes[Pa]);
+                cout << "Se agregó el paciente correctamente" << endl;
+            }
+            catch (exception& e) { cerr << "Exception->" << e.what() << endl; }
+            break;
 
-       case 2:
-           cout << "Ingrese el codigo del paciente que desea eliminar: " << endl;
-           cin >> codigopaciente__;
-       Madison->eliminarpaciente(codigopaciente__);
-           break;
+        case 2:
+            cout << "Ingrese el codigo del paciente que desea eliminar: " << endl;
+            cin >> codigopaciente__;
+            Madison->eliminarpaciente(codigopaciente__);
+            break;
 
-       case 3:
-           for (int i = 0; i < MisPacientes.size(); i++)
-               cout << MisPacientes[i]->To_stringpaciente() << endl;
-           break;
+        case 3:
+            for (int i = 0; i < MisPacientes.size(); i++)
+                cout << MisPacientes[i]->To_stringpaciente() << endl;
+            break;
 
-       case 4:
-           for (int i = 0; i < MisProtesis.size(); i++)
-               MisProtesis[i]->imprimirprotesis();
-           break;
+        case 4:
+            for (int i = 0; i < MisProtesis.size(); i++)
+                MisProtesis[i]->imprimirprotesis();
+            break;
 
-       default:
-           break;
-       }
-  while(!MisPacientes.empty()) 
-        //ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
-        //cout << Registro->To_stringregistro() << endl;
-        //cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
+        default:
+            break;
+        } 
+       
+    } while (!MisPacientes.empty());
+        
+
+            //ANPA->tenerregistros(*Registro, *MisProtesis[Pro], *Richard, *MisPacientes[Pa], *Ortopediahappyplace, Raul, 6);
+            //cout << Registro->To_stringregistro() << endl;
+            //cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
 
         delete Richard;
         delete Madison;
@@ -168,5 +172,8 @@ int main()
         delete ANPA;
         delete Ortopediahappyplace;
         delete Registro;
-	return 0;
+        return 0;
+
+
+   
 }
