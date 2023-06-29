@@ -27,5 +27,5 @@ private:
 };
 
 ostream& operator <<(ostream& out, cHospital& hospital);
-void operator + (cHospital h,  cPaciente& p);
+void operator + (cHospital& h,  cPaciente& p);
 void operator - (cPaciente& p, cHospital h);

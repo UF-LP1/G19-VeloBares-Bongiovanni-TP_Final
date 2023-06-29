@@ -28,7 +28,7 @@ const vector<string> radioPac = {
 };
 
 const vector<unsigned int> codigoPac = {
-100, 101, 102, 103, 104, 105, 106//, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159
+100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159
 };
 
 unsigned int randint(unsigned int min, unsigned int max) 
@@ -88,7 +88,6 @@ int main()
     vector <cHospital*> hospital;
     vector <cOrtopedia*> ortopedia;
 
-    //int Pa = rand() % MisPacientes.size();
     int Pa = rand() % 5;
     int Pro = rand() % MisProtesis.size();
     int ProF = rand() % MisProtesisfabricante.size();
@@ -107,9 +106,12 @@ int main()
     //cPaciente* paciente3 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
     //cPaciente* paciente4 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
     //cPaciente* paciente5 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
+    
+    cHospital Madison("Madison", "av Santa Fe", medico, MisPacientes);
 
     cPaciente* paciente6 = new cPaciente("Flor", "vb", 19 / 8 / 2003, true, true, 156346, "16", 100);
-    MisPacientes.push_back(paciente6);
+    // MisPacientes.push_back(paciente6);
+    Madison + *paciente6;
     cPaciente* paciente7 = new cPaciente("lola", "vb", 19 / 8 / 2003, true, true, 156346, "16", 101);
     MisPacientes.push_back(paciente7);
     cPaciente* paciente8 = new cPaciente("ana", "vb", 19 / 8 / 2003, true, true, 156346, "16", 103);
@@ -119,18 +121,13 @@ int main()
     cPaciente* paciente10 = new cPaciente("ona", "vb", 19 / 8 / 2003, true, true, 156346, "16", 105);
     MisPacientes.push_back(paciente10);
 
-    cHospital Madison("Madison", "av Santa Fe", medico, MisPacientes);
     cRegistro* Registro = new cRegistro(&Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
-    //*Madison + *paciente1;
-    //*Madison + *paciente2;
-    //*Madison + *paciente3;
-    //*Madison + *paciente4;
-    //*Madison + *paciente5;
-
+  
     unsigned int codigopaciente__ = 0;
     int opcion;
     do
     {
+        //system("CLS");
         cout << "MENU HOSPITAL MADISON:" << endl;
         cout << "1. Opcion 1. Agregar un paciente. " << endl;
         cout << "2. Opcion 2. Eliminar un paciente." << endl;
@@ -147,9 +144,9 @@ int main()
             try
             {
                 Madison.agregarpaciente(MisPacientes[Pa]); 
-               // *Madison + *MisPacientes[Pa]; //deberia agregar el pte con ese codigo....
-                cout << "Se agregó el paciente correctamente" << endl;
+                cout << "Se agrego el paciente correctamente" << endl;
             }
+
             catch (exception& e) { cerr << "Exception->" << e.what() << endl; }
             break;
 
@@ -157,11 +154,12 @@ int main()
             cout << "Ingrese el codigo del paciente que desea eliminar: " << endl;
             cin >> codigopaciente__;
             Madison.eliminarpaciente(codigopaciente__);
+            cout << "Se elimino el paciente correctamente" << endl;
             break;
 
         case 3:
             for (int i = 0; i < MisPacientes.size(); i++)
-                cout << MisPacientes[i]->To_stringpaciente() << endl;
+            cout << MisPacientes[i]->To_stringpaciente() << endl;
             break;
 
         case 4:
@@ -181,7 +179,6 @@ int main()
             //cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
 
         delete Richard;
-        //delete Madison;
         delete Raul;
         delete ANPA;
         delete Ortopediahappyplace;

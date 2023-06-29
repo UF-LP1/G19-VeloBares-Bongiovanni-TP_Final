@@ -37,7 +37,7 @@ void cHospital::agregarpaciente(cPaciente *p)
 { 
 	bool serepite = false;
 	int i = 0;
-	while (i <vectorpa.size() && !serepite) { //==false
+	while (i < vectorpa.size()) { //==false
 		if (*vectorpa.at(i) == *p) //ahi no comparo las direc de memoria de los punteros sino los contenidos de los punteros que apuntan a un obj de cPaciente.
 		{
 			serepite = true; 
@@ -45,6 +45,7 @@ void cHospital::agregarpaciente(cPaciente *p)
 			
 		}
 		i++;
+
 	}
 	if (serepite == false)
 		vectorpa.push_back(p);
@@ -117,7 +118,7 @@ cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__)
 				return nullptr;
 }
 
-void operator + ( cHospital h, cPaciente& p)
+void operator + ( cHospital& h, cPaciente& p)
 {
 	//h.getvectorpaciente().push_back(p);
 	h.agregarpaciente(&p);

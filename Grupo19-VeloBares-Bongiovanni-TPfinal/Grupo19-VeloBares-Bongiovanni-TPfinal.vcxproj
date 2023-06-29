@@ -138,6 +138,7 @@
     <ClInclude Include="cQuirurgica.h" />
     <ClInclude Include="cRegistro.h" />
     <ClInclude Include="exception.h" />
+    <ClInclude Include="ladoenum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cANPA.cpp" />
