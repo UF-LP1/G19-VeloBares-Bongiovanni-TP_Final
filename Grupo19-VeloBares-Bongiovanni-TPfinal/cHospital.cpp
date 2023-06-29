@@ -58,7 +58,11 @@ void cHospital::eliminarpaciente(unsigned int codigo__)
 		while (i < vectorpa.size())
 		{
 			cPaciente* eliminado= buscarpaciente(codigo__); // llamo funcion buscar para encontrar el paciente que quiero eliminar.
-			if (eliminado->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
+			if (eliminado == nullptr)
+			{
+				//no se encontro
+			}
+			else if (eliminado->getcodigopaciente() == vectorpa.at(i)->getcodigopaciente())
 			{
 			vectorpa.erase(vectorpa.begin() + i); //elimino desde el principio, Is posiciones mas de ahi
 			break;
@@ -109,6 +113,8 @@ cPaciente* cHospital::buscarpaciente(unsigned int codigopaciente__)
 					//else throw exception("No se encontro al paciente");
 					i++;
 			}
+			if (i == vectorpa.size())
+				return nullptr;
 }
 
 void operator + ( cHospital h, cPaciente& p)

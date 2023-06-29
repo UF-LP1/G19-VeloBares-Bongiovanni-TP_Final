@@ -81,14 +81,15 @@ int main()
 {
     srand(time(NULL)); //simulacion todo randommm
 
-    vector <cPaciente*> MisPacientes(5);//= generador_pacientes(5);
+    vector <cPaciente*> MisPacientes(0);//= generador_pacientes(5);
     vector <cProtesis*> MisProtesis = generador_protesis(5);
     vector <cProtesis*> MisProtesisfabricante(5);// = generador_protesisfabricante(5);
     vector <cMedico*> medico;
     vector <cHospital*> hospital;
     vector <cOrtopedia*> ortopedia;
 
-    int Pa = rand() % MisPacientes.size();
+    //int Pa = rand() % MisPacientes.size();
+    int Pa = rand() % 5;
     int Pro = rand() % MisProtesis.size();
     int ProF = rand() % MisProtesisfabricante.size();
 
@@ -96,11 +97,10 @@ int main()
     time_t fechaotorgamiento = time(NULL);
 
     cMedico* Richard = new cMedico(MisProtesis, "Richard", "Gomez", "42500"); //VA EN EL ORDEN DEL CONSTRUCTOR DE LA PARTE PUBLIC
-    cHospital* Madison = new cHospital("Madison", "av Santa Fe", medico, MisPacientes);
     cFabricante* Raul = new cFabricante("Raul", "av Las Heras", 999, MisProtesisfabricante);
     cANPA* ANPA = new cANPA(ortopedia, hospital);
     cOrtopedia* Ortopediahappyplace = new cOrtopedia("Ortopediahappyplace", "av Corrientes");
-    cRegistro* Registro = new cRegistro(Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
+    
 
     //cPaciente* paciente1 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
     //cPaciente* paciente2 = new cPaciente(nomPac[randint(0, nomPac.size())], apellidoPac[randint(0, apellidoPac.size())], fechanacimientoPac[randint(0, fechanacimientoPac.size())], (bool)randint(0, 2), (bool)randint(0, 2), telefonoPac[randint(0, telefonoPac.size())], radioPac[randint(0, radioPac.size())], codigoPac[randint(0, codigoPac.size())]);
@@ -119,7 +119,8 @@ int main()
     cPaciente* paciente10 = new cPaciente("ona", "vb", 19 / 8 / 2003, true, true, 156346, "16", 105);
     MisPacientes.push_back(paciente10);
 
-
+    cHospital Madison("Madison", "av Santa Fe", medico, MisPacientes);
+    cRegistro* Registro = new cRegistro(&Madison, Richard, fechasolicitud, fechaotorgamiento, MisProtesis[Pro], MisPacientes[Pa], true);
     //*Madison + *paciente1;
     //*Madison + *paciente2;
     //*Madison + *paciente3;
@@ -145,7 +146,7 @@ int main()
             cin >> codigopaciente__;
             try
             {
-                Madison->agregarpaciente(MisPacientes[Pa]); 
+                Madison.agregarpaciente(MisPacientes[Pa]); 
                // *Madison + *MisPacientes[Pa]; //deberia agregar el pte con ese codigo....
                 cout << "Se agregó el paciente correctamente" << endl;
             }
@@ -155,7 +156,7 @@ int main()
         case 2:
             cout << "Ingrese el codigo del paciente que desea eliminar: " << endl;
             cin >> codigopaciente__;
-            Madison->eliminarpaciente(codigopaciente__);
+            Madison.eliminarpaciente(codigopaciente__);
             break;
 
         case 3:
@@ -180,7 +181,7 @@ int main()
             //cProtesis tiemporecuperacion(vector<cProtesis*> listaprotesis, time_t tiemporecup);
 
         delete Richard;
-        delete Madison;
+        //delete Madison;
         delete Raul;
         delete ANPA;
         delete Ortopediahappyplace;
